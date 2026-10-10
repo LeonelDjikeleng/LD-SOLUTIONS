@@ -3,9 +3,6 @@
   "use strict";
   var racine = document.querySelector("[data-estimateur]");
   if (!racine) return;
-  racine.hidden = false;
-  var substitut = document.querySelector("[data-estimateur-sans-js]");
-  if (substitut) substitut.hidden = true;
 
   var fmt = function (n) { return Math.round(n).toLocaleString("fr-CA").replace(/ /g, " ") + " $"; };
   var sortieTotal = racine.querySelector("[data-total]");

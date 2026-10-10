@@ -1,0 +1,3 @@
+/* Chargée seulement sans JavaScript (<noscript>) : masque les outils qui en dépendent. */
+[data-estimateur] { display: none !important; }
+[data-estimateur-sans-js] { display: block !important; }

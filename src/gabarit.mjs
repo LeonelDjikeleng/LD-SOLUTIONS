@@ -140,7 +140,8 @@ ${p.noindex ? '<meta name="robots" content="noindex, follow">' : `<link rel="can
 <link rel="stylesheet" href="/assets/css/site.css?v=${p.versions.css}">
 <script src="/assets/js/site.js?v=${p.versions.js}" defer></script>
 ${p.formulaire ? `<script src="/assets/js/formulaire.js?v=${p.versions.formulaire}" defer></script>` : ""}
-${p.estimateur ? `<script src="/assets/js/estimateur.js?v=${p.versions.estimateur}" defer></script>` : ""}
+${p.estimateur ? `<script src="/assets/js/estimateur.js?v=${p.versions.estimateur}" defer></script>
+<noscript><link rel="stylesheet" href="/assets/css/sans-js.css"></noscript>` : ""}
 ${jsonld}
 </head>
 <body${cta ? ' class="a-barre-mobile"' : ""}>

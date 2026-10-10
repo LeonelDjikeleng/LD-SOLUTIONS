@@ -22,7 +22,7 @@ const optEstimateur = options.filter((o) => o.estimateur);
 const parPage = new Set(["page-sup", "page-redigee", "redaction"]);
 
 const estimateur = `
-<div class="estimateur" data-estimateur ${lancementActif ? `data-promo-pct="${lancement.pourcentage}" data-promo-fin="${lancement.finLe}"` : ""} hidden>
+<div class="estimateur" data-estimateur ${lancementActif ? `data-promo-pct="${lancement.pourcentage}" data-promo-fin="${lancement.finLe}"` : ""}>
   <div class="estimateur__choix">
     <fieldset class="formulaire">
       <legend>1. La formule de base</legend>
@@ -58,7 +58,7 @@ const estimateur = `
     <small>Estimation indicative : le devis écrit, après notre appel, fait foi.</small>
   </aside>
 </div>
-<p class="texte-secondaire" data-estimateur-sans-js>L'estimateur interactif nécessite JavaScript. Tous les prix sont détaillés ci-dessous, et vous pouvez <a href="/contact/?type=creation">demander un devis</a> directement.</p>`;
+<p class="texte-secondaire" data-estimateur-sans-js hidden>L'estimateur interactif nécessite JavaScript. Tous les prix sont détaillés ci-dessous, et vous pouvez <a href="/contact/?type=creation">demander un devis</a> directement.</p>`;
 
 const comparatif = `
 <details class="comparatif-details"><summary>Comparer les trois formules point par point</summary>
