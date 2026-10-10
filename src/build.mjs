@@ -41,13 +41,26 @@ for (const fichier of fs.readdirSync(path.join(ici, "pages")).filter((f) => f.en
   pages.push(...[].concat(mod.default));
 }
 
+// Typographie française : espaces insécables (fines avant ; ! ? : et dans les guillemets,
+// normales entre un nombre et son unité). Appliquée au texte seulement, jamais aux balises ni aux scripts.
+const FINE = "\u202F", INSEC = "\u00A0";
+function typographie(html) {
+  return html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((morceau, i) => {
+    if (i % 2 === 1) return morceau;
+    return morceau
+      .replace(/ ([:;!?»])/g, FINE + "$1")
+      .replace(/« /g, "«" + FINE)
+      .replace(/(\d) (\$|%|h\b|min\b|jours?\b|mois\b|ans?\b|semaines?\b|pages?\b|heures?\b|minutes?\b|Ko\b|Mo\b|px\b|mots\b|points?\b|rondes?\b)/g, "$1" + INSEC + "$2");
+  }).join("");
+}
+
 // 3. Écrire chaque page
 const chemins = new Set();
 const avertissements = [];
 for (const p of pages) {
   if (chemins.has(p.chemin)) throw new Error(`Chemin en double : ${p.chemin}`);
   chemins.add(p.chemin);
-  const html = gabarit({ ...p, versions });
+  const html = typographie(gabarit({ ...p, versions }));
   const sortie = p.fichier ? path.join(dist, p.fichier) : path.join(dist, p.chemin, "index.html");
   fs.mkdirSync(path.dirname(sortie), { recursive: true });
   fs.writeFileSync(sortie, html);

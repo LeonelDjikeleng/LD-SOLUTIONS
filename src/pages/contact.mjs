@@ -19,18 +19,12 @@ const contact = {
   cta: null,
   formulaire: true,
   corps: `
-<section class="hero hero--page sombre">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
-  <div class="conteneur hero__grille">
-    <div class="hero__texte">
-      ${"" /* fil d'Ariane */}
-      <nav class="ariane" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
-      <p class="surtitre entree">Contact</p>
-      <h1 class="entree entree--2">Parlons de votre site.</h1>
-      <p class="hero__intro entree entree--3">Décrivez votre besoin en deux minutes. Vous recevez une première réponse sous ${DELAI_REPONSE}, sans engagement.</p>
-    </div>
-  </div>
-</section>
+${heroPage({
+  arianeItems: ARIANE,
+  surtitreTexte: "Contact",
+  titre: "Parlons de votre site.",
+  intro: `Décrivez votre besoin en deux minutes. Vous recevez une première réponse sous ${DELAI_REPONSE}, sans engagement.`,
+})}
 
 <section class="section section--clair" aria-labelledby="titre-formulaire">
   <div class="conteneur">

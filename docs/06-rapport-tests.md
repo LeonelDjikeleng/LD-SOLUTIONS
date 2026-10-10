@@ -7,7 +7,7 @@ Tous les résultats ci-dessous ont été **réellement exécutés** dans l'envir
 | Domaine | Résultat |
 |---|---|
 | Tests serveur et validation (`npm test`) | **29 / 29 réussis** |
-| Tests de bout en bout dans Chromium (`npm run test:e2e`) | **13 / 13 réussis** |
+| Tests de bout en bout dans Chromium (`npm run test:e2e`) | **14 / 14 réussis** |
 | Accessibilité axe-core (WCAG 2.1 A/AA, 18 pages) | **0 violation sérieuse ou critique** (1 contraste corrigé pendant les tests) |
 | Lighthouse mobile (local) | Performance **98 à 100**, Accessibilité **100**, Bonnes pratiques **100**, SEO **100** |
 | Débordement horizontal (320, 360, 390, 768, 1024, 1440 px) | **Aucun**, sur les 18 pages |
@@ -59,6 +59,16 @@ Vrai serveur HTTP, base SQLite en mémoire, **vrai serveur SMTP local** pour la 
 Poids compressés (Brotli) : HTML de l'accueil 8,9 Ko, CSS 10,8 Ko, JavaScript 1,7 à 3,6 Ko par fichier, polices 92 Ko au total (3 fichiers WOFF2 hébergés sur le site). Aucune image lourde : les démonstrations sont codées en HTML/CSS.
 
 *Limite* : mesures sur un serveur local. Les valeurs réelles dépendront de l'hébergeur et du réseau ; à remesurer avec PageSpeed Insights une fois en ligne.
+
+## 4 bis. Refonte visuelle v2 « La planche » (mesures du 10 octobre 2026)
+
+| Page | Perf. | Access. | Bonnes pratiques | SEO | LCP | CLS | TBT | Poids |
+|---|---|---|---|---|---|---|---|---|
+| Accueil | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 141 Ko |
+| Tarifs | 97 | 100 | 100 | 100 | 1,8 s | 0 | 190 ms | 143 Ko |
+| Contact | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 141 Ko |
+
+Défaut trouvé et corrigé pendant la refonte : l'animation du téléphone de l'accueil recalculait les styles d'une vingtaine d'éléments à chaque image (≈ 500 ms de calcul sur un téléphone moyen, performance 88). Réécrite pour n'animer que l'opacité et la position : performance 99, blocage 0 ms. Un 14e test vérifie le tiroir de menu (bouton « Fermer », toucher sur le voile) et le compteur des carrousels.
 
 ## 5. Revue visuelle (Creative QA, Moi 2.0)
 

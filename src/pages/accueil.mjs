@@ -2,7 +2,7 @@ import { site } from "../content/site.config.mjs";
 import { creation, maintenance, formatPrix, DELAI_REPONSE } from "../content/offres.mjs";
 import {
   surtitre, fleche, telephoneHero, grilleCreation, demonstrations, processus, engagements,
-  faq, faqJsonLd, appelFinal, ICONES, promosHTML, jsonldOrganisation,
+  faq, faqJsonLd, appelFinal, ICONES, promosHTML, jsonldOrganisation, traitsConstruction, cartouche,
 } from "../composants.mjs";
 
 export const FAQ_ACCUEIL = [
@@ -16,21 +16,21 @@ export const FAQ_ACCUEIL = [
 
 const corps = `
 <section class="hero sombre" aria-labelledby="titre-accueil">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
-  <div class="hero__lueur" aria-hidden="true"></div>
+  ${traitsConstruction()}
   <div class="conteneur hero__grille">
+    ${cartouche("Accueil")}
     <div class="hero__texte">
-      <p class="surtitre entree">Création · Amélioration · Maintenance de sites web</p>
       <h1 id="titre-accueil" class="entree entree--2">Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
-      <p class="hero__intro entree entree--3">LD SOLUTIONS conçoit, améliore et entretient des sites web pour les PME et les entrepreneurs du Québec. Clairs sur téléphone, rapides, et pensés pour transformer une visite en demande de devis.</p>
+      <p class="cote-ecran" aria-hidden="true" data-cote-ecran hidden><span class="cote-ecran__ligne"></span><span>votre écran : <b data-largeur-ecran></b> px</span><span class="cote-ecran__ligne"></span></p>
+      <p class="hero__intro entree entree--3">Création, amélioration et entretien de sites web pour les PME et les entrepreneurs du Québec. <strong>Clairs sur téléphone, rapides</strong>, et pensés pour transformer une visite en demande de devis.</p>
       <div class="groupe-boutons entree entree--4">
         <a class="bouton" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis ${fleche}</a>
-        <a class="bouton bouton--contour" href="/audit/" data-evenement="clic_audit">Demander mon audit</a>
+        <a class="bouton bouton--contour" href="/audit/" data-evenement="clic_audit">Demander mon audit ${fleche}</a>
       </div>
       <ul class="hero__garanties entree entree--5">
-        <li>Prix publiés, dès ${formatPrix(creation[0].prix)}</li>
-        <li>Réponse sous ${DELAI_REPONSE}</li>
-        <li>Votre site, à votre nom</li>
+        <li>Prix publiés <b>dès ${formatPrix(creation[0].prix)}</b></li>
+        <li>Première réponse <b>${DELAI_REPONSE}</b></li>
+        <li>Propriété du site <b>à votre nom</b></li>
       </ul>
     </div>
     <div class="entree entree--5">${telephoneHero()}</div>

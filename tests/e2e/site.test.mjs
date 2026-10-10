@@ -140,6 +140,13 @@ test("menu mobile : ouverture, focus, Échap, fermeture", async () => {
   await page.keyboard.press("Escape");
   assert.equal(await bouton.getAttribute("aria-expanded"), "false");
   assert.equal(await page.locator("#menu-mobile").isVisible(), false);
+  // Tiroir : bouton « Fermer » et toucher sur le voile
+  await bouton.click();
+  await page.locator("[data-fermer-menu]").click();
+  assert.equal(await page.locator("#menu-mobile").isVisible(), false);
+  await bouton.click();
+  await page.mouse.click(195, 120);
+  assert.equal(await page.locator("#menu-mobile").isVisible(), false, "toucher le voile ferme le tiroir");
   await bouton.click();
   await page.locator("#menu-mobile a", { hasText: "Tarifs" }).click();
   await page.waitForURL(/\/tarifs\/$/);
@@ -277,6 +284,17 @@ test("barre d'action mobile : cachée sur le hero, visible ensuite, cachée prè
   await page.evaluate(() => document.querySelector(".pied").scrollIntoView({ behavior: "instant" }));
   await page.waitForTimeout(400);
   assert.equal(await barre.evaluate((b) => b.classList.contains("est-visible")), false);
+  await ctx.close();
+});
+
+test("carrousels sur téléphone : glisser fait avancer le compteur, cote d'écran exacte", async () => {
+  const { ctx, page } = await nouvellePage();
+  await page.goto(base + "/");
+  assert.equal(await page.locator("[data-largeur-ecran]").textContent(), "390");
+  const piste = page.locator("#offres .defilant__piste");
+  await piste.evaluate((el) => el.scrollTo({ left: el.scrollWidth, behavior: "instant" }));
+  await page.waitForTimeout(200);
+  assert.match(await page.locator("#offres [data-defilant-position]").textContent(), /3 \/ 3/);
   await ctx.close();
 });
 

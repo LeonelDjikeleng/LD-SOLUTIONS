@@ -44,6 +44,13 @@
       if (premier) premier.focus();
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") fermerMenu(true); });
+    var fermer = menu.querySelector("[data-fermer-menu]");
+    if (fermer) fermer.addEventListener("click", function () { fermerMenu(true); });
+    // Toucher en dehors du tiroir (sur le voile) le referme
+    document.addEventListener("click", function (e) {
+      if (menu.hidden || menu.contains(e.target) || bouton.contains(e.target)) return;
+      fermerMenu(false);
+    });
     menu.addEventListener("click", function (e) { if (e.target.closest("a")) fermerMenu(false); });
     // Piège du focus dans le menu ouvert
     menu.addEventListener("keydown", function (e) {
@@ -95,6 +102,33 @@
     cacheurs.forEach(function (c) { obsC.observe(c); });
     maj();
   }
+
+  /* ---------- Cote vivante : la largeur réelle de l'écran du visiteur ---------- */
+  var cote = document.querySelector("[data-cote-ecran]");
+  if (cote) {
+    var valeur = cote.querySelector("[data-largeur-ecran]");
+    var mesurerEcran = function () { valeur.textContent = String(Math.round(document.documentElement.clientWidth)); };
+    mesurerEcran();
+    cote.hidden = false;
+    window.addEventListener("resize", function () { window.requestAnimationFrame(mesurerEcran); }, { passive: true });
+  }
+
+  /* ---------- Carrousels natifs : compteur et barre de progression ---------- */
+  document.querySelectorAll("[data-defilant]").forEach(function (bloc) {
+    var piste = bloc.querySelector(".defilant__piste");
+    var position = bloc.querySelector("[data-defilant-position]");
+    var barre = bloc.querySelector("[data-defilant-barre]");
+    var n = piste.children.length;
+    var maj = function () {
+      var max = piste.scrollWidth - piste.clientWidth;
+      var ratio = max > 0 ? piste.scrollLeft / max : 0;
+      var index = Math.min(n, Math.round(ratio * (n - 1)) + 1);
+      if (position) position.textContent = index + " / " + n;
+      if (barre) barre.style.transform = "translateX(" + (ratio * (n - 1) * 100) + "%)";
+    };
+    piste.addEventListener("scroll", function () { window.requestAnimationFrame(maj); }, { passive: true });
+    maj();
+  });
 
   /* ---------- Copier l'adresse courriel ---------- */
   document.querySelectorAll("[data-copier]").forEach(function (b) {

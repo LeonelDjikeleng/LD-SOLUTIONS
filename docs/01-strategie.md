@@ -158,70 +158,45 @@ Choix assumés :
 
 ---
 
-## 9. Brief de direction artistique (Moi 2.0, phase C)
+## 9. Brief de direction artistique (version 2, 10 octobre 2026)
+
+La version 1 (fond presque noir, cyan, orange, grille quadrillée, cartes arrondies) a été jugée trop proche des sites « tech » générés en série. La version 2 garde le concept et change l'exécution.
 
 ```
-CONCEPT : « Le plan devient site. » L'univers du plan d'architecte (encre profonde,
-          tracés cyan, cotes et repères) au service d'un résultat net et vivant.
-          Créer = tracer le plan · Améliorer = rénover · Entretenir = inspecter.
-          La métaphore du chantier parle directement aux entrepreneurs (segment n° 1).
-ARCHÉTYPE : Technologique premium + Architectural · immersion 2,5
-PERSONNALITÉ : précis, franc, ambitieux · à éviter : « startup » clinquante
+CONCEPT : « La planche. » Chaque page est un jeu de plans d'architecte : tirage bleu
+          (cyanotype), papier calque, cotes, cartouche, et un seul trait de surligneur
+          jaune pour ce qui demande une action. Créer = tracer · Améliorer = rénover ·
+          Entretenir = inspecter. Le langage visuel des entrepreneurs (segment n° 1).
+ARCHÉTYPE : Architectural + local premium · immersion 2,5
+PERSONNALITÉ : précis, franc, artisanal · à éviter : le « tech » sombre générique
 PALETTE (tokens par rôle) :
-  encre      #070B14  fond profond (sections sombres)
-  nuit       #0D1424  surfaces sombres
-  ardoise    #1A2438  bordures et surfaces élevées sombres
-  calque     #F4F6FA  surfaces claires (papier calque, légèrement bleuté)
-  trait      #3CD7FF  cyan électrique : tracés, repères, détails (jamais pour du texte courant sur clair)
-  bleu       #1F5FE0  liens et accents sur fond clair (contraste AA)
-  signal     #FF7A33  ACTION uniquement (boutons principaux), texte encre dessus
-  texte clair #E9EEF7 / secondaire #A3B0C5 ; texte sombre #0D1424 / secondaire #4B576B
-TYPOGRAPHIE : Bricolage Grotesque (titres, variable, caractère affirmé) ·
-              Geist (texte, très lisible) · Geist Mono (cotes, étiquettes, prix)
-              Toutes sous licence OFL, hébergées sur le site (Loi 25 + vitesse).
-COMPOSITION : grille 12 colonnes, marges généreuses, alternance sombre / clair,
-              cotes et repères (« 01 — PLAN ») qui encodent une vraie séquence.
-PROFONDEUR : couches plates + grille de plan en fond ; ombres très rares ;
-             appareils (téléphone, écran) dessinés en CSS.
-MÉDIAS : aucune photo de banque d'images. Les « images » sont des démonstrations
-         de sites codées en HTML/CSS (nettes à toutes les tailles, quelques Ko),
-         identifiées comme fictives. Image Open Graph dessinée en SVG puis rendue en PNG.
-ICÔNES : trait 1,5 px, angles nets, dessinées pour le site (plan, rénovation, inspection).
-BOUTONS : principal = signal plein, texte encre, rayon 10 px ; secondaire = contour ;
-          lien = texte souligné décalé. Hauteur ≥ 48 px.
-CARTES : uniquement pour des objets comparables (offres, démonstrations).
-MOTION : sec et précis. Les tracés se dessinent, les éléments se posent.
-DÉTAIL SIGNATURE : les cotes. Des lignes de cote cyan mesurent les éléments clés
-                   (« 390 px », « < 2,5 s ») et, dans le hero, un téléphone dont la
-                   maquette passe du plan filaire au site fini.
-RÉFÉRENCES : pages produit de Linear (rythme, sobriété sombre), Stripe (clarté des prix
-             et des démonstrations), plans d'architecte (cotes, cartouche).
-             Ce qu'on retient : un seul accent fort, démonstration plutôt que promesse.
+  plan        #14307A  bleu de tirage cyanotype (héros, sections fortes)
+  plan-nuit   #0E2563  bleu profond (pied de page, contrastes)
+  calque      #EEF1F3  papier calque légèrement bleuté (fond courant)
+  feuille     #FFFFFF  feuilles posées sur le calque (offres, formulaires)
+  encre       #0C1424  texte ; graphite #4A5363 texte secondaire
+  trait       #1F44A8  liens et tracés sur papier
+  surligneur  #FFCE3A  ACTION uniquement (boutons, trait sous un mot clé)
+  Aucun noir pur, aucun dégradé décoratif.
+TYPOGRAPHIE : Big Shoulders Display (titres en capitales étroites, comme les titres
+              de planches) · IBM Plex Sans (texte) · IBM Plex Mono (annotations, cotes,
+              prix). Licences OFL, polices hébergées sur le site.
+FORMES : angles vifs (0 à 2 px), filets de 1 px, aucune ombre sauf la barre flottante.
+DÉTAILS SIGNATURE :
+  1. Cartouche : chaque page s'ouvre et se ferme sur un cartouche de plan
+     (projet, planche, échelle, lieu). Le pied de page est un cartouche complet.
+  2. Planches numérotées : chaque section porte son numéro de planche (PL. 01, 02…),
+     calculé automatiquement, qui encode l'ordre réel de lecture.
+  3. Cote vivante : sous le titre de l'accueil, une ligne de cote mesure la largeur
+     réelle de l'écran du visiteur (« 390 px »). Vrai, et propre à ce métier.
+  4. Surligneur : le mot clé du titre est souligné au surligneur jaune, tracé à l'arrivée.
+  5. Grain de papier et traits de construction (arcs de compas, lignes d'axe) sur le bleu.
+MOBILE : menu en tiroir depuis le bas (atteignable au pouce), offres et démonstrations
+         en carrousels à défilement natif avec compteur, barre d'action flottante,
+         transitions de page natives (View Transitions) en amélioration progressive.
+FINITIONS : typographie française (espaces fines insécables avant : ; ! ? et dans les
+            guillemets), chiffres tabulaires pour les prix, aucun mot orphelin dans les titres.
 ```
-
-### Storyboard de l'accueil
-
-| Section | Fonction narrative | Média | Mouvement | CTA | Transition |
-|---|---|---|---|---|---|
-| Hero | Promesse | Téléphone de démonstration : plan filaire → site fini | Assemblage du plan (moment signature, < 2 s, une fois) | Demander un devis · Demander mon audit | La grille de plan se prolonge dans la section suivante |
-| Constats | Problème (mots des clients) | Liste de symptômes | Apparition courte | — | Passage au clair |
-| Trois chantiers | Solution (Créer / Améliorer / Entretenir) | Icônes de plan | Tracés qui se dessinent | Liens vers chaque page | — |
-| Démonstrations | Preuve de savoir-faire | Trois mini-sites codés en cadre d'appareil | Léger décalage au survol (souris seulement) | Voir les démonstrations | Retour au sombre |
-| Offres | Offre et prix | Trois cartes de prix | Aucun (lisibilité) | Choisir une formule | — |
-| Processus | Expérience (comment ça se passe) | Ligne de cotes 01 → 05 | La ligne se trace | — | — |
-| Engagements | Réassurance honnête | Liste d'engagements vérifiables | — | — | — |
-| FAQ | Objections | Accordéons natifs | Ouverture native | — | — |
-| CTA final | Passage à l'action | — | — | Deux portes : nouveau site / site existant | Pied de page |
-
-### Partition motion
-
-- Entrée hero : sur-titre 0 ms → titre 100 ms → texte 220 ms → CTA 320 ms (CTA cliquable immédiatement).
-- Moment signature : maquette du téléphone, 4 étapes en 1,8 s, une seule fois.
-- Défilement : apparition 16 px + opacité, déclenchée par `IntersectionObserver`, uniquement sous la ligne de flottaison.
-- Survol : `@media (hover: hover)` seulement ; appui : échelle 0,98.
-- Réduit (`prefers-reduced-motion`) : tout visible immédiatement, maquette affichée finie, aucun délai.
-
----
 
 ## 10. Ce qui n'a pas été fait volontairement
 

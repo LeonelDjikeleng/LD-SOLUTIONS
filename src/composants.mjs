@@ -17,14 +17,39 @@ export function ariane(items) {
   return `<nav class="ariane" aria-label="Fil d'Ariane"><ol>${li}</ol></nav>`;
 }
 
+/* Traits de construction (arcs de compas, axes, graduations) : décor du tirage bleu */
+export function traitsConstruction() {
+  const graduations = Array.from({ length: 21 }, (_, i) => `<line x1="${40 + i * 16}" y1="742" x2="${40 + i * 16}" y2="${i % 5 === 0 ? 728 : 735}"/>`).join("");
+  return `<svg class="traits" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="currentColor" stroke-width="1">
+    <circle cx="330" cy="470" r="250" stroke-opacity=".7"/>
+    <circle cx="330" cy="470" r="150" stroke-dasharray="2 6"/>
+    <line x1="-20" y1="470" x2="420" y2="470" stroke-dasharray="14 5 2 5"/>
+    <line x1="330" y1="-20" x2="330" y2="820" stroke-dasharray="14 5 2 5"/>
+    <path d="M318 470h24M330 458v24"/>
+    <path d="M40 742h320" stroke-opacity=".8"/>${graduations}
+  </g>
+</svg>`;
+}
+
+/* Cartouche de plan : projet, planche, échelle, lieu */
+export function cartouche(planche) {
+  return `<div class="cartouche entree" aria-hidden="true">
+  <div>Projet<b>LD SOLUTIONS</b></div>
+  <div>Planche<b>${esc(planche)}</b></div>
+  <div>Échelle<b>1:1</b></div>
+  <div>Lieu<b>Québec</b></div>
+</div>`;
+}
+
 export function heroPage({ arianeItems, surtitreTexte, titre, intro, boutons = "", aside = "" }) {
+  const planche = String(surtitreTexte || "").replace(/^\d+\s*·\s*/, "") || "Page";
   return `<section class="hero hero--page sombre">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
-  <div class="hero__lueur" aria-hidden="true"></div>
+  ${traitsConstruction()}
   <div class="conteneur hero__grille">
+    ${cartouche(planche)}
     <div class="hero__texte">
       ${arianeItems ? ariane(arianeItems) : ""}
-      ${surtitreTexte ? `<p class="surtitre entree">${surtitreTexte}</p>` : ""}
       <h1 class="entree entree--2">${titre}</h1>
       <p class="hero__intro entree entree--3">${intro}</p>
       ${boutons ? `<div class="groupe-boutons entree entree--4">${boutons}</div>` : ""}
@@ -96,8 +121,16 @@ export function carteCreation(o, { complet = false } = {}) {
 </article>`;
 }
 
+/* Carrousel natif sur téléphone (glisser), grille sur grand écran */
+export function defilant(contenu, n, libelle, classes = "") {
+  return `<div class="defilant" data-defilant>
+  <div class="defilant__piste ${classes}" role="group" aria-label="${esc(libelle)}" tabindex="0">${contenu}</div>
+  <div class="defilant__compteur" aria-hidden="true"><span data-defilant-position>1 / ${n}</span><span class="defilant__barre"><i data-defilant-barre></i></span><span>Glisser</span></div>
+</div>`;
+}
+
 export function grilleCreation(opts = {}) {
-  return `<div class="offres offres--3">${creation.map((o) => carteCreation(o, opts)).join("")}</div>`;
+  return defilant(creation.map((o) => carteCreation(o, opts)).join(""), creation.length, "Formules de création", "offres");
 }
 
 export function carteMaintenance(m, { complet = true } = {}) {
@@ -118,7 +151,7 @@ export function carteMaintenance(m, { complet = true } = {}) {
 }
 
 export function grilleMaintenance(opts = {}) {
-  return `<div class="offres offres--3">${maintenance.map((m) => carteMaintenance(m, opts)).join("")}</div>`;
+  return defilant(maintenance.map((m) => carteMaintenance(m, opts)).join(""), maintenance.length, "Formules de maintenance", "offres");
 }
 
 export function horsForfaitMaintenance() {
@@ -187,7 +220,7 @@ export const ENGAGEMENTS = [
 ];
 
 export function engagements(liste = ENGAGEMENTS) {
-  return `<ul class="engagements engagements--3">${liste.map((e) => `<li class="engagement"><h3><span>${e.k}</span>${e.t}</h3><p>${e.d}</p></li>`).join("")}</ul>`;
+  return `<ul class="engagements engagements--3">${liste.map((e) => `<li class="engagement"><span class="engagement__num">${e.k}</span><div><h3>${e.t}</h3><p>${e.d}</p></div></li>`).join("")}</ul>`;
 }
 
 /* ---------- Démonstrations ---------- */
@@ -213,14 +246,14 @@ export const DEMOS = [
 ];
 
 export function demonstrations({ detaille = false } = {}) {
-  return `<div class="demos">${DEMOS.map((d) => `<article class="demo demo--${d.cls}">
+  return defilant(DEMOS.map((d) => `<article class="demo demo--${d.cls}">
   <div class="demo__cadre" role="img" aria-label="Maquette d'écran de téléphone pour ${esc(d.nom)}, entreprise fictive (${esc(d.secteur.toLowerCase())}).">
     <span class="demo__badge">Démo · fictive</span>
     <div class="demo__ecran" aria-hidden="true">${d.ecran}</div>
   </div>
   <h3>${esc(d.nom)}</h3>
   <dl><dt>Secteur</dt><dd>${esc(d.secteur)}</dd><dt>Enjeu</dt><dd>${esc(d.probleme)}</dd><dt>Réponse</dt><dd>${esc(d.reponse)}</dd></dl>
-</article>`).join("")}</div>`;
+</article>`).join(""), DEMOS.length, "Démonstrations de sites", "demos");
 }
 
 /* ---------- FAQ ---------- */
