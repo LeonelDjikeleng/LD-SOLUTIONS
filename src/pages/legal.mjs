@@ -179,7 +179,7 @@ const mentions = pageLegale({
 <p>Les textes, le design, les illustrations et le code de ce site sont la propriété de LD SOLUTIONS, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
 <h2>Crédits</h2>
 <ul>
-<li>Polices de caractères : Big Shoulders Display, IBM Plex Sans et IBM Plex Mono, sous licence SIL Open Font License 1.1, hébergées sur ce site.</li>
+<li>Polices de caractères : Bodoni Moda et Instrument Sans, sous licence SIL Open Font License 1.1, hébergées sur ce site.</li>
 <li>Illustrations, icônes et maquettes : conçues et codées par LD SOLUTIONS. Aucune image de banque n'est utilisée.</li>
 </ul>
 <h2>Démonstrations</h2>

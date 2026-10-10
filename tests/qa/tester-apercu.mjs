@@ -33,7 +33,7 @@ for (const [largeur, mobile] of [[390, true], [1440, false]]) {
     await page.goto(BASE + f, { waitUntil: "load" });
     const d = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     if (d > 0) problemes.push(`${f} @${largeur} : débordement ${d}px`);
-    const police = await page.evaluate(() => document.fonts.check('800 32px "Big Shoulders Display"') && [...document.fonts].some((f) => f.family.includes("Big Shoulders") && f.status === "loaded"));
+    const police = await page.evaluate(() => document.fonts.check('500 32px "Bodoni Moda"') && [...document.fonts].some((f) => f.family.includes("Bodoni Moda") && f.status === "loaded"));
     if (!police) problemes.push(`${f} : police de titre non chargée`);
   }
   await ctx.close();

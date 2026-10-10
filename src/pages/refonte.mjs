@@ -40,7 +40,6 @@ ${heroPage({
 </section>
 
 <section class="section section--sombre" aria-labelledby="titre-methode">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="deux-colonnes deux-colonnes--5-7">
       <div>

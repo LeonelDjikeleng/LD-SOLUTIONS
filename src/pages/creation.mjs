@@ -50,7 +50,6 @@ ${heroPage({
 </section>
 
 <section class="section section--sombre" aria-labelledby="titre-base">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="entete-section">
       ${surtitre("Dans chaque site, sans supplément")}

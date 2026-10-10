@@ -3,7 +3,7 @@
 import { chromium } from "playwright";
 const [url, prefixe] = process.argv.slice(2);
 const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true });
+const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 const p = await ctx.newPage();
 const erreurs = [];
 p.on("pageerror", (e) => erreurs.push(e.message));

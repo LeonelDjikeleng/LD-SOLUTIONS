@@ -50,6 +50,7 @@ docs/                       ← stratégie, tarifs, déploiement, rapports, juri
 | [`docs/08-couts-recurrents-et-integrations.md`](docs/08-couts-recurrents-et-integrations.md) | Coûts mensuels, intégrations actives et à configurer |
 | [`docs/09-informations-a-fournir.md`](docs/09-informations-a-fournir.md) | Ce qu'il manque avant la mise en ligne |
 | [`docs/10-mesure-et-plan-amelioration.md`](docs/10-mesure-et-plan-amelioration.md) | Mesure des conversions, plan à 1, 3 et 6 mois |
+| [`docs/11-diagnostic-v3.md`](docs/11-diagnostic-v3.md) | Diagnostic en 5 étapes et refonte blanc et vert, mesures avant/après |
 | [`docs/juridique/`](docs/juridique/) | Points à valider, devis-contrat, avenant, procès-verbal, entente de maintenance |
 | [`docs/commercial/`](docs/commercial/) | Kit de prospection, CRM Prospecteur 2.0 |
 
@@ -61,4 +62,4 @@ docs/                       ← stratégie, tarifs, déploiement, rapports, juri
 
 ## Licences
 
-Code et contenus : © LD SOLUTIONS. Polices Big Shoulders Display, IBM Plex Sans et IBM Plex Mono : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).
+Code et contenus : © LD SOLUTIONS. Polices Bodoni Moda et Instrument Sans : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).

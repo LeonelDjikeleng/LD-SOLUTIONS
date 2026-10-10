@@ -158,54 +158,43 @@ Choix assumés :
 
 ---
 
-## 9. Brief de direction artistique (version 2, 10 octobre 2026)
+## 9. Brief de direction artistique (version 3, 10 octobre 2026)
 
-La version 1 (fond presque noir, cyan, orange, grille quadrillée, cartes arrondies) a été jugée trop proche des sites « tech » générés en série. La version 2 garde le concept et change l'exécution.
+La version 2 (« La planche », bleu de tirage et jaune) a été remplacée à la demande du client : plus épuré, plus raffiné, plus luxueux, blanc dominant avec des touches de vert. Le diagnostic chiffré qui justifie chaque choix est dans [`11-diagnostic-v3.md`](11-diagnostic-v3.md).
 
 ```
-CONCEPT : « La planche. » Chaque page est un jeu de plans d'architecte : tirage bleu
-          (cyanotype), papier calque, cotes, cartouche, et un seul trait de surligneur
-          jaune pour ce qui demande une action. Créer = tracer · Améliorer = rénover ·
-          Entretenir = inspecter. Le langage visuel des entrepreneurs (segment n° 1).
-ARCHÉTYPE : Architectural + local premium · immersion 2,5
-PERSONNALITÉ : précis, franc, artisanal · à éviter : le « tech » sombre générique
+CONCEPT : « Le sur-mesure. » Un site se coupe, se retouche et s'entretient comme un
+          vêtement fait sur mesure. Créer = la coupe · Améliorer = les retouches ·
+          Entretenir = le soin.
+ARCHÉTYPE : Maison haut de gamme, sobre · immersion 2
+PERSONNALITÉ : calme, précis, attentionné · à éviter : le « tech » sombre, le clinquant
 PALETTE (tokens par rôle) :
-  plan        #14307A  bleu de tirage cyanotype (héros, sections fortes)
-  plan-nuit   #0E2563  bleu profond (pied de page, contrastes)
-  calque      #EEF1F3  papier calque légèrement bleuté (fond courant)
-  feuille     #FFFFFF  feuilles posées sur le calque (offres, formulaires)
-  encre       #0C1424  texte ; graphite #4A5363 texte secondaire
-  trait       #1F44A8  liens et tracés sur papier
-  surligneur  #FFCE3A  ACTION uniquement (boutons, trait sous un mot clé)
-  Aucun noir pur, aucun dégradé décoratif.
-TYPOGRAPHIE : Big Shoulders Display (titres en capitales étroites, comme les titres
-              de planches) · IBM Plex Sans (texte) · IBM Plex Mono (annotations, cotes,
-              prix). Licences OFL, polices hébergées sur le site.
-FORMES : angles vifs (0 à 2 px), filets de 1 px, aucune ombre sauf la barre flottante.
+  blanc        #FFFFFF  fond dominant (plus de 80 % de la surface)
+  ivoire       #F8F7F3  sections alternées
+  sauge        #EFF4F0  sections de respiration, étoffe de la démonstration
+  vert sapin   #0F4D3A  action, liens, accents (contraste 9,5:1 sur blanc)
+  vert de nuit #0A2E23  appel final, pied de page, offre recommandée
+  laiton       #A8844A  filets ; #82632F pour le texte ; #D7BC8A sur fond sombre
+  encre        #121A16  texte ; graphite #56605B texte secondaire
+TYPOGRAPHIE : Bodoni Moda (didone à axe optique, titres en casse normale, mot clé en
+              italique vert) · Instrument Sans (texte). Licences OFL, hébergées.
+FORMES : boutons et pastilles en pilule, cartes aux coins doux (22 px), filets fins,
+         une seule ombre douce (barre flottante, offre recommandée).
 DÉTAILS SIGNATURE :
-  1. Cartouche : chaque page s'ouvre et se ferme sur un cartouche de plan
-     (projet, planche, échelle, lieu). Le pied de page est un cartouche complet.
-  2. Planches numérotées : chaque section porte son numéro de planche (PL. 01, 02…),
-     calculé automatiquement, qui encode l'ordre réel de lecture.
-  3. Cote vivante : sous le titre de l'accueil, une ligne de cote mesure la largeur
-     réelle de l'écran du visiteur (« 390 px »). Vrai, et propre à ce métier.
-  4. Surligneur : le mot clé du titre est souligné au surligneur jaune, tracé à l'arrivée.
-  5. Grain de papier et traits de construction (arcs de compas, lignes d'axe) sur le bleu.
-MOBILE : menu en tiroir depuis le bas (atteignable au pouce), offres et démonstrations
-         en carrousels à défilement natif avec compteur, barre d'action flottante,
-         transitions de page natives (View Transitions) en amélioration progressive.
-PAGES INTÉRIEURES (téléphone) :
-  - Sommaire collant « Sur cette page » : une rangée de pastilles construite à partir des
-    titres de la page (3 entrées minimum), la pastille active suit la lecture.
-  - En-tête qui s'efface quand on lit vers le bas et revient dès qu'on remonte.
-  - Listes de prix en lignes (nom, prix, statut) plutôt qu'en tableau large.
-  - Offres d'amélioration en carrousel, comme la création et la maintenance.
-  - Animations sobres : titres de section qui montent et trait qui se trace, cartes qui
-    arrivent en cascade (70 ms d'écart), questions de la FAQ qui s'ouvrent en douceur.
-    Tout est désactivé si l'appareil demande moins d'animations.
-FINITIONS : typographie française (espaces fines insécables avant : ; ! ? et dans les
-            guillemets), chiffres tabulaires pour les prix, aucun mot orphelin dans les titres.
+  1. Monogramme LD didone dans un cercle fin, le D en laiton.
+  2. Numéros de section en italique laiton, suivis d'un filet.
+  3. Point de couture : un pointillé laiton se coud sous chaque titre de section.
+  4. Mesure vivante : un ruban de couturière mesure la largeur réelle de l'écran.
+  5. Titre en rideau : les mots du titre principal montent un à un derrière un masque.
+  6. Étiquette cousue au pied de page (« Conçu à Québec », prix, témoins, droits).
+MOBILE : tiroir de menu blanc à grandes entrées didones, sommaire en pastilles, fil de
+         lecture vert sous l'en-tête, barre flottante blanche à une seule action,
+         carrousels natifs, en-tête qui s'efface en lisant.
+MOUVEMENT : opacité et position seulement ; tout est coupé si l'appareil demande moins
+            d'animations.
 ```
+
+La version 2 (« La planche ») reste décrite dans l'historique Git de ce fichier.
 
 ## 10. Ce qui n'a pas été fait volontairement
 

@@ -8,7 +8,7 @@ import { esc } from "./gabarit.mjs";
 
 /* ---------- Petits éléments ---------- */
 export const surtitre = (t) => `<p class="surtitre">${t}</p>`;
-export const fleche = `<span class="fleche" aria-hidden="true">→</span>`;
+export const fleche = `<svg class="fleche" viewBox="0 0 22 10" aria-hidden="true" focusable="false"><path d="M0 5h20.5M16.2.8 20.6 5l-4.4 4.2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>`;
 
 export function ariane(items) {
   const li = items.map((it, i) => i === items.length - 1
@@ -17,44 +17,18 @@ export function ariane(items) {
   return `<nav class="ariane" aria-label="Fil d'Ariane"><ol>${li}</ol></nav>`;
 }
 
-/* Traits de construction (arcs de compas, axes, graduations) : décor du tirage bleu */
-export function traitsConstruction() {
-  const graduations = Array.from({ length: 21 }, (_, i) => `<line x1="${40 + i * 16}" y1="742" x2="${40 + i * 16}" y2="${i % 5 === 0 ? 728 : 735}"/>`).join("");
-  return `<svg class="traits" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-  <g fill="none" stroke="currentColor" stroke-width="1">
-    <circle cx="330" cy="470" r="250" stroke-opacity=".7"/>
-    <circle cx="330" cy="470" r="150" stroke-dasharray="2 6"/>
-    <line x1="-20" y1="470" x2="420" y2="470" stroke-dasharray="14 5 2 5"/>
-    <line x1="330" y1="-20" x2="330" y2="820" stroke-dasharray="14 5 2 5"/>
-    <path d="M318 470h24M330 458v24"/>
-    <path d="M40 742h320" stroke-opacity=".8"/>${graduations}
-  </g>
-</svg>`;
-}
-
-/* Cartouche de plan : projet, planche, échelle, lieu */
-export function cartouche(planche) {
-  return `<div class="cartouche entree" aria-hidden="true">
-  <div>Projet<b>LD SOLUTIONS</b></div>
-  <div>Planche<b>${esc(planche)}</b></div>
-  <div>Échelle<b>1:1</b></div>
-  <div>Lieu<b>Québec</b></div>
-</div>`;
-}
-
 export function heroPage({ arianeItems, surtitreTexte, titre, intro, boutons = "", aside = "" }) {
-  const planche = String(surtitreTexte || "").replace(/^\d+\s*·\s*/, "") || "Page";
-  return `<section class="hero hero--page sombre">
-  ${traitsConstruction()}
+  const etiquette = String(surtitreTexte || "").replace(/^\d+\s*·\s*/, "");
+  return `<section class="hero hero--page">
   <div class="conteneur hero__grille">
-    ${cartouche(planche)}
     <div class="hero__texte">
       ${arianeItems ? ariane(arianeItems) : ""}
-      <h1 class="entree entree--2">${titre}</h1>
+      ${etiquette ? `<p class="hero__etiquette entree">${etiquette}</p>` : ""}
+      <h1>${titre}</h1>
       <p class="hero__intro entree entree--3">${intro}</p>
       ${boutons ? `<div class="groupe-boutons entree entree--4">${boutons}</div>` : ""}
     </div>
-    ${aside ? `<div class="entree entree--5">${aside}</div>` : ""}
+    ${aside ? `<div class="hero__aside entree entree--5">${aside}</div>` : ""}
   </div>
 </section>`;
 }
@@ -108,7 +82,7 @@ export function carteCreation(o, { complet = false } = {}) {
     <div><dt>Après</dt><dd>${esc(o.garantie)}</dd></div>
   </dl>`;
   return `<article class="offre${o.recommande ? " offre--recommandee" : ""}" id="offre-${o.id}">
-  ${o.recommande ? `<span class="offre__ruban">Le plus choisi pour une PME</span>` : ""}
+  ${o.recommande ? `<span class="offre__ruban">Recommandée pour une PME</span>` : ""}
   <h3 class="offre__nom">${esc(o.nom)}</h3>
   ${prixHTML(o.prix, o.prefixe, "taxes en sus")}
   <p class="offre__accroche">${esc(o.accroche)}</p>
@@ -117,7 +91,7 @@ export function carteCreation(o, { complet = false } = {}) {
   <ul class="liste-coches">${(complet ? o.inclus : o.inclus.slice(0, 5)).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
   ${complet ? faits + `<details><summary>Non inclus</summary><ul class="liste-moins">${o.exclusions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>`
     : `<details><summary>Tout le détail</summary><ul class="liste-coches">${o.inclus.slice(5).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>${faits}<ul class="liste-moins mt-4">${o.exclusions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>`}
-  <a class="bouton${o.recommande ? "" : " bouton--contour"}" href="/contact/?type=creation&amp;formule=${o.id}" data-evenement="clic_offre">Choisir ${esc(o.nom)} ${"<span class=\"fleche\" aria-hidden=\"true\">→</span>"}</a>
+  <a class="bouton${o.recommande ? "" : " bouton--contour"}" href="/contact/?type=creation&amp;formule=${o.id}" data-evenement="clic_offre">Choisir ${esc(o.nom)} ${fleche}</a>
 </article>`;
 }
 
@@ -271,7 +245,6 @@ export function faqJsonLd(items) {
 /* ---------- Appel final (deux portes) ---------- */
 export function appelFinal({ titre = "Prochaine étape : une conversation de 30 minutes.", intro = `Dites-nous où vous en êtes. Vous recevez une première réponse sous ${DELAI_REPONSE}, sans engagement.` } = {}) {
   return `<section class="section section--sombre appel-final" aria-labelledby="appel-final-titre">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     ${surtitre("Passer à l'action")}
     <h2 id="appel-final-titre">${titre}</h2>

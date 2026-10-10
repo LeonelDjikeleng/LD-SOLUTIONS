@@ -82,7 +82,7 @@ const page404 = {
   corps: `
 ${heroPage({
   surtitreTexte: "Erreur 404",
-  titre: "Ce plan ne mène nulle part.",
+  titre: "Cette page s'est égarée.",
   intro: "La page demandée n'existe pas ou a été déplacée. Voici les chemins les plus utiles :",
   boutons: `<a class="bouton" href="/">Retour à l'accueil</a><a class="bouton bouton--contour" href="/tarifs/">Voir les tarifs</a><a class="bouton bouton--contour" href="/contact/">Nous écrire</a>`,
 })}`,

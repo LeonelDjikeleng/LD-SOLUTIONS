@@ -10,7 +10,7 @@ const racine = path.resolve(ici, "..");
 const dist = path.join(racine, "dist");
 
 const { site } = await import("./content/site.config.mjs");
-const { gabarit } = await import("./gabarit.mjs");
+const { gabarit, typographie } = await import("./gabarit.mjs");
 
 function copierDossier(source, cible) {
   fs.mkdirSync(cible, { recursive: true });
@@ -39,19 +39,6 @@ const pages = [];
 for (const fichier of fs.readdirSync(path.join(ici, "pages")).filter((f) => f.endsWith(".mjs")).sort()) {
   const mod = await import(pathToFileURL(path.join(ici, "pages", fichier)).href);
   pages.push(...[].concat(mod.default));
-}
-
-// Typographie française : espaces insécables (fines avant ; ! ? : et dans les guillemets,
-// normales entre un nombre et son unité). Appliquée au texte seulement, jamais aux balises ni aux scripts.
-const FINE = "\u202F", INSEC = "\u00A0";
-function typographie(html) {
-  return html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((morceau, i) => {
-    if (i % 2 === 1) return morceau;
-    return morceau
-      .replace(/ ([:;!?»])/g, FINE + "$1")
-      .replace(/« /g, "«" + FINE)
-      .replace(/(\d) (\$|%|h\b|min\b|jours?\b|mois\b|ans?\b|semaines?\b|pages?\b|heures?\b|minutes?\b|Ko\b|Mo\b|px\b|mots\b|points?\b|rondes?\b)/g, "$1" + INSEC + "$2");
-  }).join("");
 }
 
 // 3. Écrire chaque page
@@ -89,7 +76,7 @@ Sitemap: ${site.url}/sitemap.xml
 `);
 fs.writeFileSync(path.join(dist, "site.webmanifest"), JSON.stringify({
   name: "LD SOLUTIONS", short_name: "LD SOLUTIONS", lang: "fr-CA", start_url: "/", display: "browser",
-  background_color: "#070b14", theme_color: "#070b14",
+  background_color: "#ffffff", theme_color: "#ffffff",
   icons: [{ src: "/assets/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" }, { src: "/assets/img/favicon.svg", sizes: "any", type: "image/svg+xml" }],
 }, null, 2));
 

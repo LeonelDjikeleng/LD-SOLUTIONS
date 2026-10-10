@@ -1,5 +1,5 @@
 /* Administration LD SOLUTIONS : sobre, lisible, utilisable au téléphone. */
-:root { --encre: #070b14; --nuit: #0d1424; --trait: #3cd7ff; --bleu: #1f5fe0; --calque: #f4f6fa; --gris: #4b576b; --bord: #d5dbe5; }
+:root { --encre: #0a2e23; --nuit: #121a16; --trait: #d7bc8a; --bleu: #0f4d3a; --calque: #f8f7f3; --gris: #56605b; --bord: #e2e7e3; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--calque); color: var(--nuit); font-size: 16px; line-height: 1.5; }
 a { color: var(--bleu); }
@@ -37,7 +37,7 @@ dl { display: grid; grid-template-columns: 9rem 1fr; gap: 0.4rem 0.8rem; margin:
 dt { color: var(--gris); font-size: 0.9rem; }
 dd { margin: 0; overflow-wrap: anywhere; }
 .a-message { white-space: pre-wrap; background: var(--calque); padding: 0.75rem; border-radius: 8px; }
-.a-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; background: #e7ecf4; color: var(--nuit); vertical-align: middle; }
+.a-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; background: #eff4f0; color: var(--nuit); vertical-align: middle; }
 .a-badge--nouveau { background: #ffe7d6; color: #8a3a06; }
 .a-badge--qualifie, .a-badge--proposition { background: #dfe9ff; color: #173f99; }
 .a-badge--gagne { background: #d9f3e6; color: #0f5b37; }

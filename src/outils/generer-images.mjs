@@ -1,4 +1,4 @@
-// Génère l'image de partage (1200×630) et l'icône Apple (180×180) à partir de la charte.
+// Génère l'image de partage (1200×630) et l'icône Apple (180×180) à partir de la charte v3.
 // Usage : node src/outils/generer-images.mjs  (nécessite Playwright)
 import fs from "node:fs";
 import path from "node:path";
@@ -8,29 +8,34 @@ import { chromium } from "playwright";
 const ici = path.dirname(fileURLToPath(import.meta.url));
 const assets = path.resolve(ici, "../assets");
 const police = (f) => "data:font/woff2;base64," + fs.readFileSync(path.join(assets, "fonts", f)).toString("base64");
-const logo = `<svg viewBox="0 0 34 34" width="__T__" height="__T__"><rect x="1.5" y="1.5" width="31" height="31" fill="none" stroke="#F4F6FC" stroke-opacity=".55"/><path d="M1.5 25.5h4M28.5 8.5h4" stroke="#F4F6FC" stroke-opacity=".55"/><path d="M9 9v16h6.4" fill="none" stroke="#F4F6FC" stroke-width="2.4" stroke-linecap="square"/><path d="M18.6 9h1.4a8 8 0 0 1 0 16h-1.4z" fill="none" stroke="#FFCE3A" stroke-width="2.4"/></svg>`;
+const monogramme = (taille, trait, d) => `<svg viewBox="0 0 34 34" width="${taille}" height="${taille}"><circle cx="17" cy="17" r="15.9" fill="none" stroke="${trait}" stroke-width=".9"/><path fill="${trait}" d="M8.4 10h2.5v12.85h5.1v.75H8.4z"/><path fill="${d}" d="M17.1 10h2.5v13.6h-2.5zM19.6 10h1.1a6.8 6.8 0 0 1 0 13.6h-1.1v-.72h1.1a5 6.08 0 0 0 0-12.16h-1.1z"/></svg>`;
 const base = `<style>
-@font-face{font-family:B;src:url(${police("big-shoulders-display.woff2")});font-weight:100 900}
-@font-face{font-family:P;src:url(${police("ibm-plex-sans.woff2")});font-weight:100 700}
-@font-face{font-family:M;src:url(${police("ibm-plex-mono-500.woff2")});font-weight:500}
-*{margin:0;box-sizing:border-box}body{background:#14307a}
+@font-face{font-family:D;src:url(${police("bodoni-moda.woff2")});font-weight:400 900}
+@font-face{font-family:D;src:url(${police("bodoni-moda-italique.woff2")});font-weight:400 900;font-style:italic}
+@font-face{font-family:S;src:url(${police("instrument-sans.woff2")});font-weight:400 700}
+*{margin:0;box-sizing:border-box}body{background:#fff}
 </style>`;
-const traits = `<svg style="position:absolute;inset:0" width="1200" height="630" viewBox="0 0 1200 630"><g fill="none" stroke="#F4F6FC" stroke-opacity=".2"><circle cx="980" cy="380" r="330"/><circle cx="980" cy="380" r="200" stroke-dasharray="3 8"/><line x1="0" y1="380" x2="1200" y2="380" stroke-dasharray="18 6 3 6"/><line x1="980" y1="0" x2="980" y2="630" stroke-dasharray="18 6 3 6"/></g></svg>`;
 
 const og = `<!doctype html><html><head><meta charset="utf-8">${base}<style>
-.c{position:relative;width:1200px;height:630px;overflow:hidden;color:#f4f6fc;font-family:P;padding:60px 72px}
-.m{position:relative;display:flex;align-items:center;gap:16px;font-family:B;font-weight:800;font-size:44px;letter-spacing:.02em}
-.m span{font-family:M;font-size:16px;letter-spacing:.24em;color:#b9c5e6}
-h1{position:relative;font-family:B;font-weight:800;font-size:104px;line-height:.9;text-transform:uppercase;margin-top:48px;max-width:860px}
-h1 em{font-style:normal;background:linear-gradient(#ffce3a,#ffce3a) no-repeat 0 86%/100% .2em}
-p{position:absolute;left:72px;bottom:56px;font-family:M;font-size:19px;letter-spacing:.14em;color:#b9c5e6;text-transform:uppercase}
-.b{position:absolute;right:72px;bottom:44px;background:#ffce3a;color:#0c1424;font-weight:600;font-size:24px;padding:16px 26px}
-</style></head><body><div class="c">${traits}
-<div class="m">${logo.replace(/__T__/g, "56")}LD <span>SOLUTIONS</span></div>
+.c{position:relative;width:1200px;height:630px;overflow:hidden;color:#121a16;font-family:S;padding:64px 80px;background:#fff}
+.c::after{content:"";position:absolute;right:0;top:0;bottom:0;width:300px;background:#eff4f0}
+.c::before{content:"";position:absolute;right:14px;top:14px;bottom:14px;width:272px;border:1px dashed rgba(15,77,58,.32);border-radius:22px;z-index:1}
+.m{position:relative;display:flex;align-items:center;gap:16px;font-family:D;font-weight:600;font-size:40px;color:#121a16}
+.m span{font-family:S;font-weight:600;font-size:15px;letter-spacing:.26em;color:#56605b}
+.k{position:relative;margin-top:54px;font-weight:600;font-size:17px;letter-spacing:.22em;text-transform:uppercase;color:#0f4d3a;display:flex;align-items:center;gap:14px}
+.k::before{content:"";width:40px;height:1px;background:#a8844a}
+h1{position:relative;font-family:D;font-weight:500;font-size:84px;line-height:1.02;letter-spacing:-.02em;margin-top:22px;max-width:760px}
+h1 em{font-style:italic;font-weight:400;color:#0f4d3a}
+.b{position:absolute;left:80px;bottom:60px;background:#0f4d3a;color:#fff;font-weight:600;font-size:22px;padding:16px 30px;border-radius:999px}
+.g{position:absolute;right:62px;top:50%;transform:translateY(-50%);z-index:2}
+</style></head><body><div class="c">
+<div class="m">${monogramme(54, "#0f4d3a", "#a8844a")}LD <span>SOLUTIONS</span></div>
+<p class="k">Créer · Améliorer · Entretenir · Québec</p>
 <h1>Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
-<p>Créer · Améliorer · Entretenir · Québec</p><div class="b">Prix publiés</div></div></body></html>`;
+<div class="b">Prix publiés, dès 1 490 $</div>
+<div class="g">${monogramme(176, "#0f4d3a", "#a8844a")}</div></div></body></html>`;
 
-const icone = `<!doctype html><html><head><meta charset="utf-8">${base}</head><body style="width:180px;height:180px;display:grid;place-items:center;background:#14307a">${logo.replace(/__T__/g, "140")}</body></html>`;
+const icone = `<!doctype html><html><head><meta charset="utf-8">${base}</head><body style="width:180px;height:180px;display:grid;place-items:center;background:#0f4d3a">${monogramme(132, "#ffffff", "#d7bc8a")}</body></html>`;
 
 const nav = await chromium.launch();
 const p = await nav.newPage({ viewport: { width: 1200, height: 630 } });

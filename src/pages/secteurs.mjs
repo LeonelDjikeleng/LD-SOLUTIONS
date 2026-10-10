@@ -24,7 +24,6 @@ ${heroPage({
 </section>
 
 <section class="section section--sombre" aria-labelledby="titre-rep-${s.cle}">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="deux-colonnes deux-colonnes--5-7">
       <div>${surtitre("Ce que votre site doit faire")}<h2 id="titre-rep-${s.cle}">${esc(s.titreReponse)}</h2></div>

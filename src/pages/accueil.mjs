@@ -2,7 +2,7 @@ import { site } from "../content/site.config.mjs";
 import { creation, maintenance, formatPrix, DELAI_REPONSE } from "../content/offres.mjs";
 import {
   surtitre, fleche, telephoneHero, grilleCreation, demonstrations, processus, engagements,
-  faq, faqJsonLd, appelFinal, ICONES, promosHTML, jsonldOrganisation, traitsConstruction, cartouche,
+  faq, faqJsonLd, appelFinal, ICONES, promosHTML, jsonldOrganisation,
 } from "../composants.mjs";
 
 export const FAQ_ACCUEIL = [
@@ -15,17 +15,16 @@ export const FAQ_ACCUEIL = [
 ];
 
 const corps = `
-<section class="hero sombre" aria-labelledby="titre-accueil">
-  ${traitsConstruction()}
+<section class="hero hero--accueil" aria-labelledby="titre-accueil">
   <div class="conteneur hero__grille">
-    ${cartouche("Accueil")}
     <div class="hero__texte">
-      <h1 id="titre-accueil" class="entree entree--2">Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
-      <p class="cote-ecran" aria-hidden="true" data-cote-ecran hidden><span class="cote-ecran__ligne"></span><span>votre écran : <b data-largeur-ecran></b> px</span><span class="cote-ecran__ligne"></span></p>
+      <p class="hero__etiquette entree">Atelier web · Québec</p>
+      <h1 id="titre-accueil">Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
+      <p class="cote-ecran" aria-hidden="true" data-cote-ecran hidden><span class="cote-ecran__ligne"></span><span>pris à votre mesure : <b data-largeur-ecran></b> px</span></p>
       <p class="hero__intro entree entree--3">Création, amélioration et entretien de sites web pour les PME et les entrepreneurs du Québec. <strong>Clairs sur téléphone, rapides</strong>, et pensés pour transformer une visite en demande de devis.</p>
       <div class="groupe-boutons entree entree--4">
         <a class="bouton" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis ${fleche}</a>
-        <a class="bouton bouton--contour" href="/audit/" data-evenement="clic_audit">Demander mon audit ${fleche}</a>
+        <a class="lien-fleche" href="/audit/" data-evenement="clic_audit">Faire analyser mon site ${fleche}</a>
       </div>
       <ul class="hero__garanties entree entree--5">
         <li>Prix publiés <b>dès ${formatPrix(creation[0].prix)}</b></li>
@@ -33,7 +32,7 @@ const corps = `
         <li>Propriété du site <b>à votre nom</b></li>
       </ul>
     </div>
-    <div class="entree entree--5">${telephoneHero()}</div>
+    <div class="hero__demo entree entree--5">${telephoneHero()}</div>
   </div>
 </section>
 
@@ -53,30 +52,29 @@ const corps = `
 </section>
 
 <section class="section section--sombre" aria-labelledby="titre-piliers">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="entete-section">
-      ${surtitre("Trois chantiers, un seul partenaire")}
+      ${surtitre("Trois savoir-faire, un seul interlocuteur")}
       <h2 id="titre-piliers">Créer. Améliorer. Entretenir.</h2>
-      <p class="intro">Comme un bâtiment, un site se planifie, se rénove et s'entretient. Nous faisons les trois, avec la même rigueur et un seul interlocuteur.</p>
+      <p class="intro">Comme un vêtement fait sur mesure, un site se coupe, se retouche et s'entretient. Nous faisons les trois, avec le même soin et un seul interlocuteur.</p>
     </div>
     <div class="piliers">
       <a class="pilier revele" href="/creation-site-web/">
-        <span class="pilier__num">01 · Le plan</span>${ICONES.creer}
+        <span class="pilier__num">01 · La coupe</span>${ICONES.creer}
         <h3>Créer</h3>
         <p>Un nouveau site, construit pour votre clientèle et ce qu'elle doit faire en arrivant.</p>
         <ul><li>Design sur mesure, pensé d'abord pour le téléphone</li><li>Formulaire de devis qui fonctionne vraiment</li><li>Référencement de base inclus</li></ul>
         <span class="lien-fleche">Créer mon site web ${fleche}</span>
       </a>
       <a class="pilier revele" href="/refonte-amelioration/">
-        <span class="pilier__num">02 · La rénovation</span>${ICONES.ameliorer}
+        <span class="pilier__num">02 · Les retouches</span>${ICONES.ameliorer}
         <h3>Améliorer</h3>
         <p>Votre site existe : on corrige ce qui empêche les visiteurs de vous contacter.</p>
         <ul><li>Diagnostic express offert</li><li>Vitesse, affichage mobile, parcours de demande</li><li>Refonte visuelle ou complète</li></ul>
         <span class="lien-fleche">Améliorer mon site ${fleche}</span>
       </a>
       <a class="pilier revele" href="/maintenance/">
-        <span class="pilier__num">03 · L'inspection</span>${ICONES.entretenir}
+        <span class="pilier__num">03 · Le soin</span>${ICONES.entretenir}
         <h3>Entretenir</h3>
         <p>Mises à jour, sauvegardes et surveillance, pour que votre site reste fiable dans le temps.</p>
         <ul><li>Dès ${formatPrix(maintenance[0].prixMois)} par mois</li><li>Sauvegardes vérifiées, copie hors serveur</li><li>Sans durée minimale</li></ul>

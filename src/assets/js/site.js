@@ -91,21 +91,30 @@
   }
 
   /* ---------- En-tête qui s'efface en descendant, revient en remontant (téléphone, tablette) ---------- */
+  // Le même passage met aussi à jour le fil de lecture vert sous l'en-tête.
   var petitEcran = window.matchMedia("(max-width: 1079px)");
+  var fil = document.querySelector("[data-progression]");
   var dernierY = window.scrollY, enAttente = false;
-  window.addEventListener("scroll", function () {
+  var surDefilement = function () {
     if (enAttente) return;
     enAttente = true;
     window.requestAnimationFrame(function () {
       var y = window.scrollY, delta = y - dernierY;
       var corps = document.body;
+      corps.classList.toggle("a-defile", y > 8);
+      if (fil) {
+        var course = document.documentElement.scrollHeight - window.innerHeight;
+        fil.style.transform = "scaleX(" + (course > 0 ? Math.min(1, y / course) : 0).toFixed(4) + ")";
+      }
       if (!petitEcran.matches || corps.classList.contains("menu-ouvert") || y < 90) corps.classList.remove("entete-masquee");
       else if (delta > 6) corps.classList.add("entete-masquee");
       else if (delta < -6) corps.classList.remove("entete-masquee");
       dernierY = y;
       enAttente = false;
     });
-  }, { passive: true });
+  };
+  window.addEventListener("scroll", surDefilement, { passive: true });
+  surDefilement();
   document.addEventListener("focusin", function (e) {
     if (e.target.closest && e.target.closest(".entete")) document.body.classList.remove("entete-masquee");
   });

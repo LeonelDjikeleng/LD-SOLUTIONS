@@ -1,9 +1,39 @@
 // Gabarit commun à toutes les pages : <head> SEO, en-tête, menu mobile, pied de page, barre d'action mobile.
 import { site } from "./content/site.config.mjs";
 
+// Typographie française : espaces insécables (fines avant ; ! ? : et dans les guillemets,
+// normales entre un nombre et son unité). Appliquée au texte seulement, jamais aux balises ni aux scripts.
+const FINE = "\u202F", INSEC = "\u00A0";
+export function typographie(html) {
+  return html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((morceau, i) => {
+    if (i % 2 === 1) return morceau;
+    return morceau
+      .replace(/ ([:;!?»])/g, FINE + "$1")
+      .replace(/« /g, "«" + FINE)
+      .replace(/(\d) (\$|%|h\b|min\b|jours?\b|mois\b|ans?\b|semaines?\b|pages?\b|heures?\b|minutes?\b|Ko\b|Mo\b|px\b|mots\b|points?\b|rondes?\b)/g, "$1" + INSEC + "$2");
+  }).join("");
+}
+
+/** Titre principal en « rideau » : chaque mot est placé dans un masque pour monter à son tour. */
+export function titreRideau(html) {
+  let rang = 0;
+  return html.replace(/(<h1\b[^>]*>)([\s\S]*?)(<\/h1>)/, (_, ouv, contenu, ferm) => {
+    const morceaux = typographie(contenu).split(/(<[^>]+>)/);
+    const sortie = morceaux.map((m, i) => {
+      if (i % 2 === 1 || !m.trim()) return m;
+      return m.split(/( +)/).map((mot) => {
+        if (!mot.trim()) return mot;
+        rang += 1;
+        return `<span class="mot m${Math.min(rang, 14)}"><span>${mot}</span></span>`;
+      }).join("");
+    }).join("");
+    return ouv + sortie + ferm;
+  });
+}
+
 export const esc = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-export const LOGO_SVG = `<svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="31" height="31" fill="none" stroke="currentColor" stroke-opacity=".55"/><path d="M1.5 25.5h4M28.5 8.5h4" stroke="currentColor" stroke-opacity=".55"/><path d="M9 9v16h6.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/><path d="M18.6 9h1.4a8 8 0 0 1 0 16h-1.4z" fill="none" stroke="#FFCE3A" stroke-width="2.4"/></svg>`;
+export const LOGO_SVG = `<svg class="monogramme" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><circle cx="17" cy="17" r="15.9" fill="none" stroke="currentColor" stroke-width=".9"/><path fill="currentColor" d="M8.4 10h2.5v12.85h5.1v.75H8.4z"/><path class="monogramme__d" fill="#A8844A" d="M17.1 10h2.5v13.6h-2.5zM19.6 10h1.1a6.8 6.8 0 0 1 0 13.6h-1.1v-.72h1.1a5 6.08 0 0 0 0-12.16h-1.1z"/></svg>`;
 
 const NAV = [
   { href: "/creation-site-web/", libelle: "Créer", cle: "creation", detail: "01" },
@@ -23,9 +53,10 @@ function entete(navActif) {
   const liens = NAV.map((n) => `<li><a href="${n.href}"${n.cle === navActif ? ' aria-current="page"' : ""}>${n.libelle}</a></li>`).join("");
   const liensMobile = [...NAV, ...NAV_MOBILE_PLUS].map((n) =>
     `<li><a class="menu-mobile__lien" href="${n.href}"${n.cle === navActif ? ' aria-current="page"' : ""}>${n.libelle}${n.detail ? `<small>${n.detail}</small>` : ""}</a></li>`).join("");
+  const enveloppe = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>`;
   return `<header class="entete">
   <div class="conteneur entete__barre">
-    <a class="logo" href="/">${LOGO_SVG}<span class="logo__texte">LD <span>SOLUTIONS</span></span><span class="visuellement-cache">, accueil</span></a>
+    <a class="logo" href="/">${LOGO_SVG}<span class="logo__texte">LD <span>Solutions</span></span><span class="visuellement-cache">, accueil</span></a>
     <nav class="nav-principale" aria-label="Navigation principale"><ul>${liens}</ul></nav>
     <div class="entete__actions">
       <a class="bouton bouton--petit entete__cta" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis</a>
@@ -33,12 +64,13 @@ function entete(navActif) {
     </div>
   </div>
   <div class="menu-mobile" id="menu-mobile" hidden>
-    <div class="menu-mobile__poignee"><span>Plan du site</span><button class="menu-mobile__fermer" type="button" data-fermer-menu>Fermer</button></div>
+    <div class="menu-mobile__poignee"><span>Menu</span><button class="menu-mobile__fermer" type="button" data-fermer-menu>Fermer</button></div>
     <nav aria-label="Navigation mobile"><ul>${liensMobile}</ul></nav>
     <a class="bouton bouton--plein-largeur" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis</a>
     <a class="bouton bouton--contour bouton--plein-largeur" href="/audit/" data-evenement="clic_audit">Demander mon audit</a>
-    <div class="menu-mobile__secondaire"><a href="/contact/">Contact</a><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${site.courriel}</a></div>
+    <div class="menu-mobile__secondaire"><a href="/contact/">Contact</a><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${enveloppe}${site.courriel}</a></div>
   </div>
+  <div class="progression" aria-hidden="true"><i data-progression></i></div>
 </header>`;
 }
 
@@ -86,61 +118,27 @@ function sommaire(corps, chemin) {
   return fin === -1 ? corps : corps.slice(0, fin + 10) + "\n" + nav + corps.slice(fin + 10);
 }
 
-function libellePlanche(p) {
-  if (p.chemin === "/") return "Accueil";
-  const court = String(p.titre).split(/\s[:·|(]\s?|,/)[0].trim();
-  return court.length <= 40 ? court : court.slice(0, 40).replace(/\s+\S*$/, "");
-}
-
 function piedDePage(p) {
-  const maintenant = new Date();
-  const annee = maintenant.getFullYear();
-  const maj = maintenant.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+  const annee = new Date().getFullYear();
   const lignesIdentite = [
     site.exploitant ? esc(site.exploitant) : null,
     site.neq ? `NEQ ${esc(site.neq)}` : null,
     site.adressePostale ? esc(site.adressePostale) : null,
   ].filter(Boolean).join(" · ");
+  const groupe = (titre, liens) => `<div class="pied__groupe"><h2>${titre}</h2><ul>${liens.map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>`;
   return `<footer class="pied">
   <div class="conteneur">
-    <p class="pied__signature" aria-hidden="true">LD<span>/</span>Solutions</p>
-    <div class="pied__grille">
-      <div class="pied__marque">
-        <h2>Atelier</h2>
-        <p>Création, amélioration et maintenance de sites web pour les entreprises du ${esc(site.zoneServie)}. Prix publiés, contrat écrit, site à votre nom.</p>
-        <p><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${site.courriel}</a>${site.telephone ? `<br><a href="tel:${esc(site.telephone.replace(/[^0-9+]/g, ""))}" data-evenement="clic_telephone">${esc(site.telephone)}</a>` : ""}</p>
-      </div>
-      <div><h2>Services</h2><ul>
-        <li><a href="/creation-site-web/">Création</a></li>
-        <li><a href="/refonte-amelioration/">Refonte</a></li>
-        <li><a href="/maintenance/">Maintenance</a></li>
-        <li><a href="/services-complementaires/">Options</a></li>
-        <li><a href="/audit/">Audit</a></li>
-        <li><a href="/tarifs/">Tarifs</a></li>
-      </ul></div>
-      <div><h2>Entreprise</h2><ul>
-        <li><a href="/a-propos/">À propos</a></li>
-        <li><a href="/demonstrations/">Démonstrations</a></li>
-        <li><a href="/secteurs/entrepreneurs-construction/">Entrepreneurs</a></li>
-        <li><a href="/secteurs/services-automobiles/">Automobile</a></li>
-        <li><a href="/secteurs/services-professionnels/">Professionnels</a></li>
-        <li><a href="/faq/">Questions</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul></div>
-      <div><h2>Informations</h2><ul>
-        <li><a href="/conditions-de-service/">Conditions de service</a></li>
-        <li><a href="/politique-de-confidentialite/">Confidentialité</a></li>
-        <li><a href="/mentions-legales/">Mentions légales</a></li>
-        <li><a href="/accessibilite/">Accessibilité</a></li>
-      </ul></div>
+    <div class="pied__tete">
+      <a class="pied__signature" href="/">${LOGO_SVG}<span>LD <em>Solutions</em></span><span class="visuellement-cache">, accueil</span></a>
+      <p>Atelier web à ${esc(site.ville || "Québec")}. Créer, améliorer, entretenir des sites pour les entreprises du ${esc(site.zoneServie)}.</p>
+      <p class="pied__contact"><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${site.courriel}</a>${site.telephone ? ` · <a href="tel:${esc(site.telephone.replace(/[^0-9+]/g, ""))}" data-evenement="clic_telephone">${esc(site.telephone)}</a>` : ""}</p>
     </div>
-    <div class="pied__bas">
-      <span>Projet<b>LD SOLUTIONS</b></span>
-      <span>Planche<b>${esc(libellePlanche(p))}</b></span>
-      <span>Lieu<b>Québec</b></span>
-      <span>Mise à jour<b>${esc(maj)}</b></span>
-      <span>© ${annee} LD SOLUTIONS${lignesIdentite ? ` · ${lignesIdentite}` : ""} · Prix en dollars canadiens, taxes en sus le cas échéant · Aucun témoin de suivi.</span>
+    <div class="pied__liens">
+      ${groupe("Services", [["/creation-site-web/", "Création"], ["/refonte-amelioration/", "Refonte"], ["/maintenance/", "Maintenance"], ["/services-complementaires/", "Options"], ["/audit/", "Audit"], ["/tarifs/", "Tarifs"]])}
+      ${groupe("Atelier", [["/a-propos/", "À propos"], ["/demonstrations/", "Démonstrations"], ["/secteurs/entrepreneurs-construction/", "Entrepreneurs"], ["/secteurs/services-automobiles/", "Automobile"], ["/secteurs/services-professionnels/", "Professionnels"], ["/faq/", "Questions"], ["/contact/", "Contact"]])}
+      ${groupe("Informations", [["/conditions-de-service/", "Conditions de service"], ["/politique-de-confidentialite/", "Confidentialité"], ["/mentions-legales/", "Mentions légales"], ["/accessibilite/", "Accessibilité"]])}
     </div>
+    <p class="pied__etiquette"><span>Conçu à Québec</span><span>Prix en dollars canadiens, taxes en sus le cas échéant</span><span>Aucun témoin de suivi</span><span>© ${annee} LD SOLUTIONS${lignesIdentite ? ` · ${lignesIdentite}` : ""}</span></p>
   </div>
 </footer>`;
 }
@@ -149,7 +147,7 @@ function barreMobile(cta) {
   if (!cta) return "";
   return `<div class="barre-mobile" data-barre-mobile aria-hidden="true">
   <a class="bouton" href="${cta.href}" tabindex="-1" data-evenement="${cta.evenement || "clic_devis"}">${cta.libelle}</a>
-  <a class="bouton bouton--contour barre-mobile__secondaire" href="mailto:${site.courriel}" tabindex="-1" data-evenement="clic_courriel">Courriel</a>
+  <a class="barre-mobile__secondaire" href="mailto:${site.courriel}" tabindex="-1" data-evenement="clic_courriel" title="Écrire un courriel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
 </div>`;
 }
 
@@ -178,7 +176,7 @@ export function gabarit(p) {
 <title>${esc(titreComplet)}</title>
 <meta name="description" content="${esc(p.description)}">
 ${p.noindex ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonical" href="${esc(url)}">`}
-<meta name="theme-color" content="#0e2563">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:site_name" content="LD SOLUTIONS">
@@ -192,8 +190,9 @@ ${p.noindex ? '<meta name="robots" content="noindex, follow">' : `<link rel="can
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+${/<h1\b[^>]*>[^]*?<em>[^]*?<\/h1>/.test(p.corps) ? '<link rel="preload" href="/assets/fonts/bodoni-moda-italique.woff2" as="font" type="font/woff2" crossorigin>' : ""}
 <link rel="stylesheet" href="/assets/css/site.css?v=${p.versions.css}">
 <script src="/assets/js/site.js?v=${p.versions.js}" defer></script>
 ${p.formulaire ? `<script src="/assets/js/formulaire.js?v=${p.versions.formulaire}" defer></script>` : ""}
@@ -205,7 +204,7 @@ ${jsonld}
 <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 ${entete(p.navActif)}
 <main id="contenu" tabindex="-1">
-${sommaire(p.corps, p.chemin)}
+${sommaire(titreRideau(p.corps), p.chemin)}
 </main>
 ${piedDePage(p)}
 ${barreMobile(cta)}

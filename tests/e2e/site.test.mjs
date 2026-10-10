@@ -338,5 +338,5 @@ test("fichiers SEO : plan du site, robots.txt, 404", async () => {
   assert.match(robots, /Sitemap: /);
   const r = await fetch(base + "/page-inexistante");
   assert.equal(r.status, 404);
-  assert.match(await r.text(), /Ce plan ne mène nulle part/);
+  assert.match((await r.text()).replace(/<[^>]+>/g, ""), /Cette page s.est égarée/);
 });

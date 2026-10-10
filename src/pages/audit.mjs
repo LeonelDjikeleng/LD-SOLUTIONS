@@ -69,7 +69,6 @@ ${heroPage({
 </section>
 
 <section class="section section--sombre" aria-labelledby="titre-apres">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="entete-section">${surtitre("Après l'audit")}<h2 id="titre-apres">Trois façons d'utiliser les résultats.</h2></div>
     <div class="piliers">

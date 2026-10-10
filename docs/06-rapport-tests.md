@@ -80,6 +80,18 @@ Défaut trouvé et corrigé pendant la refonte : l'animation du téléphone de l
 
 Parcours lus à la molette sur 390 px (script `tests/qa/parcours-mobile.mjs`) pour 12 pages : tarifs, FAQ, création, refonte, maintenance, audit, options, démonstrations, à propos, contact, secteur, confidentialité ; aucune erreur JavaScript. Un 15e test de bout en bout vérifie que chaque pastille du sommaire mène à une section existante, que la pastille active suit la lecture, que la section arrive sous le sommaire (pas cachée dessous) et que l'en-tête s'efface en lisant. Défauts trouvés et corrigés : libellé de cartouche coupé en plein mot (« Démonstrations de sites web (entreprises »), double parenthèse dans les heures ouvrables de la page Contact, texte visible à travers l'en-tête translucide.
 
+## 4 quater. Refonte v3 « Le sur-mesure » (blanc et vert, 10 octobre 2026)
+
+| Page | Perf. | Access. | Bonnes pratiques | SEO | LCP | CLS | TBT | Poids |
+|---|---|---|---|---|---|---|---|---|
+| Accueil | 99 | 100 | 100 | 100 | 1,8 s | 0 | 120 ms | 160 Ko |
+| Tarifs | 99 | 100 | 100 | 100 | 2,0 s | 0 | 0 ms | 162 Ko |
+| Questions fréquentes | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 158 Ko |
+| Contact | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 160 Ko |
+| Création | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 158 Ko |
+
+Tests : 29 / 29 (serveur et validation) et 15 / 15 (bout en bout, dont axe-core). Défauts trouvés et corrigés pendant la refonte : contraste du laiton en petit texte (axe-core), texte visible à travers l'en-tête translucide (en-tête rendu opaque), flèche de lien isolée en bout de ligne, points séparateurs orphelins dans l'étiquette du pied de page, titre d'appel final avec un mot seul en dernière ligne, libellé « Le plus choisi pour une PME » remplacé par « Recommandée pour une PME » (le premier laissait entendre une statistique de ventes qui n'existe pas). Mesures avant/après détaillées dans `docs/11-diagnostic-v3.md`.
+
 ## 5. Revue visuelle (Creative QA, Moi 2.0)
 
 Captures vérifiées à 390 et 1440 px (accueil, tarifs, contact, audit, démonstrations, secteur, administration) et script `qa_capture.mjs` de Moi 2.0 (360, 390, 768, 1440 : tout vert). Défauts trouvés et corrigés : bouton secondaire invisible sur fond sombre, annotations du hero qui chevauchaient le titre, texte surdimensionné dans une démo, estimateur collant qui masquait le contenu sur mobile, texte d'étape coupé, liens fléchés qui se repliaient mal.

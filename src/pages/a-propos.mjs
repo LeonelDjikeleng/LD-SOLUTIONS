@@ -38,7 +38,6 @@ ${site.exploitant ? `<section class="section section--blanc section--compacte" a
 </section>` : ""}
 
 <section class="section section--sombre" aria-labelledby="titre-principes">
-  <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>
   <div class="conteneur">
     <div class="entete-section">${surtitre("Nos principes")}<h2 id="titre-principes">Quatre règles que nous ne négocions pas.</h2></div>
     <div class="grille-cartes">
