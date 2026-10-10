@@ -1,0 +1,22 @@
+# Caddy : HTTPS automatique (Let's Encrypt), compression, proxy vers Node.
+# Remplacez votre-domaine.ca. Copier dans /etc/caddy/Caddyfile puis : sudo systemctl reload caddy
+www.votre-domaine.ca {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000 {
+		header_up X-Forwarded-Host {host}
+	}
+	# Journaux conservés au plus 30 jours (cohérent avec la politique de confidentialité)
+	log {
+		output file /var/log/caddy/ld-solutions.log {
+			roll_size 10mb
+			roll_keep 4
+			roll_keep_for 720h
+		}
+		format json
+	}
+}
+
+# Le domaine nu redirige vers www (une seule adresse canonique)
+votre-domaine.ca {
+	redir https://www.votre-domaine.ca{uri} permanent
+}

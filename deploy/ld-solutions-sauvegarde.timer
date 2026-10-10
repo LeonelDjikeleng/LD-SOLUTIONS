@@ -1,0 +1,11 @@
+# Déclenche la sauvegarde chaque jour à 3 h 17 (heure du serveur).
+#   sudo systemctl enable --now ld-solutions-sauvegarde.timer
+[Unit]
+Description=Sauvegarde quotidienne LD SOLUTIONS
+
+[Timer]
+OnCalendar=*-*-* 03:17:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

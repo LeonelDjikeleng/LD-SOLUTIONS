@@ -1,0 +1,14 @@
+# Sauvegarde vérifiée de la base, puis copie chiffrée hors serveur (rclone, si configuré).
+[Unit]
+Description=Sauvegarde LD SOLUTIONS
+
+[Service]
+Type=oneshot
+User=ldsite
+WorkingDirectory=/srv/ld-solutions/current
+EnvironmentFile=/srv/ld-solutions/shared/.env
+Environment=DATABASE_PATH=/srv/ld-solutions/shared/data/ld-solutions.sqlite
+Environment=BACKUP_DIR=/srv/ld-solutions/shared/data/sauvegardes
+ExecStart=/usr/bin/node server/scripts/sauvegarde.mjs
+# Copie hors serveur chiffrée (3-2-1). Retirer le « - » pour rendre l'échec bloquant une fois rclone configuré.
+ExecStartPost=-/usr/bin/rclone copy /srv/ld-solutions/shared/data/sauvegardes ld-chiffre:sauvegardes-ld-solutions --max-age 48h

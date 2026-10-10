@@ -1,0 +1,32 @@
+# systemd : service du site. Copier dans /etc/systemd/system/ puis :
+#   sudo systemctl daemon-reload && sudo systemctl enable --now ld-solutions
+[Unit]
+Description=Site web LD SOLUTIONS (Node.js)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ldsite
+Group=ldsite
+WorkingDirectory=/srv/ld-solutions/current
+EnvironmentFile=/srv/ld-solutions/shared/.env
+Environment=DATABASE_PATH=/srv/ld-solutions/shared/data/ld-solutions.sqlite
+Environment=BACKUP_DIR=/srv/ld-solutions/shared/data/sauvegardes
+ExecStart=/usr/bin/node server/index.mjs
+Restart=on-failure
+RestartSec=3
+# Durcissement
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+ReadWritePaths=/srv/ld-solutions/shared/data
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
