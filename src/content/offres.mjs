@@ -251,7 +251,7 @@ export const promotions = [
     // Date réelle de fin : l'offre disparaît automatiquement du site après cette date (vérifiée à la construction et dans le navigateur).
     finLe: "2027-03-31",
     actif: true,
-    aValider: true, // décision commerciale à confirmer par LD SOLUTIONS avant la mise en ligne
+    aValider: false, // validée par LD SOLUTIONS le 10 octobre 2026
   },
 ];
 

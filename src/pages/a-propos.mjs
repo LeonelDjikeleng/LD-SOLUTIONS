@@ -1,3 +1,4 @@
+import { site } from "../content/site.config.mjs";
 import { heroPage, surtitre, fleche, processus, engagements, appelFinal, jsonldAriane } from "../composants.mjs";
 
 const ARIANE = [{ nom: "Accueil", href: "/" }, { nom: "À propos", href: "/a-propos/" }];
@@ -23,6 +24,18 @@ ${heroPage({
     </div>
   </div>
 </section>
+
+${site.exploitant ? `<section class="section section--blanc section--compacte" aria-labelledby="titre-qui">
+  <div class="conteneur">
+    <div class="deux-colonnes deux-colonnes--5-7">
+      <div>${surtitre("Qui est derrière LD SOLUTIONS")}<h2 id="titre-qui">Un seul interlocuteur, du premier appel à l'entretien.</h2></div>
+      <div class="prose">
+        <p>LD SOLUTIONS est l'entreprise de ${site.exploitant}. Vous travaillez directement avec la personne qui conçoit, construit et entretient votre site : pas d'intermédiaire, pas de transfert de dossier entre plusieurs équipes.</p>
+        <p>Ce fonctionnement a une conséquence pratique : le nombre de projets menés en même temps est limité, pour que chaque demande reçoive une réponse sous 2 jours ouvrables et que chaque site soit testé avant sa mise en ligne.</p>
+      </div>
+    </div>
+  </div>
+</section>` : ""}
 
 <section class="section section--sombre" aria-labelledby="titre-principes">
   <div class="hero__fond grille-plan grille-plan--fondu" aria-hidden="true"></div>

@@ -1,18 +1,28 @@
 # Informations à fournir avant la mise en ligne
 
-Classées par impact. Les cinq premières bloquent la mise en production ; `npm run check:prelaunch` les vérifie automatiquement.
+Mise à jour du 10 octobre 2026 après les réponses de Leonel Djikeleng. `npm run check:prelaunch` vérifie automatiquement les points bloquants.
 
-| # | Information | Pourquoi | Où la mettre |
+## Réglé
+
+| Information | Réponse | Où c'est appliqué |
+|---|---|---|
+| Statut juridique | Entreprise individuelle de Leonel Djikeleng, nom d'affaires LD SOLUTIONS | `site.config.mjs`, mentions légales, conditions, confidentialité, devis-contrat |
+| Responsable de la protection des renseignements personnels | Leonel Djikeleng, propriétaire | Politique de confidentialité |
+| Hébergement | Recommandation retenue : VPS OVHcloud à Beauharnois (Québec) | `site.config.mjs`, politique de confidentialité, mentions légales, `05-deploiement.md` |
+| Grille tarifaire et offre de lancement | Validées | `offres.mjs` |
+
+## Reste à fournir
+
+| # | Information | Pourquoi | Bloquant ? |
 |---|---|---|---|
-| 1 | **Confirmation du marché : Québec, en dollars canadiens** (hypothèse retenue) | Elle conditionne les prix, les lois et les textes légaux. Si votre marché principal est ailleurs (ex. Afrique francophone, France), la grille et les textes doivent être refaits. | Réponse à donner |
-| 2 | **Nom légal et forme de l'entreprise** (et NEQ s'il existe) | Mentions légales, conditions de service, contrats | `src/content/site.config.mjs` › `nomLegal`, `neq` |
-| 3 | **Nom de domaine choisi** | Adresse canonique, plan du site, HTTPS | `SITE_URL` |
-| 4 | **Hébergeur retenu et lieu des serveurs** | Politique de confidentialité (Loi 25) | `site.config.mjs` › `hebergeur` |
-| 5 | **Validation de la grille tarifaire et de l'offre de lancement** (−10 % jusqu'au 31 mars 2027) | Engagements commerciaux affichés publiquement | `src/content/offres.mjs` (mettre `aValider: false`, ou `actif: false` pour retirer l'offre) |
-| 6 | Statut TPS/TVQ | Mention exacte des taxes sur les devis et factures | `site.config.mjs` › `inscriptionTaxes` |
-| 7 | District judiciaire et adresse d'affaires (une case postale suffit) | Conditions de service, identification du commerçant | `site.config.mjs` |
-| 8 | Téléphone, WhatsApp, lien de prise de rendez-vous (facultatifs) | Active automatiquement les boutons correspondants | `site.config.mjs` |
-| 9 | Accès SMTP (mot de passe d'application Gmail) | Notifications des nouvelles demandes | Fichier `.env` du serveur uniquement, jamais dans une conversation |
-| 10 | Vos vrais projets, dès qu'ils existent (avec l'accord des clients) | Remplacer progressivement les démonstrations fictives par de vraies réalisations et de vrais témoignages | Page Démonstrations |
+| 1 | **Marché visé** (question posée) | Prix, devise, lois applicables, textes légaux | Oui |
+| 2 | **Nom de domaine** (à réserver à votre nom) | Adresse du site, HTTPS, plan du site | Oui |
+| 3 | **Souscription du VPS OVHcloud** (ou indication d'un autre choix) | Mise en ligne ; si un autre hébergeur est choisi, la politique de confidentialité change | Oui |
+| 4 | Mot de passe d'application Gmail (dans le `.env` du serveur, jamais dans une conversation) | Notifications des demandes | Oui |
+| 5 | Immatriculation et NEQ | Au Québec, une entreprise individuelle qui exerce sous un nom autre que celui de son exploitant (« LD SOLUTIONS ») doit s'immatriculer au Registraire des entreprises (à vérifier) | Non pour le site, oui pour être en règle |
+| 6 | Ville ou région d'établissement, adresse d'affaires (une case postale suffit) | District judiciaire des conditions de service, identification du commerçant | Non |
+| 7 | Statut TPS/TVQ | Mention exacte des taxes | Non |
+| 8 | Téléphone, WhatsApp, lien de rendez-vous (facultatifs) | Active les boutons correspondants | Non |
+| 9 | Vos vrais projets, avec l'accord des clients | Remplacer les démonstrations fictives par de vraies réalisations | Non |
 
-**Ce que j'ai supposé, à confirmer** : vous travaillez seul ou avec un très petit nombre de personnes (« un seul interlocuteur ») ; le service est offert à distance dans tout le Québec ; vous pouvez répondre aux demandes sous 2 jours ouvrables ; vous maîtrisez les prestations listées comme « disponibles » (les automatisations et intégrations tierces sont présentées « après étude » par prudence).
+**Ce que j'ai supposé, à confirmer** : service offert à distance ; capacité de répondre sous 2 jours ouvrables ; les automatisations et intégrations tierces restent « après étude » par prudence.

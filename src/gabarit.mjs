@@ -44,7 +44,7 @@ function entete(navActif) {
 function piedDePage() {
   const annee = new Date().getFullYear();
   const lignesIdentite = [
-    site.nomLegal ? esc(site.nomLegal) : null,
+    site.exploitant ? esc(site.exploitant) : null,
     site.neq ? `NEQ ${esc(site.neq)}` : null,
     site.adressePostale ? esc(site.adressePostale) : null,
   ].filter(Boolean).join(" · ");

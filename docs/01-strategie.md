@@ -41,11 +41,15 @@ Document de travail interne. Il synthétise les sept compétences consultées et
 | Courriel officiel : ldjikeleng@gmail.com | Mandat | Confirmée |
 | Activités : créer, améliorer, entretenir des sites web | Mandat | Confirmée |
 | Marché géographique | — | **Manquante** → HYPOTHÈSE : Québec (voir §4) |
-| Statut juridique, NEQ, adresse | — | Manquantes |
+| Statut juridique | Réponse de Leonel Djikeleng (10 octobre 2026) | Confirmée : entreprise individuelle de Leonel Djikeleng, nom d'affaires LD SOLUTIONS |
+| NEQ, adresse d'affaires | — | Manquants |
+| Nom de domaine | — | Aucun choisi pour le moment |
+| Hébergement | Recommandation acceptée (« le meilleur possible ») | VPS OVHcloud à Beauharnois (Québec), à souscrire |
+| Grille tarifaire et offre de lancement | Réponse du 10 octobre 2026 | Validées |
 | Inscription TPS/TVQ | — | Manquante → prix affichés « taxes en sus, le cas échéant » |
 | Téléphone, WhatsApp | — | Manquants → non affichés (champs prévus dans la configuration) |
 | Années d'expérience, équipe, clients, témoignages, certifications | — | Manquants → **rien n'est affiché**, aucune invention |
-| Nom du responsable de la protection des renseignements personnels | — | Manquant → affiché par son titre (« le propriétaire ») + courriel, ce que permet la Loi 25 |
+| Responsable de la protection des renseignements personnels | Statut d'entreprise individuelle | Leonel Djikeleng, propriétaire |
 
 ---
 

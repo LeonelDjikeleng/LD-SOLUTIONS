@@ -6,7 +6,7 @@
 
 | Élément | Contenu |
 |---|---|
-| Partie A | LD SOLUTIONS, prestataire de services numériques. Forme juridique, NEQ et adresse : **à compléter** (`site.config.mjs`). |
+| Partie A | Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS. NEQ et adresse : **à compléter**. Responsabilité personnelle illimitée de l'exploitant (propre à l'entreprise individuelle) : l'assurance responsabilité professionnelle et la limitation contractuelle prennent d'autant plus d'importance. |
 | Partie B | Surtout des entreprises (PME, travailleurs autonomes). Parfois un consommateur au sens de la LPC : règles impératives supplémentaires. |
 | Objet | Création, amélioration, audit et maintenance de sites web, options associées. |
 | Contrepartie | Prix fixes par formule (`offres.mjs`), paiement par étapes ; abonnements mensuels pour la maintenance. |
@@ -51,7 +51,7 @@ Le procès-verbal de livraison (`proces-verbal-livraison.md`) documente l'accept
 4. 🟠 Rédaction de la cession de droits conditionnée au paiement.
 5. 🟠 Rôle de LD SOLUTIONS envers les renseignements personnels des clients (prestataire agissant pour le compte du client, Loi 25) : clause de traitement et sous-traitants.
 6. 🟠 Taxes : statut TPS/TVQ et mentions sur les factures (avec votre comptable).
-7. 🟢 Choix de la structure juridique (entreprise individuelle ou société) et assurance responsabilité professionnelle : fortement recommandée avant les premiers contrats.
+7. 🟢 Immatriculation : une entreprise individuelle qui exerce sous un nom autre que les prénom et nom de son exploitant (ici « LD SOLUTIONS ») doit, au Québec, s'immatriculer au Registraire des entreprises, ce qui attribue un NEQ (à vérifier sur le site du Registraire). Assurance responsabilité professionnelle fortement recommandée avant les premiers contrats.
 
 ## 5. Auto-audit (« comment l'avocat du client attaquerait-il ce contrat ? »)
 

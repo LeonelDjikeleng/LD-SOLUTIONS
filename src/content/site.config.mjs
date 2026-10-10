@@ -11,7 +11,8 @@ export const site = {
   langue: "fr-CA",
   zoneServie: "Québec",
   // ---- À COMPLÉTER avant la mise en ligne (voir docs/09-informations-a-fournir.md) ----
-  nomLegal: null, // ex. « Leonel Djikeleng, faisant affaire sous le nom LD SOLUTIONS » ou raison sociale
+  nomLegal: "Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS",
+  exploitant: "Leonel Djikeleng", // affiché dans le pied de page et la page À propos
   neq: null, // Numéro d'entreprise du Québec, s'il existe
   adressePostale: null, // adresse d'affaires (peut être une case postale) ; jamais inventée
   telephone: null, // format 514 555-0123 ; s'il est renseigné, un bouton « Appeler » apparaît
@@ -19,10 +20,11 @@ export const site = {
   lienRendezVous: null, // URL d'un outil de prise de rendez-vous (Cal.com, Calendly…) ; active le bouton
   responsableRP: {
     titre: "Propriétaire de LD SOLUTIONS",
-    nom: null, // facultatif : la Loi 25 exige le titre et les coordonnées
+    nom: "Leonel Djikeleng",
     courriel: "ldjikeleng@gmail.com",
   },
-  hebergeur: { nom: null, lieu: null }, // ex. { nom: "Hostinger International Ltd.", lieu: "centre de données aux États-Unis" }
+  // Choix recommandé (docs/05-deploiement.md). À ajuster si un autre hébergeur est finalement souscrit.
+  hebergeur: { nom: "OVHcloud", lieu: "serveur privé virtuel situé à Beauharnois, au Québec" },
   districtJudiciaire: null, // ex. « Montréal » : district des tribunaux compétents dans les conditions de service
   inscriptionTaxes: null, // true / false une fois le statut TPS/TVQ connu ; null = « taxes en sus, le cas échéant »
   paiement: "Virement Interac ou lien de paiement sécurisé",

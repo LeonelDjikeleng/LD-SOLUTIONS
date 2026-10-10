@@ -1,6 +1,6 @@
 # Grille tarifaire recommandée — analyse interne
 
-Statut : **grille provisoire raisonnable, à valider par LD SOLUTIONS avant la mise en ligne.** Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
+Statut : **grille validée par LD SOLUTIONS le 10 octobre 2026.** Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
 
 Source unique dans le code : `src/content/offres.mjs`. Toute modification s'y fait, et se répercute sur toutes les pages, l'estimateur et les données structurées.
 
@@ -62,7 +62,7 @@ Prix fixes pour ce qui est maîtrisé (pages, rédaction, formulaire avancé, re
 | Lancement −10 % | 1 490 / 2 990 / 5 900 $ | 1 341 / 2 691 / 5 310 $ | 149 / 299 / 590 $ | Signé au plus tard le 31 mars 2027 + accord pour présenter le projet | Date réelle, l'offre disparaît du site automatiquement après | Taux effectif ≈ 61-76 $/h ; contrepartie : un portfolio réel |
 | Maintenance annuelle | 12 mois | 10 mois | 98 à 458 $ | Paiement annuel d'avance | Permanente | Trésorerie avancée, baisse du taux de départ |
 
-Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. **À valider** : l'offre de lancement et sa date (engagement commercial).
+Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. Grille et offre de lancement **validées par LD SOLUTIONS le 10 octobre 2026**.
 
 ## 7. Modalités de paiement
 

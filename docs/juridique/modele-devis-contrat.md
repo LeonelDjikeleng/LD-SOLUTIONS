@@ -7,7 +7,7 @@
 **DEVIS-CONTRAT N° [AAAA-NNN]**
 Date : [date] · Valable jusqu'au : [date + 30 jours] · Référence de la demande : [LD-AAMMJJ-XXXXX]
 
-**Prestataire** : LD SOLUTIONS, [nom légal], [NEQ], [adresse], ldjikeleng@gmail.com, [téléphone]. N° TPS / TVQ : [s'il y a lieu].
+**Prestataire** : Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS, [NEQ], [adresse], ldjikeleng@gmail.com, [téléphone]. N° TPS / TVQ : [s'il y a lieu].
 **Client** : [raison sociale], [NEQ s'il y a lieu], [adresse], représenté par [nom, fonction], [courriel], [téléphone]. Le client déclare agir dans le cadre de son entreprise : ☐ oui ☐ non (consommateur : utiliser le modèle consommateur validé par l'avocat).
 
 ## 1. Contexte et objectif

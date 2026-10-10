@@ -59,7 +59,7 @@ const confidentialite = pageLegale({
 <p>Vos renseignements servent uniquement aux fins indiquées ci-dessus. Ils ne sont <strong>ni vendus, ni loués, ni utilisés pour de la publicité</strong>. Nous ne vous inscrivons à aucune liste d'envoi : toute communication commerciale ultérieure exigerait votre consentement distinct. Aucune décision n'est prise à votre sujet de façon entièrement automatisée.</p>
 
 <h2>5. Qui y a accès, et où sont-ils conservés</h2>
-<p>Seul le personnel de LD SOLUTIONS qui traite votre demande y a accès. Pour fonctionner, nous utilisons des fournisseurs qui peuvent conserver des renseignements à l'extérieur du Québec :</p>
+<p>Seule la personne qui traite votre demande chez LD SOLUTIONS y a accès. Pour fonctionner, nous utilisons les fournisseurs suivants :</p>
 <ul>
 <li><strong>Hébergement du site et de la base de demandes</strong> : ${hebergeur}.</li>
 <li><strong>Courriel</strong> : Google (Gmail), utilisé pour recevoir les notifications de demandes et correspondre avec vous. Ses serveurs peuvent être situés hors du Québec, notamment aux États-Unis.</li>
