@@ -25,7 +25,7 @@ export const site = {
   },
   // Choix recommandé (docs/05-deploiement.md). À ajuster si un autre hébergeur est finalement souscrit.
   hebergeur: { nom: "OVHcloud", lieu: "serveur privé virtuel situé à Beauharnois, au Québec" },
-  districtJudiciaire: null, // ex. « Montréal » : district des tribunaux compétents dans les conditions de service
+  districtJudiciaire: "Québec", // district des tribunaux compétents dans les conditions de service
   inscriptionTaxes: null, // true / false une fois le statut TPS/TVQ connu ; null = « taxes en sus, le cas échéant »
   paiement: "Virement Interac ou lien de paiement sécurisé",
   heuresOuvrables: "Lundi au vendredi, 9 h à 17 h (heure de l'Est)",

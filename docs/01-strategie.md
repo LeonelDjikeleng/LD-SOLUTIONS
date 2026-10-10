@@ -40,7 +40,7 @@ Document de travail interne. Il synthétise les sept compétences consultées et
 | Nom commercial : LD SOLUTIONS | Mandat | Confirmée |
 | Courriel officiel : ldjikeleng@gmail.com | Mandat | Confirmée |
 | Activités : créer, améliorer, entretenir des sites web | Mandat | Confirmée |
-| Marché géographique | — | **Manquante** → HYPOTHÈSE : Québec (voir §4) |
+| Marché géographique | Réponse du 10 octobre 2026 | Confirmée : Québec ; établissement dans la région de Québec |
 | Statut juridique | Réponse de Leonel Djikeleng (10 octobre 2026) | Confirmée : entreprise individuelle de Leonel Djikeleng, nom d'affaires LD SOLUTIONS |
 | NEQ, adresse d'affaires | — | Manquants |
 | Nom de domaine | — | Aucun choisi pour le moment |
@@ -55,7 +55,7 @@ Document de travail interne. Il synthétise les sept compétences consultées et
 
 ## 4. Marché et hypothèse géographique
 
-**HYPOTHÈSE retenue : lancement au Québec, en français, prix en dollars canadiens, service offert à distance dans toute la province.**
+**CONFIRMÉ le 10 octobre 2026 : marché principal le Québec, en français, prix en dollars canadiens. Entreprise établie dans la région de Québec. Service offert à distance dans toute la province.**
 
 Pourquoi : l'ensemble des compétences fournies (Moi 2.0, Vente 2.0, Sales 2.0, Maître 2.0) est calibré pour le cadre québécois, qui est aussi le plus exigeant au Canada (Loi 25, Charte de la langue française, LPC). Construire pour le Québec rend le site compatible avec un marché francophone plus large ; l'inverse n'est pas vrai.
 
