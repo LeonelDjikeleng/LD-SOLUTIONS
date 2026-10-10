@@ -34,7 +34,7 @@ En attendant le nom de domaine et l'hébergement, une version d'aperçu est publ
 | Sauvegarde vérifiée | ✅ Script actif et testé | Installation du timer sur le serveur |
 | Copie hors serveur chiffrée | ⬜ Préparée (`deploy/ld-solutions-sauvegarde.service`) | `rclone config` |
 | Google Search Console | ⬜ À configurer | Domaine en ligne, validation par enregistrement DNS |
-| Google Business Profile de LD SOLUTIONS | ⬜ À évaluer | Admissibilité à vérifier : Google réserve ces fiches aux entreprises qui rencontrent leurs clients en personne ; une adresse vérifiable est exigée (elle peut être masquée) |
+| Google Business Profile de Leonel Djikeleng | ⬜ À évaluer | Admissibilité à vérifier : Google réserve ces fiches aux entreprises qui rencontrent leurs clients en personne ; une adresse vérifiable est exigée (elle peut être masquée) |
 | Bouton téléphone, WhatsApp, prise de rendez-vous | ⬜ Prêts dans le code, désactivés | Renseigner `telephone`, `whatsapp`, `lienRendezVous` dans `site.config.mjs` |
 | Paiement en ligne | ❌ Volontairement absent | Décision : devis + facture d'acompte (voir `01-strategie.md` §8) |
 | Analytique tierce (Google Analytics, pixels) | ❌ Volontairement absente | Si ajoutée : gestionnaire de consentement obligatoire (Loi 25) |

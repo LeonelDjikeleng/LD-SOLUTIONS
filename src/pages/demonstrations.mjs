@@ -30,7 +30,7 @@ ${heroPage({
   arianeItems: ARIANE,
   surtitreTexte: "Démonstrations",
   titre: "Trois entreprises fictives, trois vrais problèmes.",
-  intro: "Ces maquettes ont été conçues par LD SOLUTIONS pour montrer notre façon de travailler. Les entreprises n'existent pas : les noms, les textes et les informations affichées sont inventés pour l'exemple. Les choix de conception, eux, sont ceux que nous faisons pour de vrais clients.",
+  intro: "Ces maquettes ont été conçues par Leonel Djikeleng pour montrer notre façon de travailler. Les entreprises n'existent pas : les noms, les textes et les informations affichées sont inventés pour l'exemple. Les choix de conception, eux, sont ceux que nous faisons pour de vrais clients.",
   boutons: `<a class="bouton" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis ${fleche}</a>`,
 })}
 
@@ -68,7 +68,7 @@ ${DEMOS.map((d, i) => `
 export default {
   chemin: "/demonstrations/",
   titre: "Démonstrations de sites web (entreprises fictives)",
-  description: "Trois démonstrations de sites web conçues par LD SOLUTIONS pour des entreprises fictives : entrepreneur en toiture, garage, cabinet-conseil. Nos choix expliqués.",
+  description: "Trois démonstrations de sites web conçues par Leonel Djikeleng pour des entreprises fictives : entrepreneur en toiture, garage, cabinet-conseil. Nos choix expliqués.",
   navActif: "demonstrations",
   corps,
   jsonld: [jsonldAriane(ARIANE)],

@@ -1,4 +1,4 @@
-# Kit de prospection LD SOLUTIONS
+# Kit de prospection Leonel Djikeleng
 
 Compétences appliquées : Prospecteur 2.0 (ciblage, messages, séquence, CRM), Sales 2.0 (découverte, objections, closing), Vente 2.0 (segments, plan). Les messages réutilisent exactement les offres et les prix du site (`src/content/offres.mjs`).
 
@@ -37,7 +37,7 @@ Objet conseillé : 3 à 7 mots, précis, sans piège.
 >
 > Ça vous intéresse ?
 >
-> Leonel Djikeleng · LD SOLUTIONS · ldjikeleng@gmail.com · [site]
+> Leonel Djikeleng · Sites web · 418 255-7236 · ldjikeleng@gmail.com · [site]
 > Si vous ne souhaitez plus recevoir de message de ma part, répondez simplement « stop ».
 
 *Pourquoi celui-ci* : un fait vérifiable dans les deux premières lignes, un résultat avant le moyen, une seule demande à faible engagement (le diagnostic offert).
@@ -50,7 +50,7 @@ Objet conseillé : 3 à 7 mots, précis, sans piège.
 >
 > Votre fiche Google affiche [X] avis, mais aucun site web : quand un client veut voir vos services ou vous écrire le soir, il n'a nulle part où aller.
 >
-> Je crée des sites simples et rapides pour les entreprises comme la vôtre, à prix publié (dès 1 490 $, tout est détaillé sur ldsolutions.[domaine]/tarifs/). Seriez-vous disponible 15 minutes jeudi ou vendredi pour voir si c'est pertinent pour vous ?
+> Je crée des sites simples et rapides pour les entreprises comme la vôtre, à prix publié (dès 1 490 $, tout est détaillé sur [domaine]/tarifs/). Seriez-vous disponible 15 minutes jeudi ou vendredi pour voir si c'est pertinent pour vous ?
 >
 > [Signature + désabonnement]
 
@@ -85,7 +85,7 @@ Objet conseillé : 3 à 7 mots, précis, sans piège.
 | Étape | Délai | Message type |
 |---|---|---|
 | Relance 1 | J+3 | « Bonjour [Prénom], un exemple concret : [observation précise n° 2 sur leur site]. Je peux vous envoyer les 5 points prioritaires par écrit, sans engagement. Je vous les envoie ? » |
-| Relance 2 | J+7 (appel si possible) | « Bonjour, Leonel Djikeleng, de LD SOLUTIONS. Je vous avais écrit au sujet de votre site sur cellulaire. Avez-vous deux minutes ? » puis une question : « Aujourd'hui, la plupart de vos nouveaux clients vous trouvent comment ? » |
+| Relance 2 | J+7 (appel si possible) | « Bonjour, ici Leonel Djikeleng. Je vous avais écrit au sujet de votre site sur cellulaire. Avez-vous deux minutes ? » puis une question : « Aujourd'hui, la plupart de vos nouveaux clients vous trouvent comment ? » |
 | Relance 3 (rupture) | J+14 | « Bonjour [Prénom], je ne veux pas encombrer votre boîte. Dois-je fermer le dossier, ou est-ce simplement le mauvais moment ? Dans les deux cas, merci de me le dire en un mot. » |
 | Mise en sommeil | après J+14 | Plus rien pendant environ 90 jours, puis une seule reprise avec un élément nouveau (saison, nouvelle observation). |
 

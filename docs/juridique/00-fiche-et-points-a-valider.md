@@ -1,4 +1,4 @@
-# Cadre contractuel LD SOLUTIONS · fiche Maître 2.0 et points à faire valider
+# Cadre contractuel Leonel Djikeleng · fiche Maître 2.0 et points à faire valider
 
 > **Avertissement** : ces documents sont des bases de travail préparées avec rigueur. Ils ne constituent pas un avis juridique personnalisé. Avant la première signature, faites-les relire par un avocat ou un notaire du Québec, en priorité les points 🔴 ci-dessous. Les références aux articles du Code civil du Québec (C.c.Q.) sont des repères à vérifier dans la version en vigueur (LégisQuébec, CanLII).
 
@@ -6,7 +6,7 @@
 
 | Élément | Contenu |
 |---|---|
-| Partie A | Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS. NEQ et adresse : **à compléter**. Responsabilité personnelle illimitée de l'exploitant (propre à l'entreprise individuelle) : l'assurance responsabilité professionnelle et la limitation contractuelle prennent d'autant plus d'importance. |
+| Partie A | Leonel Djikeleng, travailleur autonome (entreprise individuelle exploitée sous ses prénom et nom, sans nom commercial). Téléphone : 418 255-7236. Adresse : **à compléter**. Responsabilité personnelle illimitée de l'exploitant (propre à l'entreprise individuelle) : l'assurance responsabilité professionnelle et la limitation contractuelle prennent d'autant plus d'importance. |
 | Partie B | Surtout des entreprises (PME, travailleurs autonomes). Parfois un consommateur au sens de la LPC : règles impératives supplémentaires. |
 | Objet | Création, amélioration, audit et maintenance de sites web, options associées. |
 | Contrepartie | Prix fixes par formule (`offres.mjs`), paiement par étapes ; abonnements mensuels pour la maintenance. |
@@ -14,7 +14,7 @@
 | Territoire / droit | Québec. Droit québécois et lois fédérales applicables. |
 | Risques principaux | Impayé ; demandes hors périmètre sans fin ; client qui ne fournit pas le contenu ; responsabilité en cas de panne ou de piratage ; propriété du code ; données personnelles traitées pour le client. |
 | Objectif | Être payé pour le travail fait, borner le périmètre, limiter la responsabilité de façon défendable, rester transparent (positionnement du site). |
-| Niveau de protection | 🟠 **PROTECTEUR** (par défaut quand LD SOLUTIONS fournit le service). |
+| Niveau de protection | 🟠 **PROTECTEUR** (par défaut quand Leonel Djikeleng fournit le service). |
 
 ## 2. Architecture documentaire (ordre de priorité)
 
@@ -40,7 +40,7 @@ Le procès-verbal de livraison (`proces-verbal-livraison.md`) documente l'accept
 | Limitation de responsabilité aux sommes payées sur 12 mois, exclusion des pertes indirectes | 🔴 À valider | Ne peut couvrir la faute intentionnelle ou lourde ni le préjudice corporel ou moral (art. 1474). Peut être écartée envers un consommateur (LPC) et réduite si jugée abusive dans un contrat d'adhésion (art. 1437). |
 | Clauses externes (conditions publiées sur le site) | 🔴 À valider | Dans un contrat d'adhésion ou de consommation, une clause externe doit avoir été expressément portée à la connaissance du client (art. 1435). D'où la case « J'ai lu les conditions » dans le devis et un exemplaire joint. |
 | Remboursement de la maintenance annuelle au prorata, moins l'avantage annuel | 🟠 À valider | Vérifier qu'elle n'est pas jugée abusive ; pour un consommateur, appliquer les règles de la LPC sur les contrats à exécution successive. |
-| Clause de juridiction (district de LD SOLUTIONS) | 🟠 Option | Inopposable au consommateur, qui garde le droit d'agir chez lui. |
+| Clause de juridiction (district de Leonel Djikeleng) | 🟠 Option | Inopposable au consommateur, qui garde le droit d'agir chez lui. |
 | Langue : documents en français | 🟢 Obligation (Charte de la langue française) | Contrats d'adhésion présentés d'abord en français. |
 
 ## 4. Points à faire valider par un avocat (priorité)
@@ -49,9 +49,9 @@ Le procès-verbal de livraison (`proces-verbal-livraison.md`) documente l'accept
 2. 🔴 Opposabilité des conditions publiées (art. 1435) et procédure de signature électronique.
 3. 🔴 Contrats avec des consommateurs (LPC) : faut-il un modèle distinct (contrat conclu à distance, mentions obligatoires, annulation) ? Recommandation : oui si vous servez des particuliers.
 4. 🟠 Rédaction de la cession de droits conditionnée au paiement.
-5. 🟠 Rôle de LD SOLUTIONS envers les renseignements personnels des clients (prestataire agissant pour le compte du client, Loi 25) : clause de traitement et sous-traitants.
+5. 🟠 Rôle de Leonel Djikeleng envers les renseignements personnels des clients (prestataire agissant pour le compte du client, Loi 25) : clause de traitement et sous-traitants.
 6. 🟠 Taxes : statut TPS/TVQ et mentions sur les factures (avec votre comptable).
-7. 🟢 Immatriculation : une entreprise individuelle qui exerce sous un nom autre que les prénom et nom de son exploitant (ici « LD SOLUTIONS ») doit, au Québec, s'immatriculer au Registraire des entreprises, ce qui attribue un NEQ (à vérifier sur le site du Registraire). Assurance responsabilité professionnelle fortement recommandée avant les premiers contrats.
+7. 🟢 Immatriculation : non requise tant que l'activité est exercée sous « Leonel Djikeleng » seulement (décision du 10 octobre 2026). Si un nom commercial comme « LD SOLUTIONS » est réutilisé, une entreprise individuelle doit, au Québec, s'immatriculer au Registraire des entreprises, ce qui attribue un NEQ (à vérifier sur le site du Registraire). Assurance responsabilité professionnelle fortement recommandée avant les premiers contrats.
 
 ## 5. Auto-audit (« comment l'avocat du client attaquerait-il ce contrat ? »)
 

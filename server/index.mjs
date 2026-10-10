@@ -11,7 +11,7 @@ serveur.headersTimeout = 10_000;
 serveur.keepAliveTimeout = 5_000;
 
 serveur.listen(port, hote, () => {
-  console.log(`LD SOLUTIONS : serveur ${production ? "production" : "développement"} sur http://${hote}:${port}`);
+  console.log(`Leonel Djikeleng : serveur ${production ? "production" : "développement"} sur http://${hote}:${port}`);
   if (!app.config.adminHashMotDePasse) console.warn("Administration désactivée : ADMIN_PASSWORD_HASH absent.");
   if (!app.config.smtp.hote) console.warn("Notifications par courriel désactivées : SMTP_HOST absent (les demandes sont quand même enregistrées).");
 });

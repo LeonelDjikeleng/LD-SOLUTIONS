@@ -25,7 +25,7 @@ export function creerCourrielleur(config, transportPersonnalise = null) {
 
   function corpsNotification(d) {
     const lignes = [
-      `Nouvelle demande reçue par le site LD SOLUTIONS`,
+      `Nouvelle demande reçue par le site Leonel Djikeleng`,
       ``,
       `Référence : ${d.reference}`,
       `Type : ${TYPES[d.type] || d.type}`,
@@ -55,7 +55,7 @@ export function creerCourrielleur(config, transportPersonnalise = null) {
       ``,
       `Vous pouvez répondre directement à ce courriel pour ajouter une précision.`,
       ``,
-      `LD SOLUTIONS`,
+      `Leonel Djikeleng`,
       config.courrielNotification,
       ``,
       `Vous recevez ce message parce que vous avez envoyé une demande sur notre site. Aucune autre communication commerciale ne vous sera envoyée sans votre accord.`,
@@ -80,7 +80,7 @@ export function creerCourrielleur(config, transportPersonnalise = null) {
               from: config.courrielExpediteur,
               to: demande.courriel,
               replyTo: config.courrielNotification,
-              subject: `LD SOLUTIONS · demande ${demande.reference} bien reçue`,
+              subject: `Leonel Djikeleng · demande ${demande.reference} bien reçue`,
               text: corpsAccuse(demande),
             });
           } catch { /* l'accusé est secondaire : la notification interne a réussi */ }

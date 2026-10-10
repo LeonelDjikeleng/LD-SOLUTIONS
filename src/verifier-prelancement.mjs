@@ -20,9 +20,9 @@ for (const p of promotions.filter((x) => x.aValider)) avertissements.push(`offre
 if (!env.ADMIN_PASSWORD_HASH) bloquants.push("ADMIN_PASSWORD_HASH (variable de production) : générer avec `npm run admin:mot-de-passe`.");
 if (!env.SMTP_HOST) bloquants.push("SMTP_HOST, SMTP_USER, SMTP_PASSWORD, MAIL_FROM : notifications par courriel des nouvelles demandes.");
 if (!fs.existsSync("dist/index.html")) bloquants.push("dist/ absent : lancez `npm run build` avec SITE_URL défini.");
-else if (fs.readFileSync("dist/index.html", "utf8").includes("ldsolutions.example")) bloquants.push("dist/ construit avec l'adresse provisoire : relancez `SITE_URL=https://… npm run build`.");
+else if (fs.readFileSync("dist/index.html", "utf8").includes("leoneldjikeleng.example")) bloquants.push("dist/ construit avec l'adresse provisoire : relancez `SITE_URL=https://… npm run build`.");
 
-console.log("\nContrôle avant mise en ligne · LD SOLUTIONS\n");
+console.log("\nContrôle avant mise en ligne · Leonel Djikeleng\n");
 console.log(bloquants.length ? "BLOQUANTS :\n - " + bloquants.join("\n - ") : "Aucun bloquant.");
 if (avertissements.length) console.log("\nÀ VÉRIFIER :\n - " + avertissements.join("\n - "));
 console.log("\nRappel : faire valider les textes légaux (conditions, confidentialité) par un conseiller juridique.\n");

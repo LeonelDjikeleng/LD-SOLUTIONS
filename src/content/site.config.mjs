@@ -1,25 +1,29 @@
-// Identité et coordonnées de LD SOLUTIONS.
+// Identité et coordonnées de Leonel Djikeleng (entreprise individuelle exploitée sous son propre nom).
 // Les champs à null ne s'affichent pas sur le site : rien de provisoire n'est montré aux visiteurs.
 // `npm run check:prelaunch` liste ceux qui doivent être remplis avant la mise en production.
 
 export const site = {
-  nom: "LD SOLUTIONS",
+  nom: "Leonel Djikeleng",
+  // Signature courte sous le nom, dans l'en-tête
+  signature: "Sites web · Québec",
   // Adresse publique finale du site (sans barre oblique finale). Sert aux balises canoniques,
   // au plan du site et aux données structurées. À REMPLACER par le domaine réel avant la mise en ligne.
-  url: process.env.SITE_URL || "https://ldsolutions.example",
+  url: process.env.SITE_URL || "https://leoneldjikeleng.example",
   courriel: "ldjikeleng@gmail.com",
   langue: "fr-CA",
   zoneServie: "Québec",
   // ---- À COMPLÉTER avant la mise en ligne (voir docs/09-informations-a-fournir.md) ----
-  nomLegal: "Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS",
+  // Exploitée sous les nom et prénom de l'exploitant : pas de nom d'entreprise distinct (voir docs/09).
+  nomLegal: "Leonel Djikeleng, travailleur autonome (entreprise individuelle)",
   exploitant: "Leonel Djikeleng", // affiché dans le pied de page et la page À propos
   neq: null, // Numéro d'entreprise du Québec, s'il existe
   adressePostale: null, // adresse d'affaires (peut être une case postale) ; jamais inventée
-  telephone: null, // format 514 555-0123 ; s'il est renseigné, un bouton « Appeler » apparaît
+  telephone: "418 255-7236", // affiché tel quel ; un bouton « Appeler » apparaît
+  telephoneLien: "+14182557236", // format international pour les liens tel:
   whatsapp: null, // numéro international sans espaces, ex. 15145550123 ; active le bouton WhatsApp
   lienRendezVous: null, // URL d'un outil de prise de rendez-vous (Cal.com, Calendly…) ; active le bouton
   responsableRP: {
-    titre: "Propriétaire de LD SOLUTIONS",
+    titre: "Propriétaire de l'entreprise",
     nom: "Leonel Djikeleng",
     courriel: "ldjikeleng@gmail.com",
   },

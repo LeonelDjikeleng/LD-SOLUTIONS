@@ -1,6 +1,6 @@
 # Installation, déploiement, sauvegarde et retour arrière
 
-Compétence appliquée : **Serveur 2.0**. Ligne d'état : client LD SOLUTIONS · projet site vitrine · environnement : **aucune production existante** · mode : **ANALYSE pour le serveur** (aucun accès à un hébergeur, un domaine ou un DNS dans cette session) · risque global : 🟢 (création, rien à migrer).
+Compétence appliquée : **Serveur 2.0**. Ligne d'état : client Leonel Djikeleng · projet site vitrine · environnement : **aucune production existante** · mode : **ANALYSE pour le serveur** (aucun accès à un hébergeur, un domaine ou un DNS dans cette session) · risque global : 🟢 (création, rien à migrer).
 
 > Rien n'a été mis en ligne. Les commandes ci-dessous sont à exécuter par vous (ou par moi dans une session qui aura accès au serveur), après votre validation des étapes 🟠 et 🔴.
 

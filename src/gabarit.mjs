@@ -56,7 +56,7 @@ function entete(navActif) {
   const enveloppe = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>`;
   return `<header class="entete">
   <div class="conteneur entete__barre">
-    <a class="logo" href="/">${LOGO_SVG}<span class="logo__texte">LD <span>Solutions</span></span><span class="visuellement-cache">, accueil</span></a>
+    <a class="logo" href="/">${LOGO_SVG}<span class="logo__texte">${esc(site.nom)}<span>${esc(site.signature)}</span></span><span class="visuellement-cache">, accueil</span></a>
     <nav class="nav-principale" aria-label="Navigation principale"><ul>${liens}</ul></nav>
     <div class="entete__actions">
       <a class="bouton bouton--petit entete__cta" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis</a>
@@ -68,7 +68,7 @@ function entete(navActif) {
     <nav aria-label="Navigation mobile"><ul>${liensMobile}</ul></nav>
     <a class="bouton bouton--plein-largeur" href="/contact/?type=creation" data-evenement="clic_devis">Demander un devis</a>
     <a class="bouton bouton--contour bouton--plein-largeur" href="/audit/" data-evenement="clic_audit">Demander mon audit</a>
-    <div class="menu-mobile__secondaire"><a href="/contact/">Contact</a><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${enveloppe}${site.courriel}</a></div>
+    <div class="menu-mobile__secondaire"><a href="/contact/">Contact</a>${site.telephone ? `<a href="tel:${esc(site.telephoneLien)}" data-evenement="clic_telephone">${esc(site.telephone)}</a>` : ""}<a href="mailto:${site.courriel}" data-evenement="clic_courriel">${enveloppe}${site.courriel}</a></div>
   </div>
   <div class="progression" aria-hidden="true"><i data-progression></i></div>
 </header>`;
@@ -121,7 +121,6 @@ function sommaire(corps, chemin) {
 function piedDePage(p) {
   const annee = new Date().getFullYear();
   const lignesIdentite = [
-    site.exploitant ? esc(site.exploitant) : null,
     site.neq ? `NEQ ${esc(site.neq)}` : null,
     site.adressePostale ? esc(site.adressePostale) : null,
   ].filter(Boolean).join(" · ");
@@ -129,16 +128,16 @@ function piedDePage(p) {
   return `<footer class="pied">
   <div class="conteneur">
     <div class="pied__tete">
-      <a class="pied__signature" href="/">${LOGO_SVG}<span>LD <em>Solutions</em></span><span class="visuellement-cache">, accueil</span></a>
+      <a class="pied__signature" href="/">${LOGO_SVG}<span>Leonel <em>Djikeleng</em></span><span class="visuellement-cache">, accueil</span></a>
       <p>Atelier web à ${esc(site.ville || "Québec")}. Créer, améliorer, entretenir des sites pour les entreprises du ${esc(site.zoneServie)}.</p>
-      <p class="pied__contact"><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${site.courriel}</a>${site.telephone ? ` · <a href="tel:${esc(site.telephone.replace(/[^0-9+]/g, ""))}" data-evenement="clic_telephone">${esc(site.telephone)}</a>` : ""}</p>
+      <p class="pied__contact"><a href="mailto:${site.courriel}" data-evenement="clic_courriel">${site.courriel}</a>${site.telephone ? ` · <a href="tel:${esc(site.telephoneLien)}" data-evenement="clic_telephone">${esc(site.telephone)}</a>` : ""}</p>
     </div>
     <div class="pied__liens">
       ${groupe("Services", [["/creation-site-web/", "Création"], ["/refonte-amelioration/", "Refonte"], ["/maintenance/", "Maintenance"], ["/services-complementaires/", "Options"], ["/audit/", "Audit"], ["/tarifs/", "Tarifs"]])}
       ${groupe("Atelier", [["/a-propos/", "À propos"], ["/demonstrations/", "Démonstrations"], ["/secteurs/entrepreneurs-construction/", "Entrepreneurs"], ["/secteurs/services-automobiles/", "Automobile"], ["/secteurs/services-professionnels/", "Professionnels"], ["/faq/", "Questions"], ["/contact/", "Contact"]])}
       ${groupe("Informations", [["/conditions-de-service/", "Conditions de service"], ["/politique-de-confidentialite/", "Confidentialité"], ["/mentions-legales/", "Mentions légales"], ["/accessibilite/", "Accessibilité"]])}
     </div>
-    <p class="pied__etiquette"><span>Conçu à Québec</span><span>Prix en dollars canadiens, taxes en sus le cas échéant</span><span>Aucun témoin de suivi</span><span>© ${annee} LD SOLUTIONS${lignesIdentite ? ` · ${lignesIdentite}` : ""}</span></p>
+    <p class="pied__etiquette"><span>Conçu à Québec</span><span>Prix en dollars canadiens, taxes en sus le cas échéant</span><span>Aucun témoin de suivi</span><span>© ${annee} ${esc(site.nom)}${lignesIdentite ? ` · ${lignesIdentite}` : ""}</span></p>
   </div>
 </footer>`;
 }
@@ -147,7 +146,9 @@ function barreMobile(cta) {
   if (!cta) return "";
   return `<div class="barre-mobile" data-barre-mobile aria-hidden="true">
   <a class="bouton" href="${cta.href}" tabindex="-1" data-evenement="${cta.evenement || "clic_devis"}">${cta.libelle}</a>
-  <a class="barre-mobile__secondaire" href="mailto:${site.courriel}" tabindex="-1" data-evenement="clic_courriel" title="Écrire un courriel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
+  ${site.telephone
+    ? `<a class="barre-mobile__secondaire" href="tel:${esc(site.telephoneLien)}" tabindex="-1" data-evenement="clic_telephone" title="Appeler le ${esc(site.telephone)}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.6l1.4 4.1-2 1.5a12.5 12.5 0 0 0 6.3 6.3l1.5-2 4.1 1.4v2.6a1.6 1.6 0 0 1-1.7 1.6C11.5 18.6 5.4 12.5 5 5.2a1.6 1.6 0 0 1 1.6-1.7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>`
+    : `<a class="barre-mobile__secondaire" href="mailto:${site.courriel}" tabindex="-1" data-evenement="clic_courriel" title="Écrire un courriel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>`}
 </div>`;
 }
 
@@ -165,7 +166,9 @@ function barreMobile(cta) {
  */
 export function gabarit(p) {
   const url = site.url + p.chemin;
-  const titreComplet = p.chemin === "/" ? p.titre : `${p.titre} | LD SOLUTIONS`;
+  // Le nom suit le titre seulement s'il tient dans les 70 caractères affichés par les moteurs de recherche
+  const avecNom = `${p.titre} | ${site.nom}`;
+  const titreComplet = p.chemin === "/" || avecNom.length > 70 ? p.titre : avecNom;
   const jsonld = (p.jsonld || []).map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n");
   const cta = p.cta === undefined ? { href: "/contact/?type=creation", libelle: "Demander un devis" } : p.cta;
   return `<!doctype html>
@@ -179,7 +182,7 @@ ${p.noindex ? '<meta name="robots" content="noindex, follow">' : `<link rel="can
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CA">
-<meta property="og:site_name" content="LD SOLUTIONS">
+<meta property="og:site_name" content="Leonel Djikeleng">
 <meta property="og:title" content="${esc(p.ogTitre || titreComplet)}">
 <meta property="og:description" content="${esc(p.description)}">
 <meta property="og:url" content="${esc(url)}">

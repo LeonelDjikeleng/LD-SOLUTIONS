@@ -1,6 +1,6 @@
 # Grille tarifaire recommandée — analyse interne
 
-Statut : **grille validée par LD SOLUTIONS le 10 octobre 2026.** Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
+Statut : **grille validée par Leonel Djikeleng le 10 octobre 2026.** Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
 
 Source unique dans le code : `src/content/offres.mjs`. Toute modification s'y fait, et se répercute sur toutes les pages, l'estimateur et les données structurées.
 
@@ -12,7 +12,7 @@ Source unique dans le code : `src/content/offres.mjs`. Toute modification s'y fa
 | Taux horaire effectif visé | 70 à 85 $/h | Bas de la fourchette « pigiste senior » observée (75-125 $/h), cohérent pour une entreprise qui lance son portfolio |
 | Taux affiché hors forfait | 85 $/h, par tranche de 15 min | |
 | Coûts directs par projet | ≈ 0 à 30 $ | Outils gratuits ou déjà payés ; l'hébergement et le domaine sont payés par le client |
-| Coûts fixes mensuels estimés | 40 à 80 $ | Hébergement du site LD SOLUTIONS, domaine, outils (voir `08-couts-recurrents.md`) |
+| Coûts fixes mensuels estimés | 40 à 80 $ | Hébergement de son propre site, domaine, outils (voir `08-couts-recurrents.md`) |
 | Temps non facturable | ≈ 30 % | Prospection, appels, devis, administration |
 
 ## 2. Création de sites
@@ -62,7 +62,7 @@ Prix fixes pour ce qui est maîtrisé (pages, rédaction, formulaire avancé, re
 | Lancement −10 % | 1 490 / 2 990 / 5 900 $ | 1 341 / 2 691 / 5 310 $ | 149 / 299 / 590 $ | Signé au plus tard le 31 mars 2027 + accord pour présenter le projet | Date réelle, l'offre disparaît du site automatiquement après | Taux effectif ≈ 61-76 $/h ; contrepartie : un portfolio réel |
 | Maintenance annuelle | 12 mois | 10 mois | 98 à 458 $ | Paiement annuel d'avance | Permanente | Trésorerie avancée, baisse du taux de départ |
 
-Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. Grille et offre de lancement **validées par LD SOLUTIONS le 10 octobre 2026**.
+Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. Grille et offre de lancement **validées par Leonel Djikeleng le 10 octobre 2026**.
 
 ## 7. Modalités de paiement
 
@@ -73,7 +73,7 @@ Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places invent
 
 ## 8. Taxes
 
-Les prix sont affichés **avant taxes**. Si LD SOLUTIONS est inscrite à la TPS/TVQ (obligatoire au-delà de 30 000 $ de ventes taxables sur quatre trimestres consécutifs, selon la règle du petit fournisseur), la TPS (5 %) et la TVQ (9,975 %) s'ajoutent. **À confirmer** avec votre statut fiscal ; la mention « taxes en sus, le cas échéant » couvre les deux situations.
+Les prix sont affichés **avant taxes**. Si Leonel Djikeleng est inscrit à la TPS/TVQ (obligatoire au-delà de 30 000 $ de ventes taxables sur quatre trimestres consécutifs, selon la règle du petit fournisseur), la TPS (5 %) et la TVQ (9,975 %) s'ajoutent. **À confirmer** avec votre statut fiscal ; la mention « taxes en sus, le cas échéant » couvre les deux situations.
 
 ## 9. Ce qui ferait changer la grille
 

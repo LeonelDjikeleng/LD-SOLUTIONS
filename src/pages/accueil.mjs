@@ -89,7 +89,7 @@ const corps = `
     <div class="entete-section">
       ${surtitre("Démonstrations")}
       <h2 id="titre-demos">Ce que nous construisons, montré honnêtement.</h2>
-      <p class="intro">LD SOLUTIONS démarre. Plutôt que d'afficher des logos de clients que nous n'avons pas encore, voici trois démonstrations conçues pour des entreprises fictives. Chacune répond à un vrai problème de son secteur.</p>
+      <p class="intro">L'entreprise démarre. Plutôt que d'afficher des logos de clients que nous n'avons pas encore, voici trois démonstrations conçues pour des entreprises fictives. Chacune répond à un vrai problème de son secteur.</p>
     </div>
     ${demonstrations()}
     <p class="mt-6"><a class="lien-fleche" href="/demonstrations/">Voir les choix derrière chaque démonstration ${fleche}</a></p>
@@ -128,7 +128,7 @@ const corps = `
       <h2 id="titre-engagements">Ce sur quoi vous pouvez compter.</h2>
     </div>
     ${engagements()}
-    <div class="encadre-verite"><p><strong>Pourquoi aucun témoignage sur cette page ?</strong> LD SOLUTIONS lance ses activités. Nous n'inventons ni avis, ni chiffres, ni logos de clients. Les premiers témoignages apparaîtront quand de vrais clients les auront écrits. D'ici là, jugez sur pièces : nos démonstrations, notre <a href="/audit/">diagnostic express offert</a> et la clarté de nos prix.</p></div>
+    <div class="encadre-verite"><p><strong>Pourquoi aucun témoignage sur cette page ?</strong> L'entreprise lance ses activités. Nous n'inventons ni avis, ni chiffres, ni logos de clients. Les premiers témoignages apparaîtront quand de vrais clients les auront écrits. D'ici là, jugez sur pièces : nos démonstrations, notre <a href="/audit/">diagnostic express offert</a> et la clarté de nos prix.</p></div>
   </div>
 </section>
 
@@ -148,13 +148,13 @@ ${appelFinal()}
 
 export default {
   chemin: "/",
-  titre: "LD SOLUTIONS · Sites web pour PME : création, refonte, maintenance",
+  titre: "Leonel Djikeleng · Création et refonte de sites web, Québec",
   description: "Sites web pour PME et entrepreneurs du Québec : création dès 1 490 $, refonte, audit et maintenance dès 49 $ par mois. Prix publiés, réponse sous 2 jours ouvrables.",
   navActif: "accueil",
   corps,
   jsonld: [
     jsonldOrganisation(),
-    { "@context": "https://schema.org", "@type": "WebSite", name: "LD SOLUTIONS", url: site.url + "/", inLanguage: "fr-CA", publisher: { "@id": site.url + "/#entreprise" } },
+    { "@context": "https://schema.org", "@type": "WebSite", name: "Leonel Djikeleng", url: site.url + "/", inLanguage: "fr-CA", publisher: { "@id": site.url + "/#entreprise" } },
     faqJsonLd(FAQ_ACCUEIL),
   ],
 };

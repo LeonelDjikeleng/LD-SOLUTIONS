@@ -392,7 +392,7 @@ export function jsonldOrganisation() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": site.url + "/#entreprise",
-    name: "LD SOLUTIONS",
+    name: "Leonel Djikeleng",
     url: site.url + "/",
     email: site.courriel,
     logo: site.url + "/assets/img/apple-touch-icon.png",

@@ -1,4 +1,4 @@
-// Source unique des offres et des prix de LD SOLUTIONS.
+// Source unique des offres et des prix de Leonel Djikeleng.
 // Toutes les pages, l'estimateur et les données structurées lisent ce fichier :
 // un prix modifié ici est modifié partout. Montants en dollars canadiens, taxes en sus.
 // Analyse des coûts et des marges : docs/02-tarification.md
@@ -245,13 +245,13 @@ export const promotions = [
   {
     id: "lancement",
     titre: "Offre de lancement : 10 % sur la création",
-    texte: "10 % de rabais sur les offres de création pour les projets signés au plus tard le 31 mars 2027, en échange de votre accord pour présenter le projet comme réalisation de LD SOLUTIONS.",
+    texte: "10 % de rabais sur les offres de création pour les projets signés au plus tard le 31 mars 2027, en échange de votre accord pour présenter le projet comme réalisation de Leonel Djikeleng.",
     pourcentage: 10,
     conditions: "Projet signé au plus tard le 31 mars 2027. Présentation du projet soumise à votre approbation du contenu publié.",
     // Date réelle de fin : l'offre disparaît automatiquement du site après cette date (vérifiée à la construction et dans le navigateur).
     finLe: "2027-03-31",
     actif: true,
-    aValider: false, // validée par LD SOLUTIONS le 10 octobre 2026
+    aValider: false, // validée par Leonel Djikeleng le 10 octobre 2026
   },
 ];
 

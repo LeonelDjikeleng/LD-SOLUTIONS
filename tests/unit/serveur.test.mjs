@@ -62,7 +62,7 @@ before(async () => {
   const config = {
     dossierPublic, https: false, adminHashMotDePasse: hacherMotDePasse(MDP), delaiMinimumMs: 2500,
     smtp: { hote: "127.0.0.1", port: smtp.port, securise: false, utilisateur: "", motDePasse: "" },
-    courrielExpediteur: "LD SOLUTIONS <site@exemple.ca>", courrielNotification: "ldjikeleng@gmail.com",
+    courrielExpediteur: "Leonel Djikeleng <site@exemple.ca>", courrielNotification: "ldjikeleng@gmail.com",
     envoyerAccuse: true, limiteDemandes: { nombre: 100, fenetreMs: 60_000 },
   };
   const courrielleur = creerCourrielleur({ ...config, smtp: { ...config.smtp } }, null);

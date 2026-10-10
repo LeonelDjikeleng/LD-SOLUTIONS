@@ -28,8 +28,8 @@ h1 em{font-style:normal;color:#0f4d3a}
 .b{position:absolute;left:80px;bottom:60px;background:#0f4d3a;color:#fff;font-weight:600;font-size:22px;padding:16px 30px;border-radius:999px}
 .g{position:absolute;right:62px;top:50%;transform:translateY(-50%);z-index:2}
 </style></head><body><div class="c">
-<div class="m">${monogramme(54, "#0f4d3a", "#a8844a")}LD <span>SOLUTIONS</span></div>
-<p class="k">Créer · Améliorer · Entretenir · Québec</p>
+<div class="m">${monogramme(54, "#0f4d3a", "#a8844a")}Leonel Djikeleng <span>SITES WEB · QUÉBEC</span></div>
+<p class="k">Créer · Améliorer · Entretenir</p>
 <h1>Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
 <div class="b">Prix publiés, dès 1 490 $</div>
 <div class="g">${monogramme(176, "#0f4d3a", "#a8844a")}</div></div></body></html>`;

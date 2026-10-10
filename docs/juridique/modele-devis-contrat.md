@@ -1,4 +1,4 @@
-# Modèle de devis-contrat · LD SOLUTIONS
+# Modèle de devis-contrat · Leonel Djikeleng
 
 > Base de travail à faire valider (voir `00-fiche-et-points-a-valider.md`). Remplacez les [crochets]. Les prix doivent correspondre exactement à `src/content/offres.mjs` et à la page Tarifs, sauf mention d'un rabais ou d'un avenant.
 
@@ -7,7 +7,7 @@
 **DEVIS-CONTRAT N° [AAAA-NNN]**
 Date : [date] · Valable jusqu'au : [date + 30 jours] · Référence de la demande : [LD-AAMMJJ-XXXXX]
 
-**Prestataire** : Leonel Djikeleng, entreprise individuelle faisant affaire sous le nom LD SOLUTIONS, [NEQ], [adresse], ldjikeleng@gmail.com, [téléphone]. N° TPS / TVQ : [s'il y a lieu].
+**Prestataire** : Leonel Djikeleng, travailleur autonome, [adresse], ldjikeleng@gmail.com, 418 255-7236. N° TPS / TVQ : [s'il y a lieu].
 **Client** : [raison sociale], [NEQ s'il y a lieu], [adresse], représenté par [nom, fonction], [courriel], [téléphone]. Le client déclare agir dans le cadre de son entreprise : ☐ oui ☐ non (consommateur : utiliser le modèle consommateur validé par l'avocat).
 
 ## 1. Contexte et objectif
@@ -60,22 +60,22 @@ Nombre de rondes incluses : **[2 / 3 / 3 + 1 finale]**. Une ronde = l'ensemble d
 | **Total** | **[montant] $** |
 
 Échéancier : [50/50 · 40/40/20 · 30/40/30] : [montant] à la signature (réserve la période de production et couvre la planification et le démarrage), [montant] à la validation de la maquette, [montant] avant la mise en ligne.
-Factures payables dans les 15 jours, par virement Interac à [adresse] ou par lien de paiement sécurisé. Intérêts sur les sommes en retard : 1 % par mois, soit 12 % par année. Après un avis écrit resté sans effet pendant 10 jours, LD SOLUTIONS peut suspendre les travaux.
+Factures payables dans les 15 jours, par virement Interac à [adresse] ou par lien de paiement sécurisé. Intérêts sur les sommes en retard : 1 % par mois, soit 12 % par année. Après un avis écrit resté sans effet pendant 10 jours, Leonel Djikeleng peut suspendre les travaux.
 
 ## 8. Propriété
-Nom de domaine, hébergement et comptes au nom du client. Au paiement complet, cession au client des droits d'auteur sur les éléments créés spécifiquement pour lui ; licence perpétuelle, non exclusive et gratuite sur les outils préexistants de LD SOLUTIONS intégrés au site. Présentation du projet comme réalisation : ☐ autorisée ☐ non autorisée ☐ autorisée après approbation du contenu publié.
+Nom de domaine, hébergement et comptes au nom du client. Au paiement complet, cession au client des droits d'auteur sur les éléments créés spécifiquement pour lui ; licence perpétuelle, non exclusive et gratuite sur les outils préexistants de Leonel Djikeleng intégrés au site. Présentation du projet comme réalisation : ☐ autorisée ☐ non autorisée ☐ autorisée après approbation du contenu publié.
 
 ## 9. Renseignements personnels
-Le site du client recueille : [ex. nom, courriel, téléphone, détails de demande]. LD SOLUTIONS les traite uniquement pour réaliser et entretenir le site, selon les instructions du client. Fournisseurs utilisés : [hébergeur, service de courriel] ; localisation : [lieux]. Le client demeure responsable de sa politique de confidentialité ; LD SOLUTIONS en fournit un modèle adapté au site.
+Le site du client recueille : [ex. nom, courriel, téléphone, détails de demande]. Leonel Djikeleng les traite uniquement pour réaliser et entretenir le site, selon les instructions du client. Fournisseurs utilisés : [hébergeur, service de courriel] ; localisation : [lieux]. Le client demeure responsable de sa politique de confidentialité ; Leonel Djikeleng en fournit un modèle adapté au site.
 
 ## 10. Maintenance après la mise en ligne
 ☐ Aucune ☐ Essentielle 49 $/mois ☐ Professionnelle 119 $/mois ☐ Prioritaire 229 $/mois · ☐ mensuel ☐ annuel. [Si promotion « 3 mois offerts » : maintenance Essentielle offerte du [date] au [date], puis 49 $/mois sauf avis contraire du client 30 jours avant.] Voir l'entente de maintenance.
 
 ## 11. Conditions de service
-Le client reconnaît avoir reçu et lu les conditions de service de LD SOLUTIONS (version du [date], jointes en PDF et publiées à [URL]/conditions-de-service/), qui font partie du présent contrat. ☐ (case à cocher par le client)
+Le client reconnaît avoir reçu et lu les conditions de service de Leonel Djikeleng (version du [date], jointes en PDF et publiées à [URL]/conditions-de-service/), qui font partie du présent contrat. ☐ (case à cocher par le client)
 
 ## 12. Signatures
 Pour le client : __________________ Nom : ______ Date : ______
-Pour LD SOLUTIONS : __________________ Nom : ______ Date : ______
+Pour Leonel Djikeleng : __________________ Nom : ______ Date : ______
 
 **Annexe A** : liste du contenu à fournir. **Annexe B** : arborescence des pages (si plus de 7 pages).

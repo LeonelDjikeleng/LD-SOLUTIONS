@@ -1,5 +1,5 @@
 /* =========================================================================
-   LD SOLUTIONS · système visuel v3 « Le sur-mesure »
+   Leonel Djikeleng · système visuel v3 « Le sur-mesure »
    Blanc dominant, vert sapin pour l'action, une pointe de laiton.
    Une seule police, Geist, pour les titres et le texte. Conçu d'abord pour le téléphone.
    Voir docs/11-diagnostic-v3.md et docs/01-strategie.md §9.
@@ -215,8 +215,8 @@ body.a-defile .entete::before { border-bottom-color: var(--filet); }
 .entete__barre { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--e-4); }
 .logo { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; min-height: 44px; color: var(--vert); }
 .logo svg { width: 34px; height: 34px; flex: none; }
-.logo__texte { font-family: var(--f-titre); font-weight: 700; font-size: 1.3rem; line-height: 1; letter-spacing: -0.03em; color: var(--encre); }
-.logo__texte span { font-family: var(--f-texte); font-weight: 600; font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--graphite); margin-left: 0.2rem; vertical-align: 0.3em; }
+.logo__texte { display: grid; gap: 0.28rem; font-family: var(--f-titre); font-weight: 600; font-size: 1.12rem; line-height: 1; letter-spacing: -0.03em; color: var(--encre); white-space: nowrap; }
+.logo__texte span { font-family: var(--f-texte); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--graphite); }
 .nav-principale { display: none; }
 .nav-principale ul { list-style: none; display: flex; gap: 0.15rem; align-items: center; }
 .nav-principale a {

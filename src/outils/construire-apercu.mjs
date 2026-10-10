@@ -9,7 +9,7 @@ const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..
 const dist = path.join(racine, "dist");
 const sortie = path.join(racine, "dist-apercu");
 const EXCLUS = new Set(["/merci/"]);
-const TITRE_PRINCIPAL = "Site LD SOLUTIONS";
+const TITRE_PRINCIPAL = "Site Leonel Djikeleng";
 
 const lire = (f) => fs.readFileSync(path.join(dist, f), "utf8");
 const police = (f) => "data:font/woff2;base64," + fs.readFileSync(path.join(dist, "assets/fonts", f)).toString("base64");
@@ -44,7 +44,7 @@ function lienApercu(href) {
   return connus.has(chemin) ? plat(chemin) + m[2] : href;
 }
 
-const BANDEAU = `<div class="bandeau-apercu">Aperçu privé du site LD SOLUTIONS · les formulaires seront actifs à la mise en ligne définitive</div>`;
+const BANDEAU = `<div class="bandeau-apercu">Aperçu privé du site Leonel Djikeleng · les formulaires seront actifs à la mise en ligne définitive</div>`;
 
 fs.rmSync(sortie, { recursive: true, force: true });
 fs.mkdirSync(sortie, { recursive: true });

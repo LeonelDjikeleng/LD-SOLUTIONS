@@ -41,7 +41,7 @@ Aucune hausse de conversion n'est annoncée : ces indicateurs serviront de point
 
 ### 3 à 6 mois
 - Version anglaise si la demande le justifie (en gardant le français au moins aussi complet).
-- Fiche Google Business Profile si LD SOLUTIONS y est admissible (rencontres en personne, adresse vérifiable) ; demander des avis réels aux clients satisfaits.
+- Fiche Google Business Profile si l'entreprise y est admissible (rencontres en personne, adresse vérifiable) ; demander des avis réels aux clients satisfaits.
 - Paiement en ligne pour l'audit complet (lien de paiement), si les demandes d'audit sont régulières.
 - Page sectorielle supplémentaire seulement pour un segment qui a déjà produit des clients.
 - Revue de sécurité et de dépendances ; test de restauration trimestriel.

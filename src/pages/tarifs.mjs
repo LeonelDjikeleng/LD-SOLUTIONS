@@ -13,8 +13,8 @@ const lancementActif = lancement && promotionActive(lancement);
 export const FAQ_PRIX = [
   { q: "Pourquoi ne pas proposer un site à 500 $ ?", r: "<p>À ce prix, un site se résume à un gabarit rempli rapidement, sans réflexion sur vos clients ni vérification du formulaire. Nos prix rémunèrent la conception, les tests et la mise en ligne. Si votre budget est serré, la formule Départ résout l'essentiel et peut évoluer ensuite.</p>" },
   { q: "Le prix peut-il changer en cours de projet ?", r: "<p>Le prix écrit dans le devis signé est fixe pour le périmètre décrit. Il ne change que si vous demandez quelque chose de nouveau (une page, une fonction) : nous vous envoyons alors un avenant chiffré, que vous acceptez ou non, avant tout travail.</p>" },
-  { q: "Puis-je payer en plusieurs fois ?", r: "<p>Oui : chaque formule est payée en 2 ou 3 étapes liées à l'avancement (signature, maquette, mise en ligne). Paiement par virement Interac ou par lien de paiement sécurisé. Aucune carte bancaire n'est conservée par LD SOLUTIONS.</p>" },
-  { q: "Les taxes sont-elles incluses ?", r: "<p>Non : les prix sont affichés avant taxes. La TPS et la TVQ s'ajoutent si LD SOLUTIONS y est inscrite au moment de la facturation ; le devis indique toujours le montant total exact.</p>" },
+  { q: "Puis-je payer en plusieurs fois ?", r: "<p>Oui : chaque formule est payée en 2 ou 3 étapes liées à l'avancement (signature, maquette, mise en ligne). Paiement par virement Interac ou par lien de paiement sécurisé. Aucune carte bancaire n'est conservée par Leonel Djikeleng.</p>" },
+  { q: "Les taxes sont-elles incluses ?", r: "<p>Non : les prix sont affichés avant taxes. La TPS et la TVQ s'ajoutent si Leonel Djikeleng y est inscrit au moment de la facturation ; le devis indique toujours le montant total exact.</p>" },
   { q: "Pourquoi ne puis-je pas payer directement sur le site ?", r: "<p>Parce qu'un site se construit avec votre contenu et vos objectifs : un appel de 30 minutes et un devis écrit évitent les malentendus. Vous payez après avoir signé un document qui décrit précisément ce que vous recevez.</p>" },
 ];
 
@@ -163,7 +163,7 @@ ${appelFinal()}
 export default {
   chemin: "/tarifs/",
   titre: "Tarifs : création de site web, refonte, maintenance",
-  description: "Tous les prix de LD SOLUTIONS : sites web dès 1 490 $, audit 390 $, maintenance dès 49 $ par mois. Estimateur en ligne, périmètres écrits, taxes en sus.",
+  description: "Tous les prix de Leonel Djikeleng : sites web dès 1 490 $, audit 390 $, maintenance dès 49 $ par mois. Estimateur en ligne, périmètres écrits, taxes en sus.",
   navActif: "tarifs",
   cta: { href: "#estimateur", libelle: "Estimer mon projet", evenement: "clic_offre" },
   estimateur: true,

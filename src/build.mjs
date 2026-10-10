@@ -75,7 +75,7 @@ Disallow: /merci/
 Sitemap: ${site.url}/sitemap.xml
 `);
 fs.writeFileSync(path.join(dist, "site.webmanifest"), JSON.stringify({
-  name: "LD SOLUTIONS", short_name: "LD SOLUTIONS", lang: "fr-CA", start_url: "/", display: "browser",
+  name: "Leonel Djikeleng · Sites web", short_name: "Djikeleng", lang: "fr-CA", start_url: "/", display: "browser",
   background_color: "#ffffff", theme_color: "#ffffff",
   icons: [{ src: "/assets/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" }, { src: "/assets/img/favicon.svg", sizes: "any", type: "image/svg+xml" }],
 }, null, 2));

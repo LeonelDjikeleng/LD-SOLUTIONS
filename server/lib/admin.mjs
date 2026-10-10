@@ -24,9 +24,9 @@ function lireCookies(req) {
 function page(titre, corps, { session } = {}) {
   return `<!doctype html>
 <html lang="fr-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>${e(titre)} · Administration LD SOLUTIONS</title>
+<meta name="robots" content="noindex, nofollow"><title>${e(titre)} · Administration Leonel Djikeleng</title>
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/admin.css"></head>
-<body><header class="a-entete"><a href="/admin" class="a-logo">LD SOLUTIONS <span>administration</span></a>
+<body><header class="a-entete"><a href="/admin" class="a-logo">Leonel Djikeleng <span>administration</span></a>
 ${session ? `<nav><a href="/admin">Demandes</a><a href="/admin/mesures">Mesures</a><a href="/admin/export.csv">Export CSV</a>
 <form method="post" action="/admin/deconnexion"><input type="hidden" name="csrf" value="${e(session.jeton_csrf)}"><button type="submit">Se déconnecter</button></form></nav>` : ""}
 </header><main class="a-main">${corps}</main></body></html>`;
@@ -116,7 +116,7 @@ ${message ? `<p class="a-erreur" role="alert">${e(message)}</p>` : ""}
 <dt>Reçue le</dt><dd>${e(dateLocale(d.cree_le))}</dd>
 <dt>Nom</dt><dd>${e(d.nom)}</dd>
 ${d.entreprise ? `<dt>Entreprise</dt><dd>${e(d.entreprise)}</dd>` : ""}
-<dt>Courriel</dt><dd><a href="mailto:${e(d.courriel)}?subject=${encodeURIComponent("Votre demande " + d.reference + " · LD SOLUTIONS")}">${e(d.courriel)}</a></dd>
+<dt>Courriel</dt><dd><a href="mailto:${e(d.courriel)}?subject=${encodeURIComponent("Votre demande " + d.reference + " · Leonel Djikeleng")}">${e(d.courriel)}</a></dd>
 ${d.telephone ? `<dt>Téléphone</dt><dd><a href="tel:${e(d.telephone.replace(/[^0-9+]/g, ""))}">${e(d.telephone)}</a></dd>` : ""}
 ${d.secteur ? `<dt>Secteur</dt><dd>${e(d.secteur)}</dd>` : ""}
 ${d.site_actuel ? `<dt>Site actuel</dt><dd><a href="${e(d.site_actuel)}" rel="noopener noreferrer nofollow" target="_blank">${e(d.site_actuel)}</a></dd>` : ""}

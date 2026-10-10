@@ -1,4 +1,4 @@
-// LD SOLUTIONS : interactions communes. Le contenu et les liens fonctionnent sans ce script.
+// Leonel Djikeleng : interactions communes. Le contenu et les liens fonctionnent sans ce script.
 (function () {
   "use strict";
   var doc = document.documentElement;

@@ -150,7 +150,7 @@
 
     function mailtoSecours() {
       var lignes = ["Type : " + typeCourant(), "Nom : " + form.elements.nom.value, "Entreprise : " + form.elements.entreprise.value, "Téléphone : " + form.elements.telephone.value, "", form.elements.message.value];
-      return "mailto:ldjikeleng@gmail.com?subject=" + encodeURIComponent("Demande depuis le site LD SOLUTIONS") + "&body=" + encodeURIComponent(lignes.join("\n"));
+      return "mailto:ldjikeleng@gmail.com?subject=" + encodeURIComponent("Demande depuis le site Leonel Djikeleng") + "&body=" + encodeURIComponent(lignes.join("\n"));
     }
 
     form.addEventListener("submit", function (e) {

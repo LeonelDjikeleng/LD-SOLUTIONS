@@ -1,4 +1,4 @@
-# LD SOLUTIONS — Stratégie du site (phases A à C)
+# Leonel Djikeleng — Stratégie du site (phases A à C)
 
 Document de travail interne. Il synthétise les sept compétences consultées et sert de référence pour toutes les décisions du site. Date : 10 octobre 2026.
 
@@ -37,11 +37,11 @@ Document de travail interne. Il synthétise les sept compétences consultées et
 
 | Information | Source | Fiabilité |
 |---|---|---|
-| Nom commercial : LD SOLUTIONS | Mandat | Confirmée |
+| Nom affiché : Leonel Djikeleng (le nom commercial « LD SOLUTIONS » du mandat est abandonné pour le moment) | Décision du client, 10 octobre 2026 | Confirmée |
 | Courriel officiel : ldjikeleng@gmail.com | Mandat | Confirmée |
 | Activités : créer, améliorer, entretenir des sites web | Mandat | Confirmée |
 | Marché géographique | Réponse du 10 octobre 2026 | Confirmée : Québec ; établissement dans la région de Québec |
-| Statut juridique | Réponse de Leonel Djikeleng (10 octobre 2026) | Confirmée : entreprise individuelle de Leonel Djikeleng, nom d'affaires LD SOLUTIONS |
+| Statut juridique | Réponse de Leonel Djikeleng (10 octobre 2026) | Confirmée : entreprise individuelle exploitée sous les prénom et nom de Leonel Djikeleng, sans immatriculation pour le moment |
 | NEQ, adresse d'affaires | — | Manquants |
 | Nom de domaine | — | Aucun choisi pour le moment |
 | Hébergement | Recommandation acceptée (« le meilleur possible ») | VPS OVHcloud à Beauharnois (Québec), à souscrire |
@@ -153,7 +153,7 @@ Choix assumés :
 
 **RECOMMANDATION : pas de paiement direct sur le site au lancement.**
 - Les offres de création dépendent du contenu et des besoins : un achat immédiat créerait des malentendus de périmètre (Maître 2.0 §18-19).
-- Le flux recommandé : demande → appel → devis-contrat signé → facture d'acompte payable par virement Interac ou par lien de paiement (Stripe Payment Links ou Square, sans développement, aucune carte stockée par LD SOLUTIONS).
+- Le flux recommandé : demande → appel → devis-contrat signé → facture d'acompte payable par virement Interac ou par lien de paiement (Stripe Payment Links ou Square, sans développement, aucune carte stockée par Leonel Djikeleng).
 - Candidat futur au paiement direct : l'**Audit complet** (prix fixe, périmètre fermé). À activer seulement quand le compte de paiement existe ; rien n'est simulé sur le site.
 
 ---

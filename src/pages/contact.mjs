@@ -6,7 +6,7 @@ import { esc } from "../gabarit.mjs";
 const ARIANE = [{ nom: "Accueil", href: "/" }, { nom: "Contact", href: "/contact/" }];
 
 const contactsOptionnels = [
-  site.telephone ? `<li><a class="lien-fleche" href="tel:${esc(site.telephone.replace(/[^0-9+]/g, ""))}" data-evenement="clic_telephone">Appeler le ${esc(site.telephone)}</a></li>` : "",
+  site.telephone ? `<li><a class="lien-fleche" href="tel:${esc(site.telephoneLien)}" data-evenement="clic_telephone">Appeler le ${esc(site.telephone)}</a></li>` : "",
   site.whatsapp ? `<li><a class="lien-fleche" href="https://wa.me/${esc(site.whatsapp)}" rel="noopener" data-evenement="clic_whatsapp">Écrire sur WhatsApp</a></li>` : "",
   site.lienRendezVous ? `<li><a class="lien-fleche" href="${esc(site.lienRendezVous)}" rel="noopener">Réserver un appel de 30 minutes</a></li>` : "",
 ].join("");
@@ -14,7 +14,7 @@ const contactsOptionnels = [
 const contact = {
   chemin: "/contact/",
   titre: "Contact et demande de projet",
-  description: "Demandez un devis, un audit, une maintenance ou posez une question à LD SOLUTIONS. Réponse sous 2 jours ouvrables. Courriel : ldjikeleng@gmail.com.",
+  description: "Demandez un devis, un audit, une maintenance ou posez une question à Leonel Djikeleng. Réponse sous 2 jours ouvrables. Courriel : ldjikeleng@gmail.com.",
   navActif: "contact",
   cta: null,
   formulaire: true,
@@ -56,7 +56,7 @@ ${heroPage({
 const merci = {
   chemin: "/merci/",
   titre: "Demande enregistrée",
-  description: "Votre demande a bien été enregistrée par LD SOLUTIONS.",
+  description: "Votre demande a bien été enregistrée par Leonel Djikeleng.",
   noindex: true,
   cta: null,
   corps: `

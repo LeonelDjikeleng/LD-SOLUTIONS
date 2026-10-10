@@ -8,7 +8,7 @@ ${heroPage({
   arianeItems: ARIANE,
   surtitreTexte: "À propos",
   titre: "Un partenaire web, pas un fournisseur de pages.",
-  intro: "LD SOLUTIONS accompagne les PME, les entrepreneurs et les travailleurs autonomes dans la création, l'amélioration et l'entretien de leur site web. Notre mesure du succès est simple : votre site vous aide-t-il à obtenir des clients ?",
+  intro: "Leonel Djikeleng accompagne les PME, les entrepreneurs et les travailleurs autonomes dans la création, l'amélioration et l'entretien de leur site web. Notre mesure du succès est simple : votre site vous aide-t-il à obtenir des clients ?",
   boutons: `<a class="bouton" href="/contact/?type=discussion" data-evenement="clic_devis">Discuter de mon projet ${fleche}</a>`,
 })}
 
@@ -28,9 +28,9 @@ ${heroPage({
 ${site.exploitant ? `<section class="section section--blanc section--compacte" aria-labelledby="titre-qui">
   <div class="conteneur">
     <div class="deux-colonnes deux-colonnes--5-7">
-      <div>${surtitre("Qui est derrière LD SOLUTIONS")}<h2 id="titre-qui">Un seul interlocuteur, du premier appel à l'entretien.</h2></div>
+      <div>${surtitre("Qui est derrière ce site")}<h2 id="titre-qui">Un seul interlocuteur, du premier appel à l'entretien.</h2></div>
       <div class="prose">
-        <p>LD SOLUTIONS est l'entreprise de ${site.exploitant}. Vous travaillez directement avec la personne qui conçoit, construit et entretient votre site : pas d'intermédiaire, pas de transfert de dossier entre plusieurs équipes.</p>
+        <p>Je m'appelle ${site.exploitant}. Vous travaillez directement avec moi : je conçois, construis et entretiens votre site moi-même. Pas d'intermédiaire, pas de dossier qui passe d'une équipe à l'autre.</p>
         <p>Ce fonctionnement a une conséquence pratique : le nombre de projets menés en même temps est limité, pour que chaque demande reçoive une réponse sous 2 jours ouvrables et que chaque site soit testé avant sa mise en ligne.</p>
       </div>
     </div>
@@ -84,8 +84,8 @@ ${appelFinal()}
 
 export default {
   chemin: "/a-propos/",
-  titre: "À propos de LD SOLUTIONS",
-  description: "LD SOLUTIONS crée, améliore et entretient des sites web pour les PME du Québec. Notre approche, nos principes et nos engagements vérifiables.",
+  titre: "À propos de Leonel Djikeleng",
+  description: "Leonel Djikeleng crée, améliore et entretient des sites web pour les PME du Québec. Notre approche, nos principes et nos engagements vérifiables.",
   navActif: "a-propos",
   cta: { href: "/contact/?type=discussion", libelle: "Discuter de mon projet" },
   corps,

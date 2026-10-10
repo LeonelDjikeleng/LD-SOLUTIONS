@@ -1,4 +1,4 @@
-/* Administration LD SOLUTIONS : sobre, lisible, utilisable au téléphone. */
+/* Administration Leonel Djikeleng : sobre, lisible, utilisable au téléphone. */
 :root { --encre: #0a2e23; --nuit: #121a16; --trait: #d7bc8a; --bleu: #0f4d3a; --calque: #f8f7f3; --gris: #56605b; --bord: #e2e7e3; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--calque); color: var(--nuit); font-size: 16px; line-height: 1.5; }

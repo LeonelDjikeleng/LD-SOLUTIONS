@@ -56,7 +56,7 @@ function json(res, statut, objet) {
 function pageErreurFormulaire(erreurs, courriel) {
   const items = Object.values(erreurs).map((m) => `<li>${echapperHtml(m)}</li>`).join("");
   return `<!doctype html><html lang="fr-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex"><title>Demande incomplète · LD SOLUTIONS</title><link rel="stylesheet" href="/assets/css/site.css"></head>
+<meta name="robots" content="noindex"><title>Demande incomplète · Leonel Djikeleng</title><link rel="stylesheet" href="/assets/css/site.css"></head>
 <body><main class="section"><div class="conteneur conteneur--etroit"><div class="message-formulaire message-formulaire--erreur" role="alert">
 <h1>Votre demande n'a pas été envoyée</h1><p>Il manque des informations :</p><ul>${items}</ul>
 <p>Utilisez le bouton « Retour » de votre navigateur pour compléter le formulaire (vos réponses sont normalement conservées), <a href="/contact/">ouvrez un nouveau formulaire</a> ou écrivez-nous à <a href="mailto:${echapperHtml(courriel)}">${echapperHtml(courriel)}</a>.</p>

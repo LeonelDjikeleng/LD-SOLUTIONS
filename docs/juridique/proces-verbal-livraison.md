@@ -2,7 +2,7 @@
 
 **Projet** : [nom] · **Devis-contrat** : [N°] · **Date de livraison** : [date] · **Adresse du site** : [URL]
 
-## Vérifications réalisées par LD SOLUTIONS avant livraison
+## Vérifications réalisées par Leonel Djikeleng avant livraison
 - [ ] Toutes les pages du périmètre présentes et accessibles
 - [ ] Affichage vérifié sur téléphone (360 et 390 px), tablette et ordinateur, sans débordement
 - [ ] Formulaires testés : demande enregistrée, notification reçue à [adresse], message de confirmation correct
@@ -24,4 +24,4 @@
 
 Les demandes nouvelles ne relevant pas d'un défaut suivent la procédure d'avenant. La période de corrections incluse ([30 / 60] jours) court à partir de la mise en ligne.
 
-Client : __________________ Date : ______ · LD SOLUTIONS : __________________ Date : ______
+Client : __________________ Date : ______ · Leonel Djikeleng : __________________ Date : ______

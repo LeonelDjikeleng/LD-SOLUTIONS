@@ -1,6 +1,6 @@
-# LD SOLUTIONS · site web
+# Leonel Djikeleng · site web
 
-Site commercial de LD SOLUTIONS : création, amélioration et maintenance de sites web pour les PME du Québec.
+Site commercial de Leonel Djikeleng (entreprise individuelle, sans nom commercial) : création, amélioration et maintenance de sites web pour les PME du Québec.
 Français (fr-CA), mobile d'abord, aucun témoin de suivi, formulaires réellement enregistrés, administration des demandes.
 
 ## Démarrer en local
@@ -62,4 +62,4 @@ docs/                       ← stratégie, tarifs, déploiement, rapports, juri
 
 ## Licences
 
-Code et contenus : © LD SOLUTIONS. Police Geist : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).
+Code et contenus : © Leonel Djikeleng. Police Geist : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).

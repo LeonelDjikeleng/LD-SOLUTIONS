@@ -15,4 +15,4 @@
 
 Les autres conditions du devis-contrat restent inchangées. Le travail commence après l'acceptation écrite (signature ou courriel « J'accepte l'avenant n° [n] »).
 
-Client : __________________ Date : ______ · LD SOLUTIONS : __________________ Date : ______
+Client : __________________ Date : ______ · Leonel Djikeleng : __________________ Date : ______
