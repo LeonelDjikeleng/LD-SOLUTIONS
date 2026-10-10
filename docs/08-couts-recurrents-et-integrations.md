@@ -18,7 +18,11 @@ Estimations à confirmer chez chaque fournisseur ; aucune n'a été souscrite.
 | Outil de rendez-vous (Cal.com, Calendly) | 0 à 15 $ par mois | Facultatif | |
 | **Total minimal** | **≈ 8 à 20 $ par mois** + domaine | | |
 
-## 2. Intégrations
+## 2. Aperçu en ligne (gratuit, sans souscription)
+
+En attendant le nom de domaine et l'hébergement, une version d'aperçu est publiée comme page privée sur claude.ai : https://claude.ai/artifact/VXHE5XCtpQp2MMiyzADZKp. Mêmes 18 pages et même design ; les formulaires y affichent qu'ils seront actifs à la mise en ligne (aucun serveur derrière, rien n'est envoyé). Régénérer : `npm run apercu`, puis republier `dist-apercu/`. La page est privée : partagez-la depuis son menu « Partager » si quelqu'un d'autre doit la voir.
+
+## 3. Intégrations
 
 | Intégration | État | Ce qui manque |
 |---|---|---|

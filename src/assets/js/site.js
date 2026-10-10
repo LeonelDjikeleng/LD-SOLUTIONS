@@ -8,7 +8,7 @@
   /* ---------- Mesure anonyme (sans témoin, sans identifiant) ---------- */
   var chemin = location.pathname;
   function mesurer(nom) {
-    if (navigator.globalPrivacyControl) return;
+    if (navigator.globalPrivacyControl || window.LD_APERCU) return;
     var corps = JSON.stringify({ nom: nom, page: chemin });
     try {
       if (navigator.sendBeacon) navigator.sendBeacon("/api/evenements", new Blob([corps], { type: "text/plain" }));
@@ -106,6 +106,10 @@
         b.textContent = "Adresse copiée";
         mesurer("copie_courriel");
         setTimeout(function () { b.textContent = avant; }, 2200);
+      }).catch(function () {
+        // Copie refusée par le navigateur : on sélectionne l'adresse affichée à côté pour une copie manuelle
+        var texte = b.parentNode && b.parentNode.querySelector(".courriel-affiche");
+        if (texte && window.getSelection) { var r = document.createRange(); r.selectNodeContents(texte); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }
       });
     });
   });

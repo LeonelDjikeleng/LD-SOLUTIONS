@@ -15,6 +15,7 @@
     "test:e2e": "node src/build.mjs && node --test --test-concurrency=1 \"tests/e2e/*.test.mjs\"",
     "qa": "node tests/qa/capture.mjs http://127.0.0.1:3000/ qa-captures 360,390,768,1440",
     "check:prelaunch": "node src/verifier-prelancement.mjs",
+    "apercu": "node src/build.mjs && node src/outils/construire-apercu.mjs && node tests/qa/tester-apercu.mjs",
     "admin:mot-de-passe": "node server/scripts/hacher-mot-de-passe.mjs",
     "sauvegarde": "node --env-file-if-exists=.env server/scripts/sauvegarde.mjs",
     "purger": "node --env-file-if-exists=.env server/scripts/purger.mjs"

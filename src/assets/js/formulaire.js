@@ -156,6 +156,15 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!valider()) return;
+      // Version d'aperçu (sans serveur) : rien n'est envoyé, et on le dit clairement.
+      if (window.LD_APERCU) {
+        afficherMessage(
+          "<p><strong>Aperçu du site : cette demande n'a pas été envoyée.</strong> Les formulaires seront actifs dès la mise en ligne définitive.</p>" +
+          "<p>Pour une vraie demande dès maintenant, écrivez à <strong>ldjikeleng@gmail.com</strong>.</p>",
+          "message-formulaire--erreur"
+        );
+        return;
+      }
       var donnees = {};
       new FormData(form).forEach(function (v, k) { if (typeof v === "string") donnees[k] = v; });
       boutonEnvoyer.disabled = true;

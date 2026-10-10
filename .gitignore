@@ -8,3 +8,4 @@ qa-captures/
 test-results/
 *.log
 .DS_Store
+dist-apercu/

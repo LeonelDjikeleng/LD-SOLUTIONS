@@ -205,7 +205,7 @@ strong { font-weight: 650; }
 
 /* ---------- En-tête ---------- */
 .entete {
-  position: sticky; top: 0; z-index: 50; height: var(--header-h);
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; height: var(--header-h);
   color: var(--texte-clair);
 }
 /* Le flou est sur un pseudo-élément : un parent avec backdrop-filter piégerait le menu en position fixe */
@@ -840,3 +840,6 @@ body.menu-ouvert { overflow: hidden; }
 .comparatif-details > summary::-webkit-details-marker { display: none; }
 .comparatif-details > summary::after { content: "+"; font-family: var(--f-mono); font-size: 1.2rem; }
 .comparatif-details[open] > summary::after { content: "−"; }
+
+/* Bandeau de la version d'aperçu (n'apparaît que dans l'aperçu) */
+.bandeau-apercu { background: var(--signal); color: var(--encre); font-size: 0.85rem; font-weight: 600; text-align: center; padding: 0.45rem var(--gouttiere); line-height: 1.35; }
