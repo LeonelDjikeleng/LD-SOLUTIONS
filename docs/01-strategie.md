@@ -176,18 +176,21 @@ PALETTE (tokens par rôle) :
   vert de nuit #0A2E23  appel final, pied de page, offre recommandée
   laiton       #A8844A  filets ; #82632F pour le texte ; #D7BC8A sur fond sombre
   encre        #121A16  texte ; graphite #56605B texte secondaire
-TYPOGRAPHIE : Bodoni Moda (didone à axe optique, titres en casse normale, mot clé en
-              italique vert) · Instrument Sans (texte). Licences OFL, hébergées.
+TYPOGRAPHIE : une seule police, Geist (linéale suisse, licence OFL, hébergée), pour
+              les titres et le texte. Titres en graisse 500, approche serrée ; mot clé
+              en vert ; grands chiffres en graisse légère. Choisie à la demande du
+              client (« premium et simple ») après comparaison avec Instrument Sans,
+              Hanken Grotesk et Inter Tight. Remplace Bodoni Moda + Instrument Sans.
 FORMES : boutons et pastilles en pilule, cartes aux coins doux (22 px), filets fins,
          une seule ombre douce (barre flottante, offre recommandée).
 DÉTAILS SIGNATURE :
-  1. Monogramme LD didone dans un cercle fin, le D en laiton.
-  2. Numéros de section en italique laiton, suivis d'un filet.
+  1. Monogramme LD au trait régulier dans un cercle fin, le D en laiton.
+  2. Numéros de section en laiton, suivis d'un filet.
   3. Point de couture : un pointillé laiton se coud sous chaque titre de section.
   4. Mesure vivante : un ruban de couturière mesure la largeur réelle de l'écran.
   5. Titre en rideau : les mots du titre principal montent un à un derrière un masque.
   6. Étiquette cousue au pied de page (« Conçu à Québec », prix, témoins, droits).
-MOBILE : tiroir de menu blanc à grandes entrées didones, sommaire en pastilles, fil de
+MOBILE : tiroir de menu blanc à grandes entrées, sommaire en pastilles, fil de
          lecture vert sous l'en-tête, barre flottante blanche à une seule action,
          carrousels natifs, en-tête qui s'efface en lisant.
 MOUVEMENT : opacité et position seulement ; tout est coupé si l'appareil demande moins

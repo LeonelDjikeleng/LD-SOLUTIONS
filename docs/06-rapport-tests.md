@@ -92,6 +92,16 @@ Parcours lus à la molette sur 390 px (script `tests/qa/parcours-mobile.mjs`) po
 
 Tests : 29 / 29 (serveur et validation) et 15 / 15 (bout en bout, dont axe-core). Défauts trouvés et corrigés pendant la refonte : contraste du laiton en petit texte (axe-core), texte visible à travers l'en-tête translucide (en-tête rendu opaque), flèche de lien isolée en bout de ligne, points séparateurs orphelins dans l'étiquette du pied de page, titre d'appel final avec un mot seul en dernière ligne, libellé « Le plus choisi pour une PME » remplacé par « Recommandée pour une PME » (le premier laissait entendre une statistique de ventes qui n'existe pas). Mesures avant/après détaillées dans `docs/11-diagnostic-v3.md`.
 
+## 4 quinquies. Police unique Geist (10 octobre 2026)
+
+| Page | Perf. | Access. | Bonnes pratiques | SEO | LCP | CLS | TBT | Poids |
+|---|---|---|---|---|---|---|---|---|
+| Accueil (3 mesures) | 93 à 100 | 100 | 100 | 100 | 1,3 à 1,4 s | 0 | 80 à 330 ms | 60 Ko |
+| Tarifs | 100 | 100 | 100 | 100 | 1,4 s | 0 | 80 ms | 62 Ko |
+| Contact | 100 | 100 | 100 | 100 | 1,3 s | 0 | 0 ms | 60 Ko |
+
+Le temps de blocage de l'accueil varie d'une mesure à l'autre sur la machine de test (animations d'entrée et démonstration au téléphone) ; deux mesures sur trois donnent 100. Tests : 29 / 29 et 15 / 15.
+
 ## 5. Revue visuelle (Creative QA, Moi 2.0)
 
 Captures vérifiées à 390 et 1440 px (accueil, tarifs, contact, audit, démonstrations, secteur, administration) et script `qa_capture.mjs` de Moi 2.0 (360, 390, 768, 1440 : tout vert). Défauts trouvés et corrigés : bouton secondaire invisible sur fond sombre, annotations du hero qui chevauchaient le titre, texte surdimensionné dans une démo, estimateur collant qui masquait le contenu sur mobile, texte d'étape coupé, liens fléchés qui se repliaient mal.

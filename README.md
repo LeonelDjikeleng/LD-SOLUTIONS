@@ -62,4 +62,4 @@ docs/                       ← stratégie, tarifs, déploiement, rapports, juri
 
 ## Licences
 
-Code et contenus : © LD SOLUTIONS. Polices Bodoni Moda et Instrument Sans : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).
+Code et contenus : © LD SOLUTIONS. Police Geist : SIL Open Font License 1.1 (fichiers de licence dans `src/assets/fonts/`).

@@ -33,7 +33,7 @@ export function titreRideau(html) {
 
 export const esc = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-export const LOGO_SVG = `<svg class="monogramme" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><circle cx="17" cy="17" r="15.9" fill="none" stroke="currentColor" stroke-width=".9"/><path fill="currentColor" d="M8.4 10h2.5v12.85h5.1v.75H8.4z"/><path class="monogramme__d" fill="#A8844A" d="M17.1 10h2.5v13.6h-2.5zM19.6 10h1.1a6.8 6.8 0 0 1 0 13.6h-1.1v-.72h1.1a5 6.08 0 0 0 0-12.16h-1.1z"/></svg>`;
+export const LOGO_SVG = `<svg class="monogramme" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><circle cx="17" cy="17" r="15.9" fill="none" stroke="currentColor" stroke-width=".9"/><path fill="currentColor" d="M8.6 10h2.2v11.4h5.6v2.2H8.6z"/><path class="monogramme__d" fill="#A8844A" d="M17.6 10h2.2v13.6h-2.2zM19.8 10h.8a6.8 6.8 0 0 1 0 13.6h-.8v-2.2h.8a4.6 4.6 0 0 0 0-9.2h-.8z"/></svg>`;
 
 const NAV = [
   { href: "/creation-site-web/", libelle: "Créer", cle: "creation", detail: "01" },
@@ -190,9 +190,7 @@ ${p.noindex ? '<meta name="robots" content="noindex, follow">' : `<link rel="can
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-${/<h1\b[^>]*>[^]*?<em>[^]*?<\/h1>/.test(p.corps) ? '<link rel="preload" href="/assets/fonts/bodoni-moda-italique.woff2" as="font" type="font/woff2" crossorigin>' : ""}
+<link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css?v=${p.versions.css}">
 <script src="/assets/js/site.js?v=${p.versions.js}" defer></script>
 ${p.formulaire ? `<script src="/assets/js/formulaire.js?v=${p.versions.formulaire}" defer></script>` : ""}

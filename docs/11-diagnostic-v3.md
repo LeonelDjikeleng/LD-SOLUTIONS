@@ -77,6 +77,8 @@ Mesures prises sur la version 2 (« La planche », bleu de tirage) dans Chromium
 
 ---
 
+> **Révision du 10 octobre 2026 (demande du client : « une police premium et simple »).** Le didone Bodoni Moda est remplacé par **Geist**, une linéale suisse sobre, utilisée seule pour les titres et le texte. L'accent passe par la couleur (vert) au lieu de l'italique. Effet mesuré : poids d'une page divisé par 2,6 (environ 160 Ko → 60 Ko), affichage du titre principal en 1,3 à 1,4 s au lieu de 1,8 à 2,0 s.
+
 ## Concept de la v3 : « Le sur-mesure »
 
 Un site web conçu comme un vêtement sur mesure : on prend les mesures, on coupe, on ajuste, puis on entretient. Les trois piliers deviennent **Créer** (la coupe), **Améliorer** (les retouches) et **Entretenir** (le soin). Le vocabulaire visuel s'en inspire avec retenue : filets cousus, étiquette, ruban de mesure, monogramme LD.
