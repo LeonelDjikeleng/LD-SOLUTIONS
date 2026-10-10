@@ -194,6 +194,15 @@ DÉTAILS SIGNATURE :
 MOBILE : menu en tiroir depuis le bas (atteignable au pouce), offres et démonstrations
          en carrousels à défilement natif avec compteur, barre d'action flottante,
          transitions de page natives (View Transitions) en amélioration progressive.
+PAGES INTÉRIEURES (téléphone) :
+  - Sommaire collant « Sur cette page » : une rangée de pastilles construite à partir des
+    titres de la page (3 entrées minimum), la pastille active suit la lecture.
+  - En-tête qui s'efface quand on lit vers le bas et revient dès qu'on remonte.
+  - Listes de prix en lignes (nom, prix, statut) plutôt qu'en tableau large.
+  - Offres d'amélioration en carrousel, comme la création et la maintenance.
+  - Animations sobres : titres de section qui montent et trait qui se trace, cartes qui
+    arrivent en cascade (70 ms d'écart), questions de la FAQ qui s'ouvrent en douceur.
+    Tout est désactivé si l'appareil demande moins d'animations.
 FINITIONS : typographie française (espaces fines insécables avant : ; ! ? et dans les
             guillemets), chiffres tabulaires pour les prix, aucun mot orphelin dans les titres.
 ```

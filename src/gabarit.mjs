@@ -42,9 +42,54 @@ function entete(navActif) {
 </header>`;
 }
 
+// Libellés courts du sommaire collant (pastilles), par identifiant de titre de section.
+const SOMMAIRE = {
+  "titre-approche": "Approche", "titre-qui": "Qui", "titre-principes": "Principes", "titre-engagements-ap": "Engagements", "titre-methode-ap": "Méthode", "titre-pas": "Nos refus",
+  "titre-domaines": "Ce qu'on examine", "titre-formules-a": "Formules", "titre-apres": "Après l'audit", "titre-demande-a": "Demande", "titre-faq-a": "Questions",
+  "titre-types": "Types de sites", "titre-formules": "Formules", "titre-base": "Inclus", "titre-fournir": "À fournir", "titre-processus-c": "Étapes", "titre-limites": "Limites", "titre-faq-c": "Questions",
+  "titre-demo-toiture": "Toiture", "titre-demo-garage": "Garage", "titre-demo-conseil": "Cabinet-conseil", "titre-demo-vous": "Votre site",
+  "titre-faq-general": "Générales", "titre-faq-prix": "Prix", "titre-faq-creation": "Création", "titre-faq-refonte": "Refonte", "titre-faq-audit": "Audit", "titre-faq-maintenance": "Maintenance", "titre-faq-contrat": "Contrat",
+  "titre-roles": "Ce qui est couvert", "titre-formules-m": "Formules", "titre-demande-m": "Demande", "titre-faq-m": "Questions",
+  "titre-symptomes": "Problèmes", "titre-methode": "Méthode", "titre-offres-r": "Prix", "titre-faq-r": "Questions",
+  "titre-services": "Services", "titre-grille-options": "Prix", "titre-principe": "Principe",
+  "titre-t-creation": "Création", "titre-estimateur": "Estimateur", "titre-t-amelioration": "Refonte", "titre-t-maintenance": "Maintenance", "titre-t-options": "Options", "titre-t-promos": "Avantages", "titre-modalites": "Paiement", "titre-faq-t": "Questions",
+};
+const SOMMAIRE_PREFIXES = { "titre-pb-": "Constats", "titre-rep-": "Votre site", "titre-offre-": "Formule", "titre-faq-": "Questions" };
+
+const slug = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);
+
+/** Ajoute des identifiants aux titres de texte long (pages légales) et construit le sommaire collant. */
+function sommaire(corps, chemin) {
+  if (chemin === "/" || chemin === "/contact/") return corps;
+  // Pages légales : les intertitres de la prose reçoivent un identifiant
+  corps = corps.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, t) => `<h2 id="s-${slug(t)}">${t}</h2>`);
+  const entrees = [];
+  for (const m of corps.matchAll(/<h2 id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)) {
+    const [, id, titre] = m;
+    let libelle = SOMMAIRE[id];
+    if (!libelle) {
+      const prefixe = Object.keys(SOMMAIRE_PREFIXES).find((k) => id.startsWith(k));
+      if (prefixe) libelle = SOMMAIRE_PREFIXES[prefixe];
+    }
+    if (!libelle && id.startsWith("s-")) {
+      libelle = titre.replace(/<[^>]+>/g, "").replace(/^\s*\d+\.\s*/, "").trim();
+      if (libelle.length > 24 && libelle.includes(",")) libelle = libelle.split(",")[0];
+      if (libelle.length > 30) libelle = libelle.slice(0, 28).replace(/\s+\S*$/, "") + "…";
+    }
+    if (libelle) entrees.push({ id, libelle });
+  }
+  if (entrees.length < 3) return corps;
+  const nav = `<nav class="sommaire" aria-label="Sur cette page" data-sommaire>
+  <ol class="sommaire__liste">${entrees.map((e) => `<li><a href="#${e.id}">${esc(e.libelle)}</a></li>`).join("")}</ol>
+</nav>`;
+  const fin = corps.indexOf("</section>");
+  return fin === -1 ? corps : corps.slice(0, fin + 10) + "\n" + nav + corps.slice(fin + 10);
+}
+
 function libellePlanche(p) {
   if (p.chemin === "/") return "Accueil";
-  return String(p.titre).split(/\s[:·|]\s|,/)[0].trim().slice(0, 40);
+  const court = String(p.titre).split(/\s[:·|(]\s?|,/)[0].trim();
+  return court.length <= 40 ? court : court.slice(0, 40).replace(/\s+\S*$/, "");
 }
 
 function piedDePage(p) {
@@ -160,7 +205,7 @@ ${jsonld}
 <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 ${entete(p.navActif)}
 <main id="contenu" tabindex="-1">
-${p.corps}
+${sommaire(p.corps, p.chemin)}
 </main>
 ${piedDePage(p)}
 ${barreMobile(cta)}

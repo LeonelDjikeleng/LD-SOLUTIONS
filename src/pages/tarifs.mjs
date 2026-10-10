@@ -1,7 +1,7 @@
 import { creation, amelioration, maintenance, options, promotions, formatPrix, promotionActive, TAUX_HORAIRE } from "../content/offres.mjs";
 import { site } from "../content/site.config.mjs";
 import {
-  heroPage, surtitre, fleche, grilleCreation, grilleMaintenance, carteAmelioration, tableauOptions,
+  defilant, heroPage, surtitre, fleche, grilleCreation, grilleMaintenance, carteAmelioration, tableauOptions,
   promosHTML, faq, faqJsonLd, appelFinal, jsonldAriane, jsonldOrganisation,
 } from "../composants.mjs";
 import { esc } from "../gabarit.mjs";
@@ -108,8 +108,7 @@ ${heroPage({
 <section class="section section--clair" id="amelioration" aria-labelledby="titre-t-amelioration">
   <div class="conteneur">
     <div class="entete-section">${surtitre("Amélioration et refonte")}<h2 id="titre-t-amelioration">Pour les sites qui existent déjà.</h2></div>
-    <div class="offres offres--3">${amelioration.slice(0, 3).map(carteAmelioration).join("")}</div>
-    <div class="offres offres--2 mt-5">${amelioration.slice(3).map(carteAmelioration).join("")}</div>
+    ${defilant(amelioration.map(carteAmelioration).join(""), amelioration.length, "Offres d'amélioration", "offres")}
   </div>
 </section>
 

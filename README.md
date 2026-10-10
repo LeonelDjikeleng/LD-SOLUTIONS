@@ -16,7 +16,7 @@ Pour activer l'administration en local : `npm run admin:mot-de-passe`, copier la
 
 ```bash
 npm test               # 29 tests serveur et validation (dont un vrai envoi SMTP vers un serveur de test)
-npm run test:e2e       # 14 scénarios dans Chromium : parcours, sans JavaScript, accessibilité axe-core, mobile
+npm run test:e2e       # 15 scénarios dans Chromium : parcours, sans JavaScript, accessibilité axe-core, mobile
 npm run check:prelaunch  # ce qui manque avant la mise en production
 ```
 

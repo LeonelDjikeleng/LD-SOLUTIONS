@@ -188,12 +188,11 @@ export function promosHTML({ ids } = {}) {
 
 export function tableauOptions() {
   const lignes = options.map((o) => {
-    const prix = o.statut === "inclus" ? "Inclus" : o.prix === null ? "Sur devis après étude" : `${o.prefixe ? o.prefixe.toLowerCase() + " " : ""}${formatPrix(o.prix)}${o.unite ? " " + o.unite : ""}`;
-    const statut = { disponible: "Prix fixe", etude: "Après étude", inclus: "Inclus" }[o.statut];
-    return `<tr><th scope="row">${esc(o.nom)}</th><td data-label="Prix">${esc(prix)}</td><td data-label="Modalité">${statut}</td></tr>`;
+    const prix = o.statut === "inclus" ? "Inclus" : o.prix === null ? "Sur devis" : `${o.prefixe ? "dès " : ""}${formatPrix(o.prix)}`;
+    const statut = { disponible: "Prix fixe", etude: "Après étude", inclus: "Inclus dans chaque site" }[o.statut];
+    return `<li><span class="liste-prix__nom">${esc(o.nom)}</span><span class="liste-prix__prix">${esc(prix)}${o.unite ? `<small>${esc(o.unite)}</small>` : ""}</span><span class="liste-prix__statut liste-prix__statut--${o.statut}">${statut}</span></li>`;
   }).join("");
-  return `<table class="comparatif"><caption class="visuellement-cache">Options et services complémentaires</caption>
-<thead><tr><th scope="col">Option</th><th scope="col">Prix (taxes en sus)</th><th scope="col">Modalité</th></tr></thead><tbody>${lignes}</tbody></table>`;
+  return `<ul class="liste-prix" aria-label="Options et services complémentaires, prix avant taxes">${lignes}</ul>`;
 }
 
 /* ---------- Processus ---------- */

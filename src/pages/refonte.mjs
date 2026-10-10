@@ -1,6 +1,6 @@
 import { amelioration } from "../content/offres.mjs";
 import {
-  heroPage, surtitre, fleche, carteAmelioration, faq, faqJsonLd, appelFinal, promosHTML,
+  defilant, heroPage, surtitre, fleche, carteAmelioration, faq, faqJsonLd, appelFinal, promosHTML,
   jsonldService, jsonldAriane,
 } from "../composants.mjs";
 
@@ -65,8 +65,7 @@ ${heroPage({
       <h2 id="titre-offres-r">Du diagnostic à la refonte complète.</h2>
       <p class="intro">Les montants sont avant taxes. L'audit complet est déduit de tout projet signé dans les 60 jours.</p>
     </div>
-    <div class="offres offres--3">${amelioration.slice(0, 3).map(carteAmelioration).join("")}</div>
-    <div class="offres offres--2 mt-5">${amelioration.slice(3).map(carteAmelioration).join("")}</div>
+    ${defilant(amelioration.map(carteAmelioration).join(""), amelioration.length, "Offres d'amélioration", "offres")}
     <div class="mt-6">${promosHTML({ ids: ["audit-credite"] })}</div>
     <div class="groupe-boutons mt-6"><a class="bouton" href="/audit/" data-evenement="clic_audit">Demander mon audit ${fleche}</a><a class="bouton bouton--contour" href="/contact/?type=discussion">Discuter de mon projet</a></div>
   </div>

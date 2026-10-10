@@ -64,6 +64,10 @@
   }
 
   /* ---------- Apparitions au défilement (seulement sous la ligne de flottaison) ---------- */
+  // Les titres de section et les éléments de listes se posent les uns après les autres.
+  var GROUPES = ".constats > li, .grille-cartes > *, .liste-etapes > li, .faq > details, .engagements > li, .promos > .promo, .processus > li, .liste-prix > li, .portes > a, .piliers > a, .piliers > div, .demo, .offre, .carte-simple.isolee";
+  document.querySelectorAll("main .section .entete-section").forEach(function (el) { el.classList.add("revele"); });
+  document.querySelectorAll(GROUPES).forEach(function (el) { if (!el.closest(".hero")) el.classList.add("revele"); });
   var reveles = document.querySelectorAll(".revele");
   if ("IntersectionObserver" in window && reveles.length) {
     var hauteur = window.innerHeight;
@@ -71,11 +75,12 @@
       entrees.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("est-visible"); obs.unobserve(en.target); }
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    reveles.forEach(function (el, i) {
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
+    reveles.forEach(function (el) {
       if (!reduit && el.getBoundingClientRect().top > hauteur) {
         el.classList.add("revele--attente");
-        el.style.transitionDelay = (i % 4) * 70 + "ms";
+        var rang = Array.prototype.indexOf.call(el.parentNode.children, el);
+        if (rang > 0) el.style.transitionDelay = Math.min(rang, 5) * 70 + "ms";
       } else {
         el.classList.add("est-visible");
       }
@@ -83,6 +88,51 @@
     });
   } else {
     reveles.forEach(function (el) { el.classList.add("est-visible"); });
+  }
+
+  /* ---------- En-tête qui s'efface en descendant, revient en remontant (téléphone, tablette) ---------- */
+  var petitEcran = window.matchMedia("(max-width: 1079px)");
+  var dernierY = window.scrollY, enAttente = false;
+  window.addEventListener("scroll", function () {
+    if (enAttente) return;
+    enAttente = true;
+    window.requestAnimationFrame(function () {
+      var y = window.scrollY, delta = y - dernierY;
+      var corps = document.body;
+      if (!petitEcran.matches || corps.classList.contains("menu-ouvert") || y < 90) corps.classList.remove("entete-masquee");
+      else if (delta > 6) corps.classList.add("entete-masquee");
+      else if (delta < -6) corps.classList.remove("entete-masquee");
+      dernierY = y;
+      enAttente = false;
+    });
+  }, { passive: true });
+  document.addEventListener("focusin", function (e) {
+    if (e.target.closest && e.target.closest(".entete")) document.body.classList.remove("entete-masquee");
+  });
+
+  /* ---------- Sommaire collant : la pastille active suit la lecture ---------- */
+  var sommaire = document.querySelector("[data-sommaire]");
+  if (sommaire && "IntersectionObserver" in window) {
+    var liens = Array.prototype.slice.call(sommaire.querySelectorAll("a"));
+    var liste = sommaire.querySelector(".sommaire__liste");
+    var cibles = liens.map(function (a) {
+      var titre = document.getElementById(a.getAttribute("href").slice(1));
+      return titre ? (titre.closest("section") && !titre.closest(".prose") ? titre.closest("section") : titre) : null;
+    });
+    var activer = function (i) {
+      liens.forEach(function (a, j) { if (j === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+      var a = liens[i];
+      if (a) liste.scrollTo({ left: a.offsetLeft - liste.clientWidth / 2 + a.offsetWidth / 2, behavior: reduit ? "auto" : "smooth" });
+    };
+    var obsS = new IntersectionObserver(function () {
+      // La section active est la dernière dont le haut a dépassé le premier tiers de l'écran
+      var limite = window.innerHeight * 0.35, actif = -1;
+      cibles.forEach(function (c, i) { if (c && c.getBoundingClientRect().top <= limite) actif = i; });
+      if (actif === -1) liens.forEach(function (a) { a.removeAttribute("aria-current"); });
+      else if (liens[actif].getAttribute("aria-current") !== "true") activer(actif);
+    }, { rootMargin: "-35% 0px -60% 0px", threshold: [0, 1] });
+    cibles.forEach(function (c) { if (c) obsS.observe(c); });
+    liens.forEach(function (a, i) { a.addEventListener("click", function () { activer(i); }); });
   }
 
   /* ---------- Barre d'action mobile : visible après le hero, masquée près des formulaires et du pied ---------- */
@@ -119,6 +169,7 @@
     var position = bloc.querySelector("[data-defilant-position]");
     var barre = bloc.querySelector("[data-defilant-barre]");
     var n = piste.children.length;
+    if (barre) barre.style.width = (100 / n) + "%";
     var maj = function () {
       var max = piste.scrollWidth - piste.clientWidth;
       var ratio = max > 0 ? piste.scrollLeft / max : 0;

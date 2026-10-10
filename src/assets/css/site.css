@@ -213,7 +213,7 @@ body { counter-reset: planche; }
 .entete { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 60; height: var(--header-h); color: var(--sur-plan); }
 .entete::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: rgba(14, 37, 99, 0.94); border-bottom: 1px solid var(--ligne-plan);
+  background: rgba(14, 37, 99, 0.975); border-bottom: 1px solid var(--ligne-plan);
   -webkit-backdrop-filter: blur(12px) saturate(140%); backdrop-filter: blur(12px) saturate(140%);
 }
 .entete__barre { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--e-4); }
@@ -910,7 +910,7 @@ body.menu-ouvert::after { content: ""; position: fixed; inset: 0; z-index: 57; b
 
 /* ---------- Apparitions au défilement (sous la ligne de flottaison seulement) ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  .js .revele--attente { opacity: 0; transform: translateY(14px); }
+  .js .revele--attente:not(.entete-section) { opacity: 0; transform: translateY(14px); }
   .js .revele--attente.est-visible { opacity: 1; transform: none; transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
 }
 
@@ -938,3 +938,85 @@ body.menu-ouvert::after { content: ""; position: fixed; inset: 0; z-index: 57; b
   body { background: #fff; color: #000; }
   .section--sombre, .sombre, .hero, .section--nuit, .pied { background: #fff !important; color: #000 !important; }
 }
+
+/* =========================================================================
+   Navigation et mouvement des pages intérieures
+   ========================================================================= */
+
+/* Sommaire collant : pastilles qu'on fait glisser, la pastille active suit la lecture */
+html:has(.sommaire) { scroll-padding-top: calc(var(--header-h) + 64px); }
+.sommaire {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--header-h)); z-index: 50;
+  background: rgba(238, 241, 243, 0.94); border-bottom: 1px solid var(--filet);
+  -webkit-backdrop-filter: blur(12px) saturate(140%); backdrop-filter: blur(12px) saturate(140%);
+  transition: transform var(--dur-m) var(--ease);
+}
+.sommaire__liste {
+  list-style: none; display: flex; gap: 0.4rem; margin: 0 auto; max-width: var(--largeur);
+  padding: 0.55rem var(--gouttiere); overflow-x: auto; scrollbar-width: none; scroll-padding-inline: var(--gouttiere);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+}
+.sommaire__liste::-webkit-scrollbar { display: none; }
+.sommaire__liste li { flex: none; }
+.sommaire a {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 0.95rem;
+  border: 1px solid var(--filet-fort); background: var(--feuille); color: var(--encre);
+  font-size: 0.86rem; font-weight: 500; white-space: nowrap; text-decoration: none;
+  transition: background-color var(--dur-s), color var(--dur-s), border-color var(--dur-s);
+}
+.sommaire a:active { transform: scale(0.97); }
+.sommaire a[aria-current="true"] { background: var(--encre); border-color: var(--encre); color: var(--feuille); }
+.sommaire a[aria-current="true"]::before { content: ""; width: 6px; height: 6px; background: var(--surligneur); margin-right: 0.5rem; }
+@media (hover: hover) { .sommaire a:not([aria-current="true"]):hover { border-color: var(--encre); } }
+
+/* En-tête qui s'efface en descendant et revient en remontant (téléphone et tablette) */
+@media (max-width: 1079px) {
+  .entete { transition: transform var(--dur-m) var(--ease); }
+  body.entete-masquee .entete { transform: translateY(calc(-100% - env(safe-area-inset-top, 0px))); }
+  body.entete-masquee .sommaire { transform: translateY(calc(-1 * var(--header-h))); }
+}
+
+/* Titres de section : ils se posent, puis un filet de cote se trace sous eux */
+.entete-section::after {
+  content: ""; display: block; height: 1px; margin-top: 1.5rem; max-width: 220px;
+  background: currentColor; opacity: 0.28; transform-origin: left center;
+}
+.entete-section--centre::after { margin-inline: auto; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .entete-section.revele--attente > * { opacity: 0; transform: translateY(18px); }
+  .js .entete-section.revele--attente::after { transform: scaleX(0); }
+  .js .entete-section.revele--attente.est-visible > * { opacity: 1; transform: none; transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+  .js .entete-section.revele--attente.est-visible > :nth-child(2) { transition-delay: 90ms; }
+  .js .entete-section.revele--attente.est-visible > :nth-child(3) { transition-delay: 180ms; }
+  .js .entete-section.revele--attente.est-visible::after { transform: scaleX(1); transition: transform 1200ms var(--ease) 250ms; }
+}
+
+/* Réponses qui se déplient en glissant (navigateurs récents ; ailleurs, ouverture directe) */
+@supports selector(::details-content) {
+  :root { interpolate-size: allow-keywords; }
+  .faq details::details-content, .offre details::details-content, .comparatif-details::details-content {
+    block-size: 0; overflow: clip;
+    transition: block-size 420ms var(--ease), content-visibility 420ms allow-discrete;
+  }
+  .faq details[open]::details-content, .offre details[open]::details-content, .comparatif-details[open]::details-content { block-size: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq details::details-content, .offre details::details-content, .comparatif-details::details-content { transition: none; }
+}
+
+/* Passage d'une page à l'autre : l'en-tête reste en place, le contenu se pose */
+.entete { view-transition-name: entete; }
+::view-transition-old(root) { animation: 160ms ease-in both vt-sortie; }
+::view-transition-new(root) { animation: 460ms var(--ease) both vt-entree; }
+@keyframes vt-sortie { to { opacity: 0; } }
+@keyframes vt-entree { from { opacity: 0; transform: translateY(16px); } }
+
+/* Liste de prix des options : un bordereau, pas des cartes */
+.liste-prix { list-style: none; display: grid; border-top: 1px solid var(--filet-fort); }
+.liste-prix li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.2rem var(--e-4); padding: 0.95rem 0; border-bottom: 1px solid var(--filet); align-items: baseline; }
+.liste-prix__nom { font-weight: 500; line-height: 1.35; }
+.liste-prix__prix { font-family: var(--f-mono); font-size: 0.92rem; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.liste-prix__prix small { display: block; font-size: 0.68rem; color: var(--graphite); letter-spacing: 0.04em; }
+.liste-prix__statut { grid-column: 1; font-family: var(--f-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--graphite); }
+.liste-prix__statut--etude { color: var(--trait); }
+.liste-prix__statut--inclus { color: var(--succes); }

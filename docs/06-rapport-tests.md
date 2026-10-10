@@ -7,7 +7,7 @@ Tous les résultats ci-dessous ont été **réellement exécutés** dans l'envir
 | Domaine | Résultat |
 |---|---|
 | Tests serveur et validation (`npm test`) | **29 / 29 réussis** |
-| Tests de bout en bout dans Chromium (`npm run test:e2e`) | **14 / 14 réussis** |
+| Tests de bout en bout dans Chromium (`npm run test:e2e`) | **15 / 15 réussis** |
 | Accessibilité axe-core (WCAG 2.1 A/AA, 18 pages) | **0 violation sérieuse ou critique** (1 contraste corrigé pendant les tests) |
 | Lighthouse mobile (local) | Performance **98 à 100**, Accessibilité **100**, Bonnes pratiques **100**, SEO **100** |
 | Débordement horizontal (320, 360, 390, 768, 1024, 1440 px) | **Aucun**, sur les 18 pages |
@@ -69,6 +69,16 @@ Poids compressés (Brotli) : HTML de l'accueil 8,9 Ko, CSS 10,8 Ko, JavaScript 1
 | Contact | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms | 141 Ko |
 
 Défaut trouvé et corrigé pendant la refonte : l'animation du téléphone de l'accueil recalculait les styles d'une vingtaine d'éléments à chaque image (≈ 500 ms de calcul sur un téléphone moyen, performance 88). Réécrite pour n'animer que l'opacité et la position : performance 99, blocage 0 ms. Un 14e test vérifie le tiroir de menu (bouton « Fermer », toucher sur le voile) et le compteur des carrousels.
+
+## 4 ter. Pages intérieures sur téléphone (mesures du 10 octobre 2026)
+
+| Page | Perf. | Access. | Bonnes pratiques | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|
+| Tarifs | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms |
+| Questions fréquentes | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms |
+| Création | 99 | 100 | 100 | 100 | 1,8 s | 0 | 0 ms |
+
+Parcours lus à la molette sur 390 px (script `tests/qa/parcours-mobile.mjs`) pour 12 pages : tarifs, FAQ, création, refonte, maintenance, audit, options, démonstrations, à propos, contact, secteur, confidentialité ; aucune erreur JavaScript. Un 15e test de bout en bout vérifie que chaque pastille du sommaire mène à une section existante, que la pastille active suit la lecture, que la section arrive sous le sommaire (pas cachée dessous) et que l'en-tête s'efface en lisant. Défauts trouvés et corrigés : libellé de cartouche coupé en plein mot (« Démonstrations de sites web (entreprises »), double parenthèse dans les heures ouvrables de la page Contact, texte visible à travers l'en-tête translucide.
 
 ## 5. Revue visuelle (Creative QA, Moi 2.0)
 

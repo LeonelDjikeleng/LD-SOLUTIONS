@@ -41,7 +41,7 @@ ${heroPage({
         ${contactsOptionnels ? `<ul class="mt-5">${contactsOptionnels}</ul>` : ""}
         <h3 class="mt-7 mb-5">Ce qui se passe ensuite</h3>
         <ol class="liste-etapes">
-          <li><span><strong>Réponse sous ${DELAI_REPONSE}</strong>, en heures ouvrables (${esc(site.heuresOuvrables)}).</span></li>
+          <li><span><strong>Réponse sous ${DELAI_REPONSE}</strong>, en heures ouvrables : ${esc(site.heuresOuvrables.replace(/^L/, "l"))}.</span></li>
           <li><span><strong>Appel découverte de 30 minutes</strong> si votre projet s'y prête, par téléphone ou en vidéo.</span></li>
           <li><span><strong>Proposition écrite</strong> : périmètre, prix, calendrier. Vous décidez ensuite, sans pression.</span></li>
         </ol>

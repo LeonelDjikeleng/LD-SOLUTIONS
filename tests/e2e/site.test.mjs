@@ -298,6 +298,26 @@ test("carrousels sur téléphone : glisser fait avancer le compteur, cote d'écr
   await ctx.close();
 });
 
+test("sommaire des pages : chaque pastille mène à une section existante, pastille active, en-tête masqué en lisant", async () => {
+  const { ctx, page } = await nouvellePage();
+  await page.goto(base + "/tarifs/");
+  const liens = page.locator("[data-sommaire] a");
+  assert.ok(await liens.count() >= 3);
+  for (const href of await liens.evaluateAll((as) => as.map((a) => a.getAttribute("href")))) {
+    assert.equal(await page.locator(href).count(), 1, `cible manquante : ${href}`);
+  }
+  await page.mouse.wheel(0, 900);
+  await page.waitForTimeout(500);
+  assert.equal(await page.evaluate(() => document.body.classList.contains("entete-masquee")), true);
+  const cible = await liens.nth(2).getAttribute("href");
+  await liens.nth(2).click();
+  await page.waitForTimeout(1200);
+  assert.equal(await page.locator(`[data-sommaire] a[href="${cible}"]`).getAttribute("aria-current"), "true");
+  const haut = await page.locator(cible).evaluate((el) => el.getBoundingClientRect().top);
+  assert.ok(haut > 0 && haut < 260, `section mal placée sous le sommaire (${haut}px)`);
+  await ctx.close();
+});
+
 test("mesure anonyme : pages vues comptées, aucun témoin déposé", async () => {
   const { ctx, page } = await nouvellePage();
   await page.goto(base + "/tarifs/");

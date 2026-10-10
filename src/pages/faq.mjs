@@ -31,12 +31,11 @@ ${heroPage({
   surtitreTexte: "Questions fréquentes",
   titre: "Les réponses, avant même de nous écrire.",
   intro: "Prix, délais, propriété du site, contrat, maintenance : si votre question n'est pas ici, écrivez-nous, nous l'ajouterons.",
-  boutons: GROUPES.map((g) => `<a class="bouton bouton--contour bouton--petit" href="#${g.id}">${g.titre}</a>`).join(""),
 })}
 ${GROUPES.map((g, i) => `
 <section class="section section--compacte ${i % 2 ? "section--blanc" : "section--clair"}" id="${g.id}" aria-labelledby="titre-faq-${g.id}">
   <div class="conteneur conteneur--etroit">
-    ${surtitre(String(i + 1).padStart(2, "0"))}
+    ${surtitre(`${g.items.length} questions`)}
     <h2 id="titre-faq-${g.id}" class="mb-5">${g.titre}</h2>
     ${faq(g.items)}
   </div>
