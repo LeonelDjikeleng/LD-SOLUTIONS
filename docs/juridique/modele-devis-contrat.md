@@ -51,7 +51,7 @@ Nombre de rondes incluses : **[2 / 3 / 3 + 1 finale]**. Une ronde = l'ensemble d
 ## 7. Prix et paiement
 | Élément | Montant |
 |---|---|
-| Formule [nom] | [1 490 / 2 990 / à partir de 5 900] $ |
+| Formule [nom] | [1 595 / 2 990 / à partir de 5 900] $ |
 | Options | [montants] |
 | Rabais [ex. offre de lancement 10 % sur la formule, projet signé au plus tard le 31 mars 2027, avec autorisation de présentation] | − [montant] $ |
 | **Sous-total** | **[montant] $** |
@@ -69,7 +69,7 @@ Nom de domaine, hébergement et comptes au nom du client. Au paiement complet, c
 Le site du client recueille : [ex. nom, courriel, téléphone, détails de demande]. Leonel Djikeleng les traite uniquement pour réaliser et entretenir le site, selon les instructions du client. Fournisseurs utilisés : [hébergeur, service de courriel] ; localisation : [lieux]. Le client demeure responsable de sa politique de confidentialité ; Leonel Djikeleng en fournit un modèle adapté au site.
 
 ## 10. Maintenance après la mise en ligne
-☐ Aucune ☐ Essentielle 49 $/mois ☐ Professionnelle 119 $/mois ☐ Prioritaire 229 $/mois · ☐ mensuel ☐ annuel. [Si promotion « 3 mois offerts » : maintenance Essentielle offerte du [date] au [date], puis 49 $/mois sauf avis contraire du client 30 jours avant.] Voir l'entente de maintenance.
+☐ Aucune ☐ Essentielle 69 $/mois ☐ Professionnelle 159 $/mois ☐ Prioritaire 269 $/mois · ☐ mensuel ☐ annuel. [Si promotion « 3 mois offerts » : maintenance Essentielle offerte du [date] au [date], puis 69 $/mois sauf avis contraire du client 30 jours avant.] Voir l'entente de maintenance.
 
 ## 11. Conditions de service
 Le client reconnaît avoir reçu et lu les conditions de service de Leonel Djikeleng (version du [date], jointes en PDF et publiées à [URL]/conditions-de-service/), qui font partie du présent contrat. ☐ (case à cocher par le client)

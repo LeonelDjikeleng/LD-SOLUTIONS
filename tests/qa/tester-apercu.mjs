@@ -46,7 +46,7 @@ await page.locator("#menu-mobile a", { hasText: "Tarifs" }).click();
 await page.waitForURL(/tarifs\.html/);
 await page.locator('label[for="est-depart"]').click();
 const total = (await page.locator("[data-total]").textContent()).replace(/\s/g, "");
-if (total !== "1490$") problemes.push("estimateur : total inattendu " + total);
+if (total !== "1595$") problemes.push("estimateur : total inattendu " + total);
 await page.goto(BASE + "contact.html");
 await page.fill("#fc-nom", "Essai Apercu");
 await page.fill("#fc-courriel", "essai@exemple.ca");

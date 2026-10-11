@@ -9,3 +9,12 @@ test-results/
 *.log
 .DS_Store
 dist-apercu/
+
+# Données commerciales et financières : jamais dans ce dépôt public (Loi 25)
+*CRM*.xlsx
+Growth-*.xlsx
+Finance-*.xlsx
+Grille-prix-*.xlsx
+*.xlsx
+*.csv
+!tests/**/*.csv

@@ -1,6 +1,6 @@
 # Grille tarifaire recommandée — analyse interne
 
-Statut : **grille validée par Leonel Djikeleng le 10 octobre 2026.** Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
+Statut : **grille validée par Leonel Djikeleng le 10 octobre 2026 ; prix alignés le 11 octobre 2026 sur son modèle financier** (`Finance-LD-SOLUTIONS.xlsx` : taux minimal 50 $/h, taux visé 75 $/h, marge cible 30 %, frais fixes ≈ 270 $/mois soit ≈ 6,94 $ par heure facturable ; règle retenue : prix au milieu entre le plancher et la cible, Départ fixé à 1 595 $ par décision de Leonel Djikeleng). Elle n'a pas été testée auprès de vrais prospects ; elle repose sur des prix publiés par des concurrents québécois (voir `01-strategie.md` §4) et sur des estimations de temps.
 
 Source unique dans le code : `src/content/offres.mjs`. Toute modification s'y fait, et se répercute sur toutes les pages, l'estimateur et les données structurées.
 
@@ -19,9 +19,11 @@ Source unique dans le code : `src/content/offres.mjs`. Toute modification s'y fa
 
 | Offre | Prix | Heures estimées | Taux effectif | Marché observé | Lecture |
 |---|---|---|---|---|---|
-| Départ (≤ 3 pages) | 1 490 $ | 18-22 h | 68-83 $/h | 800-1 500 $ pour 1-3 pages | Au niveau des offres « Essentiel » publiées, avec plus inclus (formulaire enregistré, Loi 25, tests) |
+| Départ (≤ 3 pages) | 1 595 $ | 18-22 h | 73-89 $/h | 800-1 500 $ pour 1-3 pages | Au niveau des offres « Essentiel » publiées, avec plus inclus (formulaire enregistré, Loi 25, tests) |
 | Professionnel (≤ 7 pages) | 2 990 $ | 38-42 h | 71-79 $/h | 2 500-3 000 $ pour 5-8 pages | Offre recommandée, cœur de la rentabilité |
 | Sur mesure (8-15 pages) | dès 5 900 $ | 70-80 h | 74-84 $/h | Agences boutiques nettement plus haut | Devis final après l'appel découverte |
+
+Professionnel (2 990 $) et Sur mesure (dès 5 900 $) restent inchangés le 11 octobre 2026 : ils sont compris entre le plancher et la cible du modèle financier (Professionnel, 40 h : 2 302 $ à 4 718 $ ; Sur mesure, 75 h : 4 296 $ à 8 815 $).
 
 **Pourquoi pas moins cher** : sous 1 200 $, le temps de conception sur mesure n'est plus rémunéré et le site attire des clients qui comparent seulement le prix (Sales 2.0 §13). **Pourquoi pas plus cher** : sans portfolio réel, un prix d'agence serait difficile à justifier ; la transparence et l'audit offert compensent l'absence de références.
 
@@ -34,20 +36,20 @@ Garde-fous de marge : nombre de pages et de rondes de révisions plafonné, cont
 | Diagnostic express | Offert | ≈ 45 min | — | Aimant à prospects pour les entreprises qui ont déjà un site ; sert aussi d'ouverture de prospection |
 | Audit complet | 390 $ | ≈ 5 h | ≈ 78 $/h | Porte d'entrée payante ; crédité sur projet signé → transforme l'audit en découverte payée |
 | Optimisation ciblée | 690 $ | 8 h | ≈ 86 $/h | Vente rapide après un audit |
-| Refonte visuelle | dès 2 490 $ | 30-34 h | 73-83 $/h | |
+| Refonte visuelle | dès 2 790 $ | 30-34 h | 82-93 $/h | Plancher 1 847 $, cible 3 782 $ (modèle financier, 32 h) |
 | Refonte complète | sur devis | — | — | Toujours précédée d'un audit |
 
 ## 4. Maintenance
 
 | Formule | Mois | An (12 pour 10) | Temps mensuel estimé | Taux | Commentaire |
 |---|---|---|---|---|---|
-| Essentielle | 49 $ | 490 $ | ≈ 45 min (automatisé en grande partie) | ≈ 65 $/h | Revenu récurrent de base |
-| Professionnelle | 119 $ | 1 190 $ | ≈ 1 h 45 (dont 1 h incluse) | ≈ 68 $/h | Recommandée |
-| Prioritaire | 229 $ | 2 290 $ | ≈ 3 h (dont 2 h incluses) | ≈ 76 $/h | Délai de réponse renforcé, en heures ouvrables seulement |
+| Essentielle | 69 $ | 690 $ | ≈ 45 min (automatisé en grande partie) | ≈ 92 $/h | Revenu récurrent de base ; plancher 48 $, cible 95 $ |
+| Professionnelle | 159 $ | 1 590 $ | ≈ 1 h 45 (dont 1 h incluse) | ≈ 91 $/h | Recommandée ; plancher 105 $, cible 212 $ |
+| Prioritaire | 269 $ | 2 690 $ | ≈ 3 h (dont 2 h incluses) | ≈ 90 $/h ; plancher 176 $, cible 358 $ | Délai de réponse renforcé, en heures ouvrables seulement |
 
 Engagements volontairement réalistes : surveillance **automatique** 24/7, mais intervention **en heures ouvrables** ; aucun « 99,9 % garanti », aucune sécurité absolue. Les heures incluses ne se cumulent pas (évite la dette d'heures).
 
-**Valeur récurrente** : 10 clients en Professionnelle = 1 190 $/mois. C'est l'objectif de rétention prioritaire (Vente 2.0 §28).
+**Valeur récurrente** : 10 clients en Professionnelle = 1 590 $/mois. C'est l'objectif de rétention prioritaire (Vente 2.0 §28).
 
 ## 5. Options
 
@@ -58,9 +60,9 @@ Prix fixes pour ce qui est maîtrisé (pages, rédaction, formulaire avancé, re
 | Promotion | Prix normal | Prix promo | Économie réelle | Conditions | Durée | Effet sur la marge |
 |---|---|---|---|---|---|---|
 | Audit crédité | 390 $ | 0 $ si projet signé | 390 $ | Projet signé dans les 60 jours | Permanente | Neutre : l'audit remplace la phase de découverte du projet |
-| Création + 3 mois d'entretien | 147 $ | 0 $ | 147 $ | Avec une création, maintenance démarrée à la mise en ligne | Permanente | ≈ 2 h offertes contre un revenu récurrent probable |
-| Lancement −10 % | 1 490 / 2 990 / 5 900 $ | 1 341 / 2 691 / 5 310 $ | 149 / 299 / 590 $ | Signé au plus tard le 31 mars 2027 + accord pour présenter le projet | Date réelle, l'offre disparaît du site automatiquement après | Taux effectif ≈ 61-76 $/h ; contrepartie : un portfolio réel |
-| Maintenance annuelle | 12 mois | 10 mois | 98 à 458 $ | Paiement annuel d'avance | Permanente | Trésorerie avancée, baisse du taux de départ |
+| Création + 3 mois d'entretien | 207 $ | 0 $ | 207 $ | Avec une création, maintenance démarrée à la mise en ligne | Permanente | ≈ 2 h offertes contre un revenu récurrent probable |
+| Lancement −10 % | 1 595 / 2 990 / 5 900 $ | 1 436 / 2 691 / 5 310 $ | 160 / 299 / 590 $ | Signé au plus tard le 31 mars 2027 + accord pour présenter le projet | Date réelle, l'offre disparaît du site automatiquement après | Taux effectif ≈ 64-80 $/h ; contrepartie : un portfolio réel |
+| Maintenance annuelle | 12 mois | 10 mois | 138 à 538 $ | Paiement annuel d'avance | Permanente | Trésorerie avancée, baisse du taux de départ |
 
 Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. Grille et offre de lancement **validées par Leonel Djikeleng le 10 octobre 2026**.
 

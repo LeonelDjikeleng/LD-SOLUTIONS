@@ -23,8 +23,8 @@ Mise à jour du 10 octobre 2026 après les réponses de Leonel Djikeleng. `npm r
 | 2 | **Souscription du VPS OVHcloud** : compte créé le 10 octobre 2026, abonnement pas encore pris | Mise en ligne ; si un autre hébergeur est choisi, la politique de confidentialité change | Oui |
 | 3 | Mot de passe d'application Gmail (dans le `.env` du serveur, jamais dans une conversation) | Notifications des demandes | Oui |
 | 4 | Immatriculation et NEQ | Plus nécessaire tant que l'activité est exercée sous « Leonel Djikeleng » seulement : la Loi sur la publicité légale des entreprises vise la personne qui exploite sous un nom qui ne comprend pas ses prénom et nom (à confirmer auprès du Registraire). Si un nom commercial (ex. « LD SOLUTIONS ») est utilisé plus tard, sur le site, une facture ou une carte, l'immatriculation redevient obligatoire | Non |
-| 5 | Adresse d'affaires (une case postale suffit) | Identification du commerçant | Non |
-| 6 | Statut TPS/TVQ | Mention exacte des taxes | Non |
+| 5 | ~~Adresse d'affaires~~ : **Case postale 202, Québec (Québec) G1E 2G4** (fournie le 11 octobre 2026) | Identification du commerçant | Réglé |
+| 6 | ~~Statut TPS/TVQ~~ : **non inscrit** (petit fournisseur, confirmé le 11 octobre 2026) | Mention exacte des taxes | Réglé |
 | 7 | WhatsApp, lien de rendez-vous (facultatifs) | Active les boutons correspondants | Non |
 | 8 | Vos vrais projets, avec l'accord des clients | Remplacer les démonstrations fictives par de vraies réalisations | Non |
 

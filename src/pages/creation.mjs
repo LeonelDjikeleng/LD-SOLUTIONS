@@ -132,8 +132,8 @@ ${appelFinal({ titre: "Votre futur site commence par un appel de 30 minutes." })
 
 export default {
   chemin: "/creation-site-web/",
-  titre: "Création de site web pour PME au Québec, dès 1 490 $",
-  description: "Création de sites web professionnels pour PME et entrepreneurs du Québec : mobile d'abord, rapides, formulaire de devis. Formules dès 1 490 $, périmètre écrit.",
+  titre: "Création de site web pour PME au Québec, dès 1 595 $",
+  description: "Création de sites web professionnels pour PME et entrepreneurs du Québec : mobile d'abord, rapides, formulaire de devis. Formules dès 1 595 $, périmètre écrit.",
   navActif: "creation",
   cta: { href: "/contact/?type=creation", libelle: "Créer mon site web" },
   corps,

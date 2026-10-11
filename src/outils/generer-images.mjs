@@ -31,7 +31,7 @@ h1 em{font-style:normal;color:#0f4d3a}
 <div class="m">${monogramme(54, "#0f4d3a", "#a8844a")}Leonel Djikeleng <span>SITES WEB · QUÉBEC</span></div>
 <p class="k">Créer · Améliorer · Entretenir</p>
 <h1>Un site web qui <em>travaille</em> pendant que vous travaillez.</h1>
-<div class="b">Prix publiés, dès 1 490 $</div>
+<div class="b">Prix publiés, dès 1 595 $</div>
 <div class="g">${monogramme(176, "#0f4d3a", "#a8844a")}</div></div></body></html>`;
 
 const icone = `<!doctype html><html><head><meta charset="utf-8">${base}</head><body style="width:180px;height:180px;display:grid;place-items:center;background:#0f4d3a">${monogramme(132, "#ffffff", "#d7bc8a")}</body></html>`;

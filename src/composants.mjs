@@ -341,7 +341,7 @@ export function formulaireDemande({ typeDefaut = "creation", typesVisibles = nul
       <div class="champ"><label for="${p}-plateforme">Plateforme <span class="facultatif">(si vous la connaissez)</span></label>
         <select id="${p}-plateforme" name="plateforme">${opt([["", "Choisir…"], ["wordpress", "WordPress"], ["wix", "Wix"], ["squarespace", "Squarespace"], ["shopify", "Shopify"], ["sur-mesure", "Développement sur mesure"], ["autre", "Autre"], ["inconnue", "Je ne sais pas"]])}</select></div>
       <div class="champ"><label for="${p}-niveau">Formule <span class="facultatif">(facultatif)</span></label>
-        <select id="${p}-niveau" name="niveau_maintenance">${opt([["", "Choisir…"], ["essentielle", "Essentielle · 49 $/mois"], ["professionnelle", "Professionnelle · 119 $/mois"], ["prioritaire", "Prioritaire · 229 $/mois"], ["conseil", "Conseillez-moi"]])}</select></div>
+        <select id="${p}-niveau" name="niveau_maintenance">${opt([["", "Choisir…"], ["essentielle", "Essentielle · 69 $/mois"], ["professionnelle", "Professionnelle · 159 $/mois"], ["prioritaire", "Prioritaire · 269 $/mois"], ["conseil", "Conseillez-moi"]])}</select></div>
     </div>
   </fieldset>
 

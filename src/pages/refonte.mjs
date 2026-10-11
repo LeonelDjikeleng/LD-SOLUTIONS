@@ -83,7 +83,7 @@ ${appelFinal({ titre: "Commençons par regarder votre site.", intro: "Le diagnos
 export default {
   chemin: "/refonte-amelioration/",
   titre: "Refonte et amélioration de site web au Québec",
-  description: "Refonte de site web, optimisation mobile, vitesse et conversion pour PME du Québec. Diagnostic express offert, audit complet 390 $ crédité, refonte dès 2 490 $.",
+  description: "Refonte de site web, optimisation mobile, vitesse et conversion pour PME du Québec. Diagnostic express offert, audit complet 390 $ crédité, refonte dès 2 790 $.",
   navActif: "refonte",
   cta: { href: "/audit/", libelle: "Améliorer mon site", evenement: "clic_audit" },
   corps,

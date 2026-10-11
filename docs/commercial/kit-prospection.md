@@ -13,7 +13,7 @@ Compétences appliquées : Prospecteur 2.0 (ciblage, messages, séquence, CRM), 
 | 🔥 A | Entrepreneurs et métiers (plomberie, électricité, toiture, rénovation, paysagement, nettoyage) | Pas de site ; site non lisible sur cellulaire ; numéro non cliquable ; licence RBQ absente ; formulaire cassé | Diagnostic express offert → Professionnel (2 990 $) |
 | 🔥 A | Services automobiles | Pas de prise de rendez-vous en ligne ; heures introuvables ; site lent | Diagnostic express → Professionnel + rendez-vous |
 | 🟠 B | Services professionnels / B2B | Site daté, discours générique, aucune méthode expliquée | Audit complet (390 $, crédité) → Professionnel ou Sur mesure |
-| 🟡 C | Restaurants, commerces | Site absent mais forte activité sur les réseaux | Départ (1 490 $) |
+| 🟡 C | Restaurants, commerces | Site absent mais forte activité sur les réseaux | Départ (1 595 $) |
 
 **Score rapide sur 100** (à inscrire dans le CRM) : besoin visible (0-30) + valeur d'un client pour eux (0-25) + décideur joignable (0-20) + capacité de payer probable (0-15) + proximité de saison (0-10). Contacter à partir de 60.
 
@@ -50,7 +50,7 @@ Objet conseillé : 3 à 7 mots, précis, sans piège.
 >
 > Votre fiche Google affiche [X] avis, mais aucun site web : quand un client veut voir vos services ou vous écrire le soir, il n'a nulle part où aller.
 >
-> Je crée des sites simples et rapides pour les entreprises comme la vôtre, à prix publié (dès 1 490 $, tout est détaillé sur [domaine]/tarifs/). Seriez-vous disponible 15 minutes jeudi ou vendredi pour voir si c'est pertinent pour vous ?
+> Je crée des sites simples et rapides pour les entreprises comme la vôtre, à prix publié (dès 1 595 $, tout est détaillé sur [domaine]/tarifs/). Seriez-vous disponible 15 minutes jeudi ou vendredi pour voir si c'est pertinent pour vous ?
 >
 > [Signature + désabonnement]
 
@@ -89,11 +89,11 @@ Objet conseillé : 3 à 7 mots, précis, sans piège.
 | Relance 3 (rupture) | J+14 | « Bonjour [Prénom], je ne veux pas encombrer votre boîte. Dois-je fermer le dossier, ou est-ce simplement le mauvais moment ? Dans les deux cas, merci de me le dire en un mot. » |
 | Mise en sommeil | après J+14 | Plus rien pendant environ 90 jours, puis une seule reprise avec un élément nouveau (saison, nouvelle observation). |
 
-Commandes CRM correspondantes (exemples) :
+Commandes CRM correspondantes (exemples). Le CRM vit dans `Documents\LD SOLUTIONS` sur l'ordinateur de Leonel Djikeleng, **jamais dans ce dépôt public** (il contient des renseignements personnels) :
 ```
-python3 scripts/crm.py interaction docs/commercial/Prospecteur-CRM.xlsx P-0001 --type "Premier contact" --canal Courriel --resume "Message A, site illisible sur cellulaire"
-python3 scripts/crm.py interaction docs/commercial/Prospecteur-CRM.xlsx P-0001 --type "Réponse du prospect" --canal Courriel --resultat "Réponse positive" --resume "Veut le diagnostic"
-python3 scripts/crm.py noncontact docs/commercial/Prospecteur-CRM.xlsx P-0001 --canal Courriel --portee entreprise --note "A répondu stop"
+python3 scripts/crm.py interaction Prospecteur-CRM.xlsx P-0001 --type "Premier contact" --canal Courriel --resume "Message A, site illisible sur cellulaire"
+python3 scripts/crm.py interaction Prospecteur-CRM.xlsx P-0001 --type "Réponse du prospect" --canal Courriel --resultat "Réponse positive" --resume "Veut le diagnostic"
+python3 scripts/crm.py noncontact Prospecteur-CRM.xlsx P-0001 --canal Courriel --portee entreprise --note "A répondu stop"
 ```
 (Le moteur `crm.py` est fourni par la compétence Prospecteur 2.0.)
 
@@ -116,7 +116,7 @@ python3 scripts/crm.py noncontact docs/commercial/Prospecteur-CRM.xlsx P-0001 --
 
 | Objection | Ce qu'elle peut signifier | Réponse | Prochaine action |
 |---|---|---|---|
-| « C'est trop cher. » | Valeur pas claire, budget réel plus bas, comparaison avec un gabarit | « Par rapport à quoi ? » puis rappeler ce qui est inclus et le prix d'un client gagné. Proposer de réduire le **périmètre** (Départ, moins de pages), pas le taux. | Si le budget est réellement < 1 490 $ : Départ plus tard, ou diagnostic seulement. |
+| « C'est trop cher. » | Valeur pas claire, budget réel plus bas, comparaison avec un gabarit | « Par rapport à quoi ? » puis rappeler ce qui est inclus et le prix d'un client gagné. Proposer de réduire le **périmètre** (Départ, moins de pages), pas le taux. | Si le budget est réellement < 1 595 $ : Départ plus tard, ou diagnostic seulement. |
 | « J'ai déjà quelqu'un. » | Satisfait, ou relation affective (« mon neveu ») | « Très bien. Le diagnostic express peut quand même vous servir avec lui. » | Offrir le diagnostic ; relance dans 90 jours. |
 | « Envoyez-moi de l'information. » | Politesse pour couper court, ou intérêt réel | « Avec plaisir. Pour vous envoyer ce qui vous concerne : votre priorité, c'est plus d'appels ou un site plus moderne ? » | Envoyer la page sectorielle correspondante + 1 constat précis. |
 | « Je dois réfléchir. » | Une crainte non dite | « Bien sûr. Qu'est-ce qui vous ferait hésiter : le prix, le moment, ou le résultat ? » | Date de suivi précise. |

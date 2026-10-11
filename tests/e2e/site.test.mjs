@@ -161,7 +161,7 @@ test("parcours A : estimateur → contact pré-rempli → demande enregistrée a
   await page.locator("#qte-page-sup").fill("2");
   await page.locator("#est-opt-rendez-vous").check();
   const total = await page.locator("[data-total]").textContent();
-  assert.equal(total.replace(/\s/g, ""), "2020$", "1 490 + 2 × 190 + 150");
+  assert.equal(total.replace(/\s/g, ""), "2125$", "1 595 + 2 × 190 + 150");
   await page.locator("[data-lien-devis]").click();
   await page.waitForURL(/\/contact\/\?/);
   assert.ok(await page.locator("[data-selection-estimateur]").isVisible());
