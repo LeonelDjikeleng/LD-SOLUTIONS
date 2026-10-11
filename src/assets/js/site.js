@@ -65,7 +65,7 @@
 
   /* ---------- Apparitions au défilement (seulement sous la ligne de flottaison) ---------- */
   // Les titres de section et les éléments de listes se posent les uns après les autres.
-  var GROUPES = ".constats > li, .grille-cartes > *, .liste-etapes > li, .faq > details, .engagements > li, .promos > .promo, .processus > li, .liste-prix > li, .portes > a, .piliers > a, .piliers > div, .demo, .offre, .carte-simple.isolee";
+  var GROUPES = ".constats > li, .grille-cartes > *, .liste-etapes > li, .faq > details, .engagements > li, .promos > .promo, .processus > li, .liste-prix > li, .portes > a, .piliers > a, .piliers > div, .demo, .offre, .carte-simple.isolee, .projets > a, .chiffres > li, .fiche-projet > div";
   document.querySelectorAll("main .section .entete-section").forEach(function (el) { el.classList.add("revele"); });
   document.querySelectorAll(GROUPES).forEach(function (el) { if (!el.closest(".hero")) el.classList.add("revele"); });
   var reveles = document.querySelectorAll(".revele");

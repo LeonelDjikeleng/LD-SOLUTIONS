@@ -26,7 +26,7 @@ npm run check:prelaunch  # ce qui manque avant la mise en production
 src/
   content/offres.mjs        ← SOURCE UNIQUE des prix et des offres (pages, estimateur, données structurées)
   content/site.config.mjs   ← identité, coordonnées, champs à compléter
-  pages/*.mjs               ← contenu des 20 pages
+  pages/*.mjs               ← contenu des 22 pages (dont Réalisations et l'étude de cas)
   composants.mjs, gabarit.mjs, build.mjs
   assets/                   ← CSS (tokens), JS (menu, formulaire, estimateur), polices OFL hébergées, images
 server/

@@ -60,6 +60,8 @@ for (const p of pages) {
     .replace(/<link rel="stylesheet" href="\/assets\/css\/site\.css\?v=[^"]+">/, `<meta name="robots" content="noindex, nofollow">\n<style>${css}</style>`)
     .replace(/<noscript><link rel="stylesheet" href="\/assets\/css\/sans-js\.css"><\/noscript>/, `<noscript><style>${cssSansJs}</style></noscript>`)
     .replace(/action="\/api\/demandes"/g, 'action="#"')
+    // Images du site intégrées dans la page (l'aperçu est publié sans dossier d'images)
+    .replace(/src="\/assets\/img\/([^"]+\.(webp|png|svg))"/g, (_, f, ext) => `src="data:image/${ext === "svg" ? "svg+xml" : ext};base64,${fs.readFileSync(path.join(dist, "assets/img", f)).toString("base64")}"`)
     .replace(/href="(\/[^"]*)"/g, (_, h) => `href="${lienApercu(h)}"`);
 
   const scriptsFin = `<script>window.LD_APERCU = true; document.documentElement.lang = "fr-CA";</script>\n` +

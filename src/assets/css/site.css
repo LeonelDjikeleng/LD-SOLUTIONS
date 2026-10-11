@@ -683,7 +683,7 @@ body.menu-ouvert::after { content: ""; position: fixed; inset: 0; z-index: 57; b
 .liste-etapes li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: var(--e-3); padding: var(--e-4) 0; border-bottom: 1px solid var(--ligne); }
 .liste-etapes li::before { counter-increment: le; content: counter(le, decimal-leading-zero); font-family: var(--f-titre); color: var(--dore); font-size: 1.05rem; line-height: 1.5; }
 
-.grille-cartes { display: grid; gap: 0; border-top: 1px solid var(--ligne-forte); }
+.grille-cartes { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--ligne-forte); }
 .carte-simple { padding: var(--e-5) 0; border-bottom: 1px solid var(--ligne); min-width: 0; }
 .carte-simple h3 { font-size: 1.32rem; margin-bottom: 0.5rem; }
 .carte-simple p { color: var(--texte-2); }
@@ -982,3 +982,62 @@ html:has(.sommaire) { scroll-padding-top: calc(var(--header-h) + 68px); }
   body { background: #fff; color: #000; }
   .appel-final, .pied, .offre--recommandee, .estimateur__total { background: #fff !important; --texte: #000; --texte-2: #333; --accent: #000; }
 }
+
+/* =========================================================================
+   Réalisations : portfolio et étude de cas
+   ========================================================================= */
+.projets { display: grid; gap: var(--e-4); }
+.projet {
+  display: grid; min-width: 0; overflow: hidden; color: var(--texte); text-decoration: none;
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--r-carte);
+  transition: transform var(--dur-m) var(--ease), box-shadow var(--dur-m) var(--ease), border-color var(--dur-m);
+}
+.projet__visuel { background: var(--sauge); padding: 1rem 1rem 0; overflow: hidden; }
+.projet__visuel img { width: 100%; height: auto; border-radius: 12px 12px 0 0; box-shadow: 0 20px 40px -24px rgba(10, 46, 35, 0.45); transition: transform var(--dur-l) var(--ease); }
+.projet__texte { display: grid; gap: var(--e-3); align-content: start; padding: 1.6rem 1.5rem 1.4rem; }
+.projet__k { font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.projet h3 { font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem); letter-spacing: -0.035em; }
+.projet p { margin: 0; color: var(--texte-2); }
+.projet .lien-fleche { justify-self: start; }
+.projet--vide { border-style: dashed; border-color: var(--filet-fort); background: transparent; }
+@media (hover: hover) {
+  .projet:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -32px rgba(10, 46, 35, 0.35); border-color: var(--filet-fort); }
+  .projet:hover .projet__visuel img { transform: translateY(-6px); }
+}
+@media (min-width: 900px) {
+  .projets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projet--vedette { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; }
+  .projet--vedette .projet__visuel { padding: 2rem 0 0 2rem; align-self: stretch; display: flex; align-items: flex-end; }
+  .projet--vedette .projet__texte { padding: 2rem 2.25rem; }
+}
+
+/* Fiche du projet : quatre repères en ligne */
+.fiche-projet { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--ligne-forte); }
+.fiche-projet > div { padding: 1rem 0; border-bottom: 1px solid var(--ligne); min-width: 0; }
+.fiche-projet > div:nth-child(odd) { padding-right: var(--e-4); }
+.fiche-projet dt { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--texte-2); }
+.fiche-projet dd { margin: 0.3rem 0 0; font-weight: 500; letter-spacing: -0.01em; }
+@media (min-width: 820px) { .fiche-projet { grid-template-columns: repeat(4, minmax(0, 1fr)); } .fiche-projet > div { padding-right: var(--e-4); } }
+
+/* Versions successives : trois écrans de téléphone */
+.version { margin: 0; display: grid; gap: var(--e-4); align-content: start; }
+.version__ecran {
+  aspect-ratio: 390 / 720; overflow: hidden; border-radius: 30px; padding: 7px; background: #141a17;
+  box-shadow: 0 30px 50px -30px rgba(10, 46, 35, 0.5);
+}
+.version__ecran img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 24px; }
+.version figcaption { display: grid; gap: 0.35rem; font-size: 0.95rem; color: var(--texte-2); }
+.version figcaption strong { color: var(--texte); font-weight: 600; font-size: 1.05rem; letter-spacing: -0.015em; }
+.version__statut { justify-self: start; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--texte-2); border: 1px solid var(--ligne-forte); border-radius: 999px; padding: 0.25rem 0.65rem; }
+.version--retenue .version__statut { color: #fff; background: var(--vert); border-color: var(--vert); }
+.version--retenue .version__ecran { box-shadow: 0 0 0 2px var(--laiton-clair), 0 30px 50px -30px rgba(10, 46, 35, 0.5); }
+.versions { grid-auto-columns: min(78%, 320px); }
+
+/* Résultats mesurés : grands chiffres fins */
+.chiffres { list-style: none; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ligne-forte); }
+.chiffres li { display: grid; gap: 0.25rem; align-content: start; padding: 1.4rem 0 1.4rem; border-bottom: 1px solid var(--ligne); min-width: 0; }
+.chiffres li:nth-child(odd) { padding-right: var(--e-4); }
+.chiffres b { font-weight: 300; font-size: clamp(2.4rem, 2rem + 2vw, 3.6rem); line-height: 1; letter-spacing: -0.05em; color: var(--vert); font-variant-numeric: lining-nums; }
+.chiffres span { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; }
+.chiffres small { font-size: 0.82rem; color: var(--texte-2); line-height: 1.45; }
+@media (min-width: 900px) { .chiffres { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--e-6); } .chiffres li:nth-child(odd) { padding-right: 0; } }

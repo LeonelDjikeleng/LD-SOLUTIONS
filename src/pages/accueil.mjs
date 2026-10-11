@@ -92,7 +92,7 @@ const corps = `
       <p class="intro">L'entreprise démarre. Plutôt que d'afficher des logos de clients que nous n'avons pas encore, voici trois démonstrations conçues pour des entreprises fictives. Chacune répond à un vrai problème de son secteur.</p>
     </div>
     ${demonstrations()}
-    <p class="mt-6"><a class="lien-fleche" href="/demonstrations/">Voir les choix derrière chaque démonstration ${fleche}</a></p>
+    <div class="groupe-boutons mt-6"><a class="lien-fleche" href="/realisations/site-leonel-djikeleng/">Ma première réalisation : ce site, en chiffres ${fleche}</a><a class="lien-fleche" href="/demonstrations/">Les choix derrière chaque démonstration ${fleche}</a></div>
   </div>
 </section>
 

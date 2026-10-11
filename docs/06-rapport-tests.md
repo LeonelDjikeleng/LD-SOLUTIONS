@@ -102,6 +102,15 @@ Tests : 29 / 29 (serveur et validation) et 15 / 15 (bout en bout, dont axe-core)
 
 Le temps de blocage de l'accueil varie d'une mesure à l'autre sur la machine de test (animations d'entrée et démonstration au téléphone) ; deux mesures sur trois donnent 100. Tests : 29 / 29 et 15 / 15.
 
+## 4 sexies. Réalisations : portfolio et étude de cas (11 octobre 2026)
+
+| Page | Perf. | Access. | Bonnes pratiques | SEO | LCP | CLS | TBT | Poids |
+|---|---|---|---|---|---|---|---|---|
+| Réalisations | 99 | 100 | 100 | 100 | 1,7 s | 0 | 130 ms | 105 Ko |
+| Étude de cas | 100 | 100 | 100 | 100 | 1,4 s | 0 | 0 ms | 57 Ko |
+
+Images en WebP (46 à 69 Ko), chargées seulement à l'approche. Les captures des versions 1 et 2 ont été recréées à partir du code de ces versions (historique Git) avec le nom actuel, pour ne pas afficher l'ancien nom commercial. Tous les chiffres de l'étude de cas viennent des mesures de ce rapport. Tests : 29 / 29 et 15 / 15 ; aperçu : 20 pages vérifiées.
+
 ## 5. Revue visuelle (Creative QA, Moi 2.0)
 
 Captures vérifiées à 390 et 1440 px (accueil, tarifs, contact, audit, démonstrations, secteur, administration) et script `qa_capture.mjs` de Moi 2.0 (360, 390, 768, 1440 : tout vert). Défauts trouvés et corrigés : bouton secondaire invisible sur fond sombre, annotations du hero qui chevauchaient le titre, texte surdimensionné dans une démo, estimateur collant qui masquait le contenu sur mobile, texte d'étape coupé, liens fléchés qui se repliaient mal.

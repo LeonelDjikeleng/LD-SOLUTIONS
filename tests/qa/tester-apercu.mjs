@@ -58,5 +58,5 @@ await page.screenshot({ path: "qa-captures/apercu-formulaire.png" });
 await ctx.close();
 await navigateur.close();
 
-console.log(problemes.length ? "PROBLÈMES :\n - " + problemes.join("\n - ") : "Aperçu conforme : 18 pages, 2 largeurs, navigation, estimateur et formulaire vérifiés.");
+console.log(problemes.length ? "PROBLÈMES :\n - " + problemes.join("\n - ") : `Aperçu conforme : ${fs.readdirSync(dossier).length} pages, 2 largeurs, navigation, estimateur et formulaire vérifiés.`);
 process.exit(problemes.length ? 1 : 0);

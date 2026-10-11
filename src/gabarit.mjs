@@ -39,6 +39,7 @@ const NAV = [
   { href: "/creation-site-web/", libelle: "Créer", cle: "creation", detail: "01" },
   { href: "/refonte-amelioration/", libelle: "Améliorer", cle: "refonte", detail: "02" },
   { href: "/maintenance/", libelle: "Entretenir", cle: "maintenance", detail: "03" },
+  { href: "/realisations/", libelle: "Réalisations", cle: "realisations" },
   { href: "/tarifs/", libelle: "Tarifs", cle: "tarifs" },
   { href: "/audit/", libelle: "Audit", cle: "audit" },
   { href: "/a-propos/", libelle: "À propos", cle: "a-propos" },
@@ -83,6 +84,7 @@ const SOMMAIRE = {
   "titre-faq-general": "Générales", "titre-faq-prix": "Prix", "titre-faq-creation": "Création", "titre-faq-refonte": "Refonte", "titre-faq-audit": "Audit", "titre-faq-maintenance": "Maintenance", "titre-faq-contrat": "Contrat",
   "titre-roles": "Ce qui est couvert", "titre-formules-m": "Formules", "titre-demande-m": "Demande", "titre-faq-m": "Questions",
   "titre-symptomes": "Problèmes", "titre-methode": "Méthode", "titre-offres-r": "Prix", "titre-faq-r": "Questions",
+  "titre-depart": "Départ", "titre-directions": "Versions", "titre-construit": "Fonctions", "titre-resultats": "Résultats", "titre-methode-r": "Méthode",
   "titre-services": "Services", "titre-grille-options": "Prix", "titre-principe": "Principe",
   "titre-t-creation": "Création", "titre-estimateur": "Estimateur", "titre-t-amelioration": "Refonte", "titre-t-maintenance": "Maintenance", "titre-t-options": "Options", "titre-t-promos": "Avantages", "titre-modalites": "Paiement", "titre-faq-t": "Questions",
 };
@@ -134,7 +136,7 @@ function piedDePage(p) {
     </div>
     <div class="pied__liens">
       ${groupe("Services", [["/creation-site-web/", "Création"], ["/refonte-amelioration/", "Refonte"], ["/maintenance/", "Maintenance"], ["/services-complementaires/", "Options"], ["/audit/", "Audit"], ["/tarifs/", "Tarifs"]])}
-      ${groupe("Atelier", [["/a-propos/", "À propos"], ["/demonstrations/", "Démonstrations"], ["/secteurs/entrepreneurs-construction/", "Entrepreneurs"], ["/secteurs/services-automobiles/", "Automobile"], ["/secteurs/services-professionnels/", "Professionnels"], ["/faq/", "Questions"], ["/contact/", "Contact"]])}
+      ${groupe("Atelier", [["/a-propos/", "À propos"], ["/realisations/", "Réalisations"], ["/demonstrations/", "Démonstrations"], ["/secteurs/entrepreneurs-construction/", "Entrepreneurs"], ["/secteurs/services-automobiles/", "Automobile"], ["/secteurs/services-professionnels/", "Professionnels"], ["/faq/", "Questions"], ["/contact/", "Contact"]])}
       ${groupe("Informations", [["/conditions-de-service/", "Conditions de service"], ["/politique-de-confidentialite/", "Confidentialité"], ["/mentions-legales/", "Mentions légales"], ["/accessibilite/", "Accessibilité"]])}
     </div>
     <p class="pied__etiquette"><span>Conçu à Québec</span><span>Prix en dollars canadiens, taxes en sus le cas échéant</span><span>Aucun témoin de suivi</span><span>© ${annee} ${esc(site.nom)}${lignesIdentite ? ` · ${lignesIdentite}` : ""}</span></p>
