@@ -2,6 +2,7 @@
 // Toutes les pages, l'estimateur et les données structurées lisent ce fichier :
 // un prix modifié ici est modifié partout. Montants en dollars canadiens, taxes en sus.
 // Analyse des coûts et des marges : docs/02-tarification.md
+// Prix alignés le 11 octobre 2026 sur le modèle financier (Finance-LD-SOLUTIONS.xlsx) : milieu entre prix plancher et prix cible.
 
 export const TAUX_HORAIRE = 85; // assistance hors forfait, par tranche de 15 min
 export const TAUX_URGENCE = 125; // hors heures ouvrables, selon disponibilité, minimum 1 h
@@ -11,7 +12,7 @@ export const creation = [
   {
     id: "depart",
     nom: "Départ",
-    prix: 1490,
+    prix: 1595,
     prefixe: "",
     accroche: "Une présence professionnelle, claire et rapide.",
     pourQui: "Travailleurs autonomes et petites entreprises qui n'ont pas encore de site, ou un site à remplacer simplement.",
@@ -126,7 +127,7 @@ export const amelioration = [
   {
     id: "refonte-visuelle",
     nom: "Refonte visuelle",
-    prix: 2490,
+    prix: 2790,
     prefixe: "À partir de",
     description: "Nouvelle direction visuelle appliquée à votre contenu et à votre structure, jusqu'à 7 pages. Adresses des pages conservées ou redirigées pour protéger votre référencement.",
     conditions: "Prix final confirmé après le diagnostic ou l'audit.",
@@ -145,8 +146,8 @@ export const maintenance = [
   {
     id: "essentielle",
     nom: "Essentielle",
-    prixMois: 49,
-    prixAn: 490,
+    prixMois: 69,
+    prixAn: 690,
     accroche: "Votre site reste à jour, sauvegardé et surveillé.",
     inclus: [
       "Mises à jour mensuelles (système, extensions, dépendances)",
@@ -162,8 +163,8 @@ export const maintenance = [
   {
     id: "professionnelle",
     nom: "Professionnelle",
-    prixMois: 119,
-    prixAn: 1190,
+    prixMois: 159,
+    prixAn: 1590,
     recommande: true,
     accroche: "Entretien complet et petites modifications sans devis.",
     inclus: [
@@ -179,8 +180,8 @@ export const maintenance = [
   {
     id: "prioritaire",
     nom: "Prioritaire",
-    prixMois: 229,
-    prixAn: 2290,
+    prixMois: 269,
+    prixAn: 2690,
     accroche: "Pour les sites qui génèrent une part importante de vos demandes.",
     inclus: [
       "Tout ce que comprend la formule Professionnelle",
@@ -236,8 +237,8 @@ export const promotions = [
   {
     id: "creation-entretien",
     titre: "Création + entretien : 3 mois offerts",
-    texte: "Les 3 premiers mois de maintenance Essentielle sont offerts quand elle démarre à la mise en ligne de votre nouveau site (valeur de 147 $). Ensuite 49 $ par mois, résiliable avec 30 jours de préavis.",
-    prixNormal: 147,
+    texte: "Les 3 premiers mois de maintenance Essentielle sont offerts quand elle démarre à la mise en ligne de votre nouveau site (valeur de 207 $). Ensuite 69 $ par mois, résiliable avec 30 jours de préavis.",
+    prixNormal: 207,
     prixPromo: 0,
     conditions: "Avec une offre de création ; maintenance démarrée à la mise en ligne.",
     actif: true,

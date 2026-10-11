@@ -163,7 +163,7 @@ ${appelFinal()}
 export default {
   chemin: "/tarifs/",
   titre: "Tarifs : création de site web, refonte, maintenance",
-  description: "Tous les prix de Leonel Djikeleng : sites web dès 1 490 $, audit 390 $, maintenance dès 49 $ par mois. Estimateur en ligne, périmètres écrits, taxes en sus.",
+  description: "Tous les prix de Leonel Djikeleng : sites web dès 1 595 $, audit 390 $, maintenance dès 69 $ par mois. Estimateur en ligne, périmètres écrits, taxes en sus.",
   navActif: "tarifs",
   cta: { href: "#estimateur", libelle: "Estimer mon projet", evenement: "clic_offre" },
   estimateur: true,

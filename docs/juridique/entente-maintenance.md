@@ -3,7 +3,7 @@
 > Base de travail à faire valider. Les formules et prix reprennent exactement la page Maintenance du site.
 
 **Client** : [raison sociale] · **Site** : [URL] · **Plateforme** : [ ] · **Début** : [date]
-**Formule** : ☐ Essentielle 49 $/mois ☐ Professionnelle 119 $/mois ☐ Prioritaire 229 $/mois · ☐ Paiement mensuel d'avance ☐ Paiement annuel d'avance (12 mois pour le prix de 10)
+**Formule** : ☐ Essentielle 69 $/mois ☐ Professionnelle 159 $/mois ☐ Prioritaire 269 $/mois · ☐ Paiement mensuel d'avance ☐ Paiement annuel d'avance (12 mois pour le prix de 10)
 
 ## 1. Ce qui est inclus
 Selon la formule choisie, telle que décrite sur `/maintenance/` à la date de signature : mises à jour, sauvegardes (fréquence et conservation), copie hors serveur, surveillance automatique de disponibilité, suivi du certificat HTTPS et du nom de domaine, rapports, heures de modification incluses (non cumulables), délai de première réponse.

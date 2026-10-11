@@ -39,3 +39,19 @@ En attendant le nom de domaine et l'hébergement, une version d'aperçu est publ
 | Paiement en ligne | ❌ Volontairement absent | Décision : devis + facture d'acompte (voir `01-strategie.md` §8) |
 | Analytique tierce (Google Analytics, pixels) | ❌ Volontairement absente | Si ajoutée : gestionnaire de consentement obligatoire (Loi 25) |
 | Vidéo ou images générées (Higgsfield) | ❌ Non utilisée | Génération payante : sur votre validation seulement |
+
+## 4. Automatisations : n8n auto-hébergé (décision du 11 octobre 2026)
+
+Décision de Leonel Djikeleng : **n8n installé sur son propre serveur**, le même VPS OVHcloud (Beauharnois, Québec) que ce site, plutôt que n8n Cloud (20 € par mois en offre Starter facturée à l'année, données hébergées à Francfort, prix relevé sur n8n.io le 11 octobre 2026).
+
+| Point | Choix prévu |
+|---|---|
+| Coût | 0 $ de licence (édition communautaire) ; prévoir un VPS de 4 Go de mémoire si n8n tourne avec le site |
+| Données | restent au Québec (Loi 25 : pas de communication hors Québec à évaluer) |
+| Installation | Docker, n8n accessible seulement par un sous-domaine en HTTPS derrière Caddy, compte propriétaire avec mot de passe fort et double authentification |
+| Secrets | coffre d'identifiants de n8n, clé de chiffrement `N8N_ENCRYPTION_KEY` dans le `.env` du serveur, sauvegardée hors serveur |
+| Sauvegarde | export quotidien des workflows (sans données épinglées) + base de n8n incluse dans la sauvegarde 3-2-1 |
+| Mises à jour | mensuelles, avec export préalable et retour arrière (Serveur 2.0) |
+| Modèles prêts | compétence Automatisation IA 2.0, dossier `n8n/` : demande → tableau de suivi + confirmation, alerte d'erreur ; livrés inactifs |
+
+Rien n'est installé tant que le VPS n'est pas souscrit ; l'installation et chaque activation de workflow se font avec l'accord de Leonel Djikeleng.

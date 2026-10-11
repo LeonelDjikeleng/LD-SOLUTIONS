@@ -78,8 +78,8 @@ ${appelFinal()}
 
 export default {
   chemin: "/maintenance/",
-  titre: "Maintenance de site web dès 49 $ par mois",
-  description: "Maintenance de site web au Québec : mises à jour, sauvegardes vérifiées, surveillance, modifications. Formules de 49 $ à 229 $ par mois, sans durée minimale.",
+  titre: "Maintenance de site web dès 69 $ par mois",
+  description: "Maintenance de site web au Québec : mises à jour, sauvegardes vérifiées, surveillance, modifications. Formules de 69 $ à 269 $ par mois, sans durée minimale.",
   navActif: "maintenance",
   cta: { href: "#formules-maintenance", libelle: "Choisir une formule", evenement: "clic_offre" },
   formulaire: true,

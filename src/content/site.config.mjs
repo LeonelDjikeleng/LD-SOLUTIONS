@@ -17,7 +17,7 @@ export const site = {
   nomLegal: "Leonel Djikeleng, travailleur autonome (entreprise individuelle)",
   exploitant: "Leonel Djikeleng", // affiché dans le pied de page et la page À propos
   neq: null, // Numéro d'entreprise du Québec, s'il existe
-  adressePostale: null, // adresse d'affaires (peut être une case postale) ; jamais inventée
+  adressePostale: "Case postale 202, Québec (Québec) G1E 2G4", // fournie par Leonel Djikeleng le 11 octobre 2026
   telephone: "418 255-7236", // affiché tel quel ; un bouton « Appeler » apparaît
   telephoneLien: "+14182557236", // format international pour les liens tel:
   whatsapp: null, // numéro international sans espaces, ex. 15145550123 ; active le bouton WhatsApp
@@ -30,7 +30,7 @@ export const site = {
   // Choix recommandé (docs/05-deploiement.md). À ajuster si un autre hébergeur est finalement souscrit.
   hebergeur: { nom: "OVHcloud", lieu: "serveur privé virtuel situé à Beauharnois, au Québec" },
   districtJudiciaire: "Québec", // district des tribunaux compétents dans les conditions de service
-  inscriptionTaxes: null, // true / false une fois le statut TPS/TVQ connu ; null = « taxes en sus, le cas échéant »
+  inscriptionTaxes: false, // non inscrit (petit fournisseur), confirmé le 11 octobre 2026 ; « taxes en sus, le cas échéant » reste exact
   paiement: "Virement Interac ou lien de paiement sécurisé",
   heuresOuvrables: "Lundi au vendredi, 9 h à 17 h (heure de l'Est)",
 };

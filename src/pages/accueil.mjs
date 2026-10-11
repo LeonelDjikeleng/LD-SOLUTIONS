@@ -11,7 +11,7 @@ export const FAQ_ACCUEIL = [
   { q: "Est-ce que le site m'appartient ?", r: "<p>Oui. Le nom de domaine et l'hébergement sont à votre nom. Au paiement complet, les droits sur le design, les textes et le code créés pour vous vous sont cédés. Les outils que nous utilisions déjà avant votre projet restent à nous, mais vous recevez le droit de les utiliser pour toujours avec votre site.</p>" },
   { q: "Que dois-je fournir ?", r: "<p>Votre logo si vous en avez un, les informations sur vos services, vos zones desservies et, idéalement, de vraies photos de votre travail. Nous vous envoyons une liste simple après l'appel découverte. Si vous manquez de textes, la rédaction est incluse dans la formule Professionnel ou offerte en option.</p>" },
   { q: "Pouvez-vous garantir la première position sur Google ?", r: "<p>Non, et personne ne peut honnêtement le garantir. Nous livrons une base technique solide (vitesse, structure, données structurées, contenu par service) et nous vous aidons à configurer votre fiche Google Business Profile. Le classement dépend aussi de la concurrence, de vos avis et du temps.</p>" },
-  { q: "Que se passe-t-il après la mise en ligne ?", r: "<p>Les corrections sont incluses pendant 30 jours (60 jours en formule Sur mesure). Ensuite, vous pouvez gérer le site vous-même, choisir une <a href=\"/maintenance/\">formule de maintenance</a> à partir de 49 $ par mois, ou nous confier des interventions ponctuelles à 85 $ l'heure, toujours approuvées par vous avant.</p>" },
+  { q: "Que se passe-t-il après la mise en ligne ?", r: "<p>Les corrections sont incluses pendant 30 jours (60 jours en formule Sur mesure). Ensuite, vous pouvez gérer le site vous-même, choisir une <a href=\"/maintenance/\">formule de maintenance</a> à partir de 69 $ par mois, ou nous confier des interventions ponctuelles à 85 $ l'heure, toujours approuvées par vous avant.</p>" },
 ];
 
 const corps = `
@@ -149,7 +149,7 @@ ${appelFinal()}
 export default {
   chemin: "/",
   titre: "Leonel Djikeleng · Création et refonte de sites web, Québec",
-  description: "Sites web pour PME et entrepreneurs du Québec : création dès 1 490 $, refonte, audit et maintenance dès 49 $ par mois. Prix publiés, réponse sous 2 jours ouvrables.",
+  description: "Sites web pour PME et entrepreneurs du Québec : création dès 1 595 $, refonte, audit et maintenance dès 69 $ par mois. Prix publiés, réponse sous 2 jours ouvrables.",
   navActif: "accueil",
   corps,
   jsonld: [
