@@ -27,8 +27,9 @@ export const site = {
     nom: "Leonel Djikeleng",
     courriel: "ldjikeleng@gmail.com",
   },
-  // Choix recommandé (docs/05-deploiement.md). À ajuster si un autre hébergeur est finalement souscrit.
-  hebergeur: { nom: "OVHcloud", lieu: "serveur privé virtuel situé à Beauharnois, au Québec" },
+  // Décision du 11 octobre 2026 (DEC-2) : Hostinger, déjà payé (202 $ pour 2 ans), plutôt qu'un VPS à souscrire.
+  // lieu : emplacement du centre de données à recopier depuis hPanel avant la mise en ligne (Loi 25) ; bloquant tant qu'il est vide.
+  hebergeur: { nom: "Hostinger", lieu: null },
   districtJudiciaire: "Québec", // district des tribunaux compétents dans les conditions de service
   inscriptionTaxes: false, // non inscrit (petit fournisseur), confirmé le 11 octobre 2026 ; « taxes en sus, le cas échéant » reste exact
   paiement: "Virement Interac ou lien de paiement sécurisé",

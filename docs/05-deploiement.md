@@ -29,6 +29,22 @@ Pourquoi :
 | Hébergement Node.js géré (Hostinger, Render, Railway…) | 5-25 $/mois | Moins d'administration | Données souvent hors Québec ; disque persistant parfois payant |
 | Site statique seul (sans serveur) | 0-5 $/mois | Gratuit ou presque | Pas d'enregistrement des demandes ni d'administration : il faudrait un service de formulaires tiers. Déconseillé. |
 
+## 2 bis. Décision du 11 octobre 2026 : Hostinger (déjà payé)
+
+Leonel Djikeleng a déjà payé un hébergement Hostinger (202 $ pour 2 ans). Souscrire en plus un VPS ajouterait un abonnement avant le premier encaissement : **le site ira donc sur Hostinger** (décision DEC-2, Business Architect 2.0). Le VPS ci-dessous reste l'option de repli.
+
+Conditions vérifiées sur la documentation de Hostinger le 11 octobre 2026 : les applications Node.js (versions 18, 20, 22 et 24) sont offertes sur les forfaits **Business** et **Cloud** ; le forfait Premium n'est pas mentionné ([support Hostinger](https://www.hostinger.com/support/how-to-deploy-a-nodejs-website-in-hostinger)). Les dossiers `hbuilds/` et `public_html` sont réécrits à chaque déploiement.
+
+| # | Étape | Niveau |
+|---|---|---|
+| 1 | hPanel : vérifier que « Node.js Web Apps » est proposé. Sinon (forfait Premium) : **ne pas changer de forfait sans décision** ; choisir entre la mise à niveau Hostinger et le VPS de la section 3 | 🟠 |
+| 2 | Créer l'application depuis le dépôt Git, Node 22, commande de construction `npm ci && npm run build`, fichier d'entrée `server/index.mjs` | 🟡 |
+| 3 | Variables d'environnement : `NODE_ENV=production`, `SITE_URL`, `TRUST_PROXY=1`, `ADMIN_PASSWORD_HASH`, `SMTP_*`, et **`DATABASE_PATH` et `BACKUP_DIR` vers un dossier hors de `hbuilds/` et `public_html`** (sinon la base des demandes serait effacée au déploiement suivant). Si l'application ne répond pas, ajouter `HOST=0.0.0.0` | 🟠 |
+| 4 | Vérifier qu'un fichier écrit dans ce dossier survit à un redéploiement (envoyer une demande d'essai, redéployer, la retrouver dans `/admin`). **Non vérifié à ce jour** : bloquant | 🟠 |
+| 5 | Sauvegarde : tâche planifiée (cron de hPanel) qui lance `npm run sauvegarde` chaque jour, plus les sauvegardes de Hostinger | 🟡 |
+| 6 | Recopier l'emplacement du centre de données dans `site.config.mjs › hebergeur.lieu` (le contrôle avant mise en ligne bloque tant qu'il est vide) | 🟠 |
+| 7 | Domaine, HTTPS (géré par Hostinger), puis vérifications de la section 5 | 🔴 |
+
 ## 3. Installation sur un VPS Ubuntu 24.04 (≈ 1 heure)
 
 Niveau 🟡 (nouveau serveur, aucune donnée existante).

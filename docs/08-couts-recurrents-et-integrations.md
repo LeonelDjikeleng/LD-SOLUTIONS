@@ -7,8 +7,8 @@ Estimations à confirmer chez chaque fournisseur ; aucune n'a été souscrite.
 | Poste | Estimation | Obligatoire ? | Commentaire |
 |---|---|---|---|
 | Nom de domaine (.ca ou .com) | 15 à 40 $ par an | Oui | À votre nom |
-| VPS au Québec (1-2 vCPU, 2-4 Go) | 6 à 15 $ par mois | Oui | Recommandé : OVHcloud Beauharnois (prix à vérifier) |
-| Sauvegarde automatique du VPS (option de l'hébergeur) | 0 à 5 $ par mois | Recommandé | En plus de la copie chiffrée |
+| Hébergement Hostinger | **202 $ pour 2 ans (≈ 8,40 $ par mois), déjà payé** | Oui | Retenu le 11 octobre 2026 (DEC-2) à la place d'un VPS OVHcloud (6 à 15 $ par mois, jamais souscrit). Le site exige l'hébergement Node.js, offert sur les forfaits Business et Cloud de Hostinger : à vérifier dans hPanel |
+| Sauvegarde | 0 $ | Recommandé | Sauvegardes de Hostinger + copie chiffrée hors serveur (`npm run sauvegarde`) |
 | Copie hors serveur (Google Drive) | 0 $ (15 Go gratuits) | Recommandé | Quelques Mo suffisent |
 | Courriel (Gmail) | 0 $ | — | Google Workspace (≈ 8 à 10 $ par mois) seulement si vous voulez une adresse @votre-domaine |
 | Certificat HTTPS (Let's Encrypt via Caddy) | 0 $ | Oui | Renouvellement automatique |
@@ -41,6 +41,8 @@ En attendant le nom de domaine et l'hébergement, une version d'aperçu est publ
 | Vidéo ou images générées (Higgsfield) | ❌ Non utilisée | Génération payante : sur votre validation seulement |
 
 ## 4. Automatisations : n8n auto-hébergé (décision du 11 octobre 2026)
+
+> **Mise à jour du 11 octobre 2026, soir (DEC-2)** : le site va sur Hostinger, déjà payé ; aucun VPS n'est souscrit. L'installation de n8n est donc **reportée** : il n'y a encore ni prospect ni relance à automatiser, et un VPS ajouterait un abonnement avant le premier encaissement. On la reconsidère quand `archi.py automatisation` (sur les vrais volumes) montre un gain net ; d'ici là, les relances du jour viennent de CRM & Growth 2.0 et partent à la main. Le plan ci-dessous reste valable pour ce moment-là.
 
 Décision de Leonel Djikeleng : **n8n installé sur son propre serveur**, le même VPS OVHcloud (Beauharnois, Québec) que ce site, plutôt que n8n Cloud (20 € par mois en offre Starter facturée à l'année, données hébergées à Francfort, prix relevé sur n8n.io le 11 octobre 2026).
 

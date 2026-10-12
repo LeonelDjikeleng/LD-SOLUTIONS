@@ -10,7 +10,7 @@ const env = process.env;
 
 if (!site.url || site.url.includes("example")) bloquants.push("SITE_URL : adresse publique définitive du site (balises canoniques, plan du site).");
 if (!site.nomLegal) bloquants.push("site.config.mjs › nomLegal : nom légal de l'entreprise (mentions légales, conditions de service).");
-if (!site.hebergeur?.nom) bloquants.push("site.config.mjs › hebergeur : nom et lieu de l'hébergeur (politique de confidentialité, Loi 25).");
+if (!site.hebergeur?.nom || !site.hebergeur?.lieu) bloquants.push("site.config.mjs › hebergeur : nom et lieu du centre de données (politique de confidentialité, Loi 25 ; hors du Québec = évaluation des facteurs relatifs à la vie privée à faire avant la mise en ligne).");
 if (!site.districtJudiciaire) avertissements.push("site.config.mjs › districtJudiciaire : district des tribunaux compétents (conditions de service).");
 if (!site.adressePostale) avertissements.push("site.config.mjs › adressePostale : adresse d'affaires (identification du commerçant).");
 if (!site.neq) avertissements.push("site.config.mjs › neq : numéro d'entreprise du Québec, s'il existe.");

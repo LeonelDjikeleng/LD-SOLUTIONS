@@ -66,6 +66,8 @@ Prix fixes pour ce qui est maîtrisé (pages, rédaction, formulaire avancé, re
 
 Aucun prix barré fictif, aucun compte à rebours, aucun nombre de places inventé. Grille et offre de lancement **validées par Leonel Djikeleng le 10 octobre 2026**.
 
+**Règle de cumul (décision du 11 octobre 2026, Business Architect 2.0, DEC-1)** : le rabais de lancement **ne se cumule pas** avec l'audit crédité. Raison : les trois avantages cumulés ramenaient Départ à ≈ 48 $/h et Professionnel à ≈ 49 $/h, sous le taux minimal de 50 $/h (calcul prudent : les 5 h d'audit comptées en plus du projet). Avec la règle, la pire combinaison permise reste ≥ 54 $/h. Les 3 mois d'entretien offerts restent cumulables avec l'un ou l'autre. À réévaluer quand deux projets réels auront montré si l'audit réduit vraiment la phase de découverte.
+
 ## 7. Modalités de paiement
 
 - Départ : 50 % / 50 %. Professionnel : 40 / 40 / 20. Sur mesure : 30 / 40 / 30.

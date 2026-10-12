@@ -30,7 +30,7 @@ Aucune hausse de conversion n'est annoncée : ces indicateurs serviront de point
 - Compléter les informations (`09-informations-a-fournir.md`), déployer, vérifier en ligne (`05-deploiement.md` §5).
 - Faire valider les textes légaux ; souscrire une assurance responsabilité professionnelle.
 - Soumettre le plan du site à Google Search Console.
-- Lancer la prospection : 5 contacts qualifiés par jour ouvrable (`commercial/kit-prospection.md`), diagnostics express offerts.
+- Lancer la prospection selon les objectifs du registre Growth (fixés le 11 octobre 2026) : 20 premiers contacts en octobre, puis 40 contacts, 4 rendez-vous et 1 vente en novembre (`commercial/kit-prospection.md`), diagnostics express offerts. L'ancien rythme de 5 contacts par jour ouvrable (≈ 100 par mois) est remplacé par ces objectifs ; il sera revu avec les résultats réels d'octobre.
 - Bilan hebdomadaire : demandes, réponses, objections.
 
 ### 1 à 3 mois

@@ -231,7 +231,10 @@ export const promotions = [
     texte: "L'audit complet (390 $) est entièrement déduit d'un projet de création ou de refonte signé dans les 60 jours suivant sa remise.",
     prixNormal: 390,
     prixPromo: 0,
-    conditions: "Projet signé dans les 60 jours suivant la remise du rapport.",
+    conditions: "Projet signé dans les 60 jours suivant la remise du rapport. Non cumulable avec l'offre de lancement.",
+    // Décision du 11 octobre 2026 (Business Architect 2.0, DEC-1) : cumulés, les trois avantages faisaient passer
+    // Départ et Professionnel sous le taux horaire minimal de 50 $/h.
+    nonCumulableAvec: ["lancement"],
     actif: true,
   },
   {
@@ -248,7 +251,8 @@ export const promotions = [
     titre: "Offre de lancement : 10 % sur la création",
     texte: "10 % de rabais sur les offres de création pour les projets signés au plus tard le 31 mars 2027, en échange de votre accord pour présenter le projet comme réalisation de Leonel Djikeleng.",
     pourcentage: 10,
-    conditions: "Projet signé au plus tard le 31 mars 2027. Présentation du projet soumise à votre approbation du contenu publié.",
+    conditions: "Projet signé au plus tard le 31 mars 2027. Non cumulable avec l'audit crédité. Présentation du projet soumise à votre approbation du contenu publié.",
+    nonCumulableAvec: ["audit-credite"],
     // Date réelle de fin : l'offre disparaît automatiquement du site après cette date (vérifiée à la construction et dans le navigateur).
     finLe: "2027-03-31",
     actif: true,
