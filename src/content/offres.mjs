@@ -218,6 +218,7 @@ export const options = [
   { id: "rendez-vous", nom: "Intégration de votre outil de rendez-vous", prix: 150, unite: "", statut: "disponible", estimateur: true },
   { id: "google-business", nom: "Configuration Google Business Profile et Search Console", prix: 190, unite: "", statut: "disponible", estimateur: true },
   { id: "mots-cles", nom: "Recherche de mots-clés et plan de contenu", prix: 350, unite: "", statut: "disponible", estimateur: true },
+  { id: "fiches-annuaires", nom: "Uniformisation de vos fiches d'annuaires (jusqu'à 6 : nom, adresse, téléphone, heures, lien du site)", prix: 175, unite: "", statut: "disponible", estimateur: true },
   { id: "automatisation", nom: "Automatisation simple (demande → tableau de suivi + courriel de confirmation)", prix: 390, unite: "", prefixe: "À partir de", statut: "etude", estimateur: true },
   { id: "integration", nom: "Intégration d'un service tiers (CRM, infolettre, paiement)", prix: null, unite: "", statut: "etude", estimateur: false },
   { id: "anglais", nom: "Version anglaise du site", prix: null, unite: "", statut: "etude", estimateur: false },
